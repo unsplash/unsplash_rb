@@ -1,5 +1,8 @@
+require "httparty"
+
 require "unsplash/version"
 require "unsplash/configuration"
+require "unsplash/connection"
 
 module Unsplash
   class << self
