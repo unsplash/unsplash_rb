@@ -9,6 +9,7 @@ require "unsplash/connection"
 require "unsplash/user"
 require "unsplash/photo"
 require "unsplash/category"
+require "unsplash/curated_batch"
 
 module Unsplash
   class << self

@@ -12,10 +12,10 @@ describe Unsplash::Category do
   describe "#find" do
     it "returns a Category object" do
       VCR.use_cassette("categories") do
-        @photo = Unsplash::Category.find(category_id)
+        @category = Unsplash::Category.find(category_id)
       end
 
-      expect(@photo).to be_a Unsplash::Category
+      expect(@category).to be_a Unsplash::Category
     end
 
     it "errors if the category doesn't exist" do
