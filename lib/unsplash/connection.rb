@@ -3,18 +3,24 @@ module Unsplash
     include HTTParty
 
     DEFAULT_VERSION  = "v1"
-    DEFAULT_BASE_URI = "http://api.unsplash.com"
+    DEFAULT_API_BASE_URI   = "http://api.unsplash.com"
+    DEFAULT_OAUTH_BASE_URI = "http://www.unsplash.com"
 
     def initialize(application_id, application_secret, options = {})
       @application_id     = application_id
       @application_secret = application_secret
       @api_version        = options.fetch(:version, DEFAULT_VERSION)
-      @base_uri           = options.fetch(:base_uri, DEFAULT_BASE_URI)
+      @api_base_uri       = options.fetch(:api_base_uri, DEFAULT_API_BASE_URI)
+      @oauth_base_uri     = options.fetch(:oauth_base_uri, DEFAULT_OAUTH_BASE_URI)
 
-      Unsplash::Connection.base_uri @base_uri
+      @oauth = ::OAuth2::Client.new(@application_id, @application_secret, site: @oauth_base_uri)
+
+      Unsplash::Connection.base_uri @api_base_uri
     end
 
     def get(path)
+      # TODO OAuth stuff.
+      # TODO Error handling.
       self.class.get path, headers: auth_header
     end
 

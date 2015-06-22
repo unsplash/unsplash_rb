@@ -1,0 +1,191 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.lvh.me:3000/users/aarondev
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Client-ID baaa6a1214d50b3586bec6e06157aab859bd4d86dc0b755360f103f38974edc3
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      Cache-Control:
+      - max-age=7200, public
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '239'
+      Etag:
+      - W/"20c84f646c13eea0e5935fe89a539a2e"
+      X-Request-Id:
+      - 9adb1a07-daa8-4109-83ae-bb0c8d0ef52e
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '986'
+      X-Runtime:
+      - '0.028535'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.1.5/2014-11-13)
+      Date:
+      - Mon, 22 Jun 2015 17:00:13 GMT
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"username":"aarondev","first_name":"James","last_name":"Developer","portfolio_url":null,"links":{"self":"http://api.lvh.me:3000/users/aarondev","html":"http://lvh.me:3000/aarondev","photos":"http://api.lvh.me:3000/users/aarondev/photos"}}'
+    http_version: 
+  recorded_at: Mon, 22 Jun 2015 17:00:13 GMT
+- request:
+    method: get
+    uri: http://api.lvh.me:3000/users/lukechesser
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Client-ID baaa6a1214d50b3586bec6e06157aab859bd4d86dc0b755360f103f38974edc3
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      Cache-Control:
+      - max-age=7200, public
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '263'
+      Etag:
+      - W/"2ee1c3c3411bcd99feabeb44b17a82f5"
+      X-Request-Id:
+      - 5359e3f8-7379-44a4-a14a-16731ef397a5
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '981'
+      X-Runtime:
+      - '0.055045'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.1.5/2014-11-13)
+      Date:
+      - Mon, 22 Jun 2015 17:14:42 GMT
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"username":"lukechesser","first_name":"Luke","last_name":"Chesser","portfolio_url":"http://imluke.me/","links":{"self":"http://api.lvh.me:3000/users/lukechesser","html":"http://lvh.me:3000/lukechesser","photos":"http://api.lvh.me:3000/users/lukechesser/photos"}}'
+    http_version: 
+  recorded_at: Mon, 22 Jun 2015 17:14:42 GMT
+- request:
+    method: get
+    uri: http://api.lvh.me:3000/users/lukechesser/photos
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Client-ID baaa6a1214d50b3586bec6e06157aab859bd4d86dc0b755360f103f38974edc3
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      X-Total:
+      - '8'
+      X-Per-Page:
+      - '10'
+      Cache-Control:
+      - max-age=7200, public
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '5221'
+      Etag:
+      - W/"7be0d4221511adaaab59fa75b207f586"
+      X-Request-Id:
+      - 499f36b7-5bf9-4713-8e17-e6ce1549e217
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '980'
+      X-Runtime:
+      - '0.072926'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.1.5/2014-11-13)
+      Date:
+      - Mon, 22 Jun 2015 17:14:42 GMT
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '[{"id":"Dwu85P9SOIk","urls":{"regular":"https://ununsplash.imgix.net/photo-1417325384643-aac51acc9e5d?q=75\u0026fm=jpg\u0026w=1080\u0026fit=max\u0026s=0e9069731c9386b1c665ea05932be946","small":"https://ununsplash.imgix.net/photo-1417325384643-aac51acc9e5d?q=75\u0026fm=jpg\u0026w=400\u0026fit=max\u0026s=d7d8a0260ef8a3de351d074f4b2253ec","thumb":"https://ununsplash.imgix.net/photo-1417325384643-aac51acc9e5d?q=75\u0026fm=jpg\u0026w=200\u0026fit=max\u0026s=aff12c4500b8d7fb6d14900cb1f3088f"},"links":{"self":"http://api.lvh.me:3000/photos/Dwu85P9SOIk","html":"http://lvh.me:3000/photos/Dwu85P9SOIk","download":"http://lvh.me:3000/photos/Dwu85P9SOIk/download"}},{"id":"a2NRu2Wxa2o","urls":{"regular":"https://unsplash.imgix.net/photo-1414690165279-49ab0a9a7e66?q=75\u0026fm=jpg\u0026w=1080\u0026fit=max\u0026s=03ef7f8cfe1b6acb063ea3248d716f36","small":"https://unsplash.imgix.net/photo-1414690165279-49ab0a9a7e66?q=75\u0026fm=jpg\u0026w=400\u0026fit=max\u0026s=87b99395d0fd568cdc4ff21baaea4ace","thumb":"https://unsplash.imgix.net/photo-1414690165279-49ab0a9a7e66?q=75\u0026fm=jpg\u0026w=200\u0026fit=max\u0026s=e4e2ba1673f60cc597e656cf466acb4f"},"links":{"self":"http://api.lvh.me:3000/photos/a2NRu2Wxa2o","html":"http://lvh.me:3000/photos/a2NRu2Wxa2o","download":"http://lvh.me:3000/photos/a2NRu2Wxa2o/download"}},{"id":"rgw_H0QTYJ0","urls":{"regular":"https://ununsplash.imgix.net/photo-1413691333360-e9ed5ae2b880?q=75\u0026fm=jpg\u0026w=1080\u0026fit=max\u0026s=a5cf1486139f4e425a36a899b456c540","small":"https://ununsplash.imgix.net/photo-1413691333360-e9ed5ae2b880?q=75\u0026fm=jpg\u0026w=400\u0026fit=max\u0026s=8ad33ff11a7e42848f8f6de767966b9f","thumb":"https://ununsplash.imgix.net/photo-1413691333360-e9ed5ae2b880?q=75\u0026fm=jpg\u0026w=200\u0026fit=max\u0026s=5cdd826d283ffaa313659de21d86f01e"},"links":{"self":"http://api.lvh.me:3000/photos/rgw_H0QTYJ0","html":"http://lvh.me:3000/photos/rgw_H0QTYJ0","download":"http://lvh.me:3000/photos/rgw_H0QTYJ0/download"}},{"id":"wnShDP37vB4","urls":{"regular":"https://ununsplash.imgix.net/uploads/1413349410189e2a95d2e/39982a21?q=75\u0026fm=jpg\u0026w=1080\u0026fit=max\u0026s=7c84a31048c9b9f4131cc5a1cb586459","small":"https://ununsplash.imgix.net/uploads/1413349410189e2a95d2e/39982a21?q=75\u0026fm=jpg\u0026w=400\u0026fit=max\u0026s=fab7ba91705f5b27c00d355638293eeb","thumb":"https://ununsplash.imgix.net/uploads/1413349410189e2a95d2e/39982a21?q=75\u0026fm=jpg\u0026w=200\u0026fit=max\u0026s=8bb164398b88cfa27dc51495807361e7"},"links":{"self":"http://api.lvh.me:3000/photos/wnShDP37vB4","html":"http://lvh.me:3000/photos/wnShDP37vB4","download":"http://lvh.me:3000/photos/wnShDP37vB4/download"}},{"id":"FGwdHKNx4d0","urls":{"regular":"https://unsplash.imgix.net/reserve/kNVnPe0pRZ2bXhAqTH3q_quebec-12.jpg?q=75\u0026fm=jpg\u0026w=1080\u0026fit=max\u0026s=e9a14a9a2e56ee9ad84aad1fd85dcf0f","small":"https://unsplash.imgix.net/reserve/kNVnPe0pRZ2bXhAqTH3q_quebec-12.jpg?q=75\u0026fm=jpg\u0026w=400\u0026fit=max\u0026s=6eb7dc9dbd33446caf75f762484aa554","thumb":"https://unsplash.imgix.net/reserve/kNVnPe0pRZ2bXhAqTH3q_quebec-12.jpg?q=75\u0026fm=jpg\u0026w=200\u0026fit=max\u0026s=22b2d9dcac0df6059ce03d8bac2e6cb5"},"links":{"self":"http://api.lvh.me:3000/photos/FGwdHKNx4d0","html":"http://lvh.me:3000/photos/FGwdHKNx4d0","download":"http://lvh.me:3000/photos/FGwdHKNx4d0/download"}},{"id":"pFqrYbhIAXs","urls":{"regular":"https://unsplash.imgix.net/5/unsplash-kitsune-4.jpg?q=75\u0026fm=jpg\u0026w=1080\u0026fit=max\u0026s=21252de7ac57f56f5e45987aaf15918a","small":"https://unsplash.imgix.net/5/unsplash-kitsune-4.jpg?q=75\u0026fm=jpg\u0026w=400\u0026fit=max\u0026s=3882366f5a48d04ab5096d3bf5e219a4","thumb":"https://unsplash.imgix.net/5/unsplash-kitsune-4.jpg?q=75\u0026fm=jpg\u0026w=200\u0026fit=max\u0026s=fcb836ccc9f9b63361ba42bc81a1800d"},"links":{"self":"http://api.lvh.me:3000/photos/pFqrYbhIAXs","html":"http://lvh.me:3000/photos/pFqrYbhIAXs","download":"http://lvh.me:3000/photos/pFqrYbhIAXs/download"}},{"id":"KR2mdHJ5qMg","urls":{"regular":"https://ununsplash.imgix.net/5/unsplash-bonus.jpg?q=75\u0026fm=jpg\u0026w=1080\u0026fit=max\u0026s=d5ec95337ca1859e41e7f6f2d69f2d4f","small":"https://ununsplash.imgix.net/5/unsplash-bonus.jpg?q=75\u0026fm=jpg\u0026w=400\u0026fit=max\u0026s=c9a4ec54525517797d72809f828e70fc","thumb":"https://ununsplash.imgix.net/5/unsplash-bonus.jpg?q=75\u0026fm=jpg\u0026w=200\u0026fit=max\u0026s=e06e6dc8e8490a15ac4751ea8c870f32"},"links":{"self":"http://api.lvh.me:3000/photos/KR2mdHJ5qMg","html":"http://lvh.me:3000/photos/KR2mdHJ5qMg","download":"http://lvh.me:3000/photos/KR2mdHJ5qMg/download"}},{"id":"1uxV8fAfhVM","urls":{"regular":"https://unsplash.imgix.net/5/unsplash-kitsune-3.jpg?q=75\u0026fm=jpg\u0026w=1080\u0026fit=max\u0026s=c41c7e8727fbfb9f995eb5340ff70f49","small":"https://unsplash.imgix.net/5/unsplash-kitsune-3.jpg?q=75\u0026fm=jpg\u0026w=400\u0026fit=max\u0026s=05967b59589719f72931b7bd3d9c277d","thumb":"https://unsplash.imgix.net/5/unsplash-kitsune-3.jpg?q=75\u0026fm=jpg\u0026w=200\u0026fit=max\u0026s=a357ec3b0153fab19628726484512759"},"links":{"self":"http://api.lvh.me:3000/photos/1uxV8fAfhVM","html":"http://lvh.me:3000/photos/1uxV8fAfhVM","download":"http://lvh.me:3000/photos/1uxV8fAfhVM/download"}}]'
+    http_version: 
+  recorded_at: Mon, 22 Jun 2015 17:14:42 GMT
+- request:
+    method: get
+    uri: http://api.lvh.me:3000/users/aarondev/photos
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Client-ID baaa6a1214d50b3586bec6e06157aab859bd4d86dc0b755360f103f38974edc3
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      X-Total:
+      - '0'
+      X-Per-Page:
+      - '10'
+      Cache-Control:
+      - max-age=7200, public
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '2'
+      Etag:
+      - W/"d751713988987e9331980363e24189ce"
+      X-Request-Id:
+      - b451adcc-0d90-4f25-855d-ea1a46f0030c
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '979'
+      X-Runtime:
+      - '0.042324'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.1.5/2014-11-13)
+      Date:
+      - Mon, 22 Jun 2015 17:15:18 GMT
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: "[]"
+    http_version: 
+  recorded_at: Mon, 22 Jun 2015 17:15:18 GMT
+recorded_with: VCR 2.9.3

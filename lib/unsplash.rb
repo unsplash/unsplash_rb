@@ -1,8 +1,11 @@
+require "oauth2"
 require "httparty"
 
 require "unsplash/version"
 require "unsplash/configuration"
 require "unsplash/connection"
+require "unsplash/user"
+require "unsplash/photo"
 
 module Unsplash
   class << self

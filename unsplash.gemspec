@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name          = "unsplash"
   spec.version       = Unsplash::VERSION
   spec.authors       = ["Aaron Klaassen"]
-  spec.email         = ["aaron@outerspacehero.com"]
+  spec.email         = ["aaron@crew.co"]
 
   spec.summary       = %q{Ruby wrapper for the Unsplash API.}
   spec.description   = %q{TODO: Write a longer description or delete this line.}
@@ -28,9 +28,12 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "httparty"
+  spec.add_dependency "oauth2"
 
   spec.add_development_dependency "bundler", "~> 1.10"
-  spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "rspec", "~> 3.3.0"
+  spec.add_development_dependency "rake",    "~> 10.0"
+  spec.add_development_dependency "rspec",   "~> 3.3.0"
+  spec.add_development_dependency "vcr",     "~> 2.9.3"
+  spec.add_development_dependency "webmock", "~> 1.20.4"
   spec.add_development_dependency "pry"
 end
