@@ -20,7 +20,13 @@ describe Unsplash::User do
       expect(@user).to be_an Unsplash::User
     end
 
-    it "errors if the user does not exist"
+    it "errors if the user does not exist" do
+      expect {
+        VCR.use_cassette("users", record: :new_episodes) do
+          @user = Unsplash::User.find(fake)
+        end
+      }.to raise_error Unsplash::Error
+    end
   end
 
   describe "#photos" do
@@ -42,7 +48,13 @@ describe Unsplash::User do
       expect(@photos).to be_empty
     end
 
-    it "errors if the user does not exist"
+    it "errors if the user does not exist" do
+      expect {
+        VCR.use_cassette("users", record: :new_episodes) do
+          @user = Unsplash::User.find(fake).photos
+        end
+      }.to raise_error Unsplash::Error
+    end
 
   end
   

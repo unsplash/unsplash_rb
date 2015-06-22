@@ -20,8 +20,14 @@ module Unsplash
 
     def get(path)
       # TODO OAuth stuff.
-      # TODO Error handling.
-      self.class.get path, headers: auth_header
+      response = self.class.get path, headers: auth_header
+
+      if response.code != 200
+        msg = response.to_hash["error"] || response.to_hash["errors"].join(" ")
+        raise Unsplash::Error.new msg
+      end
+
+      response
     end
 
     private

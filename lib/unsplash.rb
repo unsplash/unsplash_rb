@@ -3,6 +3,7 @@ require "httparty"
 
 require "unsplash/version"
 require "unsplash/configuration"
+require "unsplash/errors"
 require "unsplash/connection"
 require "unsplash/user"
 require "unsplash/photo"
