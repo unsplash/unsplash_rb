@@ -1,16 +1,8 @@
 module Unsplash
   class User < OpenStruct
+    include Model
 
     class << self
-
-      def connection
-        @@connection ||= Connection.new(Unsplash.configuration.application_id,
-                                        Unsplash.configuration.application_secret)
-      end
-
-      def connection=(conn)
-        @@connection = conn
-      end
 
       def find(username)
         new connection.get("/users/#{username}").to_hash
@@ -19,10 +11,6 @@ module Unsplash
       def current
         # TODO
       end
-    end
-
-    def connection
-      self.class.connection
     end
 
     def photos
