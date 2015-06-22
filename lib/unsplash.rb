@@ -8,6 +8,7 @@ require "unsplash/model"
 require "unsplash/connection"
 require "unsplash/user"
 require "unsplash/photo"
+require "unsplash/category"
 
 module Unsplash
   class << self
