@@ -1,6 +1,5 @@
 module Unsplash
-  class User < OpenStruct
-    include Model
+  class User < Model
 
     class << self
 

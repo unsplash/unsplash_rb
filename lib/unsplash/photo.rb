@@ -1,6 +1,5 @@
 module Unsplash
-  class Photo < OpenStruct
-    include Model
+  class Photo < Model
 
     class << self
 

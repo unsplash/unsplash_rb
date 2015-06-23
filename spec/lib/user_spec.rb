@@ -57,5 +57,14 @@ describe Unsplash::User do
     end
 
   end
+
+
+  describe "#current" do
+    skip
+  end
+
+  describe "#update" do
+    skip
+  end
   
 end

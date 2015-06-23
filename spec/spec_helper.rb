@@ -20,8 +20,6 @@ RSpec.configure do |config|
 
   config.before :all do
     @test_connection = Unsplash::Connection.new(
-                            Unsplash.configuration.application_id,
-                            Unsplash.configuration.application_secret,
                             api_base_uri:   "http://api.lvh.me:3000",
                             oauth_base_uri: "http://www.lvh.me:3000")
   end

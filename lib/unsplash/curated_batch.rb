@@ -1,6 +1,5 @@
 module Unsplash
-  class CuratedBatch < OpenStruct
-    include Model
+  class CuratedBatch < Model
 
     class << self
       def find(id)

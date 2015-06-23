@@ -1,6 +1,5 @@
 module Unsplash
-  class Category < OpenStruct
-    include Model
+  class Category < Model
 
     class << self
       def all
