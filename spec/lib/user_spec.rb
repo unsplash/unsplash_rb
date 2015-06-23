@@ -6,10 +6,6 @@ describe Unsplash::User do
   let (:photographer) { "lukechesser" }
   let (:fake) { "santa" }
 
-  before :all do
-    Unsplash::User.connection = @test_connection
-  end
-
   describe "#find" do
 
     it "returns as User object" do

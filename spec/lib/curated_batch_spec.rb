@@ -5,13 +5,9 @@ describe Unsplash::CuratedBatch do
   let (:batch_id) { 2 }
   let (:fake_id)  { 1234 }
 
-  before :all do
-    Unsplash::CuratedBatch.connection = @test_connection
-  end
-
   describe "#find" do
     it "returns a CuratedBatch object" do
-      VCR.use_cassette("curated_batches", record: :new_episodes) do
+      VCR.use_cassette("curated_batches") do
         @batch = Unsplash::CuratedBatch.find(batch_id)
       end
 
@@ -20,7 +16,7 @@ describe Unsplash::CuratedBatch do
 
     it "errors if the batch doesn't exist" do
       expect {
-        VCR.use_cassette("curated_batches", record: :new_episodes) do
+        VCR.use_cassette("curated_batches") do
           @batch = Unsplash::CuratedBatch.find(fake_id)
         end
       }.to raise_error Unsplash::Error
@@ -29,7 +25,7 @@ describe Unsplash::CuratedBatch do
 
   describe "#all" do
     it "returns an array of Categories" do
-      VCR.use_cassette("curated_batches", record: :new_episodes) do
+      VCR.use_cassette("curated_batches") do
         @batches = Unsplash::CuratedBatch.all(1, 12)
       end
 
@@ -40,7 +36,7 @@ describe Unsplash::CuratedBatch do
 
   describe "#photos" do
     it "returns an array of Photos" do
-      VCR.use_cassette("curated_batches", record: :new_episodes) do
+      VCR.use_cassette("curated_batches") do
         @photos = Unsplash::CuratedBatch.find(batch_id).photos
       end
 

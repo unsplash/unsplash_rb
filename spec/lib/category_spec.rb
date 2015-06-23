@@ -2,10 +2,6 @@ require "spec_helper"
 
 describe Unsplash::Category do
 
-  before :all do
-    Unsplash::Category.connection = @test_connection
-  end
-
   let (:category_id) { 7 }
   let (:fake_id)     { 42 }
 

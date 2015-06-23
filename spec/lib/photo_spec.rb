@@ -2,11 +2,6 @@ require "spec_helper"
 
 describe Unsplash::Photo do
 
-  before :all do
-    Unsplash::Photo.connection = @test_connection
-  end
-
-
   describe "#find" do
     let(:photo_id) { "tAKXap853rY" }
     let(:fake_id)  { "abc123" }

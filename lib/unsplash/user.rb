@@ -4,11 +4,11 @@ module Unsplash
     class << self
 
       def find(username)
-        new connection.get("/users/#{username}").to_hash
+        new JSON.parse(connection.get("/users/#{username}").body)
       end
 
       def current
-        # TODO
+        new JSON.parse(connection.get("/me").body)
       end
     end
 
