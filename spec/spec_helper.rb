@@ -10,7 +10,7 @@ end
 
 VCR.configure do |config|
   config.cassette_library_dir = "spec/cassettes"
-  config.hook_into :faraday
+  config.hook_into :webmock
 end
 
 
@@ -18,7 +18,7 @@ RSpec.configure do |config|
 
   config.order = "random"
 
-  config.before :all do
+  config.before :each do
     Unsplash::Model.connection = Unsplash::Connection.new(
                                   api_base_uri:   "http://api.lvh.me:3000",
                                   oauth_base_uri: "http://www.lvh.me:3000")

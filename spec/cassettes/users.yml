@@ -231,4 +231,251 @@ http_interactions:
       string: '{"error":"Couldn''t find User"}'
     http_version: 
   recorded_at: Mon, 22 Jun 2015 17:58:48 GMT
+- request:
+    method: get
+    uri: http://api.lvh.me:3000/me
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Accept-Version:
+      - v1
+      Authorization:
+      - Bearer 69cca388c56e64fc2ee1c9f7cfb0dcec1bf1b384957b61c9ec6764777b98554e
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      Cache-Control:
+      - max-age=7200, public
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '356'
+      Etag:
+      - W/"7affa6259dd3f390a9aaadb9364a8c70"
+      X-Request-Id:
+      - ac7b8c4a-9c4d-4388-a579-187941f6b980
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '963'
+      X-Runtime:
+      - '0.066987'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.1.5/2014-11-13)
+      Date:
+      - Tue, 23 Jun 2015 21:42:33 GMT
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"username":"aarondev","first_name":"James","last_name":"Developer","portfolio_url":null,"bio":null,"uploads_remaining":10,"instagram_username":"aaron-klaassen","location":null,"email":"aaron@example.com","links":{"self":"http://api.lvh.me:3000/users/aarondev","html":"http://lvh.me:3000/aarondev","photos":"http://api.lvh.me:3000/users/aarondev/photos"}}'
+    http_version: 
+  recorded_at: Tue, 23 Jun 2015 21:42:33 GMT
+- request:
+    method: get
+    uri: http://api.lvh.me:3000/users/aarondev
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Accept-Version:
+      - v1
+      Authorization:
+      - Bearer 69cca388c56e64fc2ee1c9f7cfb0dcec1bf1b384957b61c9ec6764777b98554e
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      Cache-Control:
+      - max-age=7200, public
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '355'
+      Etag:
+      - W/"06653a7dc09963b0a0ebc6d0d1a08447"
+      X-Request-Id:
+      - a743a6b9-8da5-4e70-934b-8ddfee245ecd
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '981'
+      X-Runtime:
+      - '0.104002'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.1.5/2014-11-13)
+      Date:
+      - Wed, 24 Jun 2015 15:31:45 GMT
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"username":"aarondev","first_name":"James","last_name":"TryAgain","portfolio_url":null,"bio":null,"uploads_remaining":10,"instagram_username":"aaron-klaassen","location":null,"email":"aaron@pickcrew.com","links":{"self":"http://api.lvh.me:3000/users/aarondev","html":"http://lvh.me:3000/aarondev","photos":"http://api.lvh.me:3000/users/aarondev/photos"}}'
+    http_version: 
+  recorded_at: Wed, 24 Jun 2015 15:31:45 GMT
+- request:
+    method: put
+    uri: http://api.lvh.me:3000/me?last_name=Jangly
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Accept-Version:
+      - v1
+      Authorization:
+      - Bearer 69cca388c56e64fc2ee1c9f7cfb0dcec1bf1b384957b61c9ec6764777b98554e
+      Content-Length:
+      - '0'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      Cache-Control:
+      - max-age=7200, public
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '353'
+      Etag:
+      - W/"2438aa1e296fa0b0d85d86edfaf0123d"
+      X-Request-Id:
+      - e1b0bdb3-c065-4adf-ac2b-e25b3c706e89
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '980'
+      X-Runtime:
+      - '0.052167'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.1.5/2014-11-13)
+      Date:
+      - Wed, 24 Jun 2015 15:31:45 GMT
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"username":"aarondev","first_name":"James","last_name":"Jangly","portfolio_url":null,"bio":null,"uploads_remaining":10,"instagram_username":"aaron-klaassen","location":null,"email":"aaron@pickcrew.com","links":{"self":"http://api.lvh.me:3000/users/aarondev","html":"http://lvh.me:3000/aarondev","photos":"http://api.lvh.me:3000/users/aarondev/photos"}}'
+    http_version: 
+  recorded_at: Wed, 24 Jun 2015 15:31:45 GMT
+- request:
+    method: put
+    uri: http://api.lvh.me:3000/me?last_name=Jangly
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Authorization:
+      - Client-ID baaa6a1214d50b3586bec6e06157aab859bd4d86dc0b755360f103f38974edc3
+  response:
+    status:
+      code: 401
+      message: 'Unauthorized '
+    headers:
+      Content-Type:
+      - application/json
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      Content-Length:
+      - '1183'
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 1739e606-4e25-4a7e-8b5d-fdb2b0336232
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '979'
+      X-Runtime:
+      - '0.022087'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.1.5/2014-11-13)
+      Date:
+      - Wed, 24 Jun 2015 15:34:44 GMT
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"error":"OAuth error: unauthorized"}'
+    http_version: 
+  recorded_at: Wed, 24 Jun 2015 15:34:44 GMT
+- request:
+    method: get
+    uri: http://api.lvh.me:3000/me
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Client-ID baaa6a1214d50b3586bec6e06157aab859bd4d86dc0b755360f103f38974edc3
+  response:
+    status:
+      code: 401
+      message: 'Unauthorized '
+    headers:
+      Content-Type:
+      - application/json
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      Content-Length:
+      - '1183'
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 2277ea5f-14d8-41aa-937d-99cd3e8ec57a
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '978'
+      X-Runtime:
+      - '0.048236'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.1.5/2014-11-13)
+      Date:
+      - Wed, 24 Jun 2015 15:36:11 GMT
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"error":"OAuth error: unauthorized"}'
+    http_version: 
+  recorded_at: Wed, 24 Jun 2015 15:36:11 GMT
 recorded_with: VCR 2.9.3

@@ -1,5 +1,6 @@
 module Unsplash
   class Connection
+    include HTTParty
 
     DEFAULT_VERSION  = "v1"
     DEFAULT_API_BASE_URI   = "http://api.unsplash.com"
@@ -13,6 +14,8 @@ module Unsplash
       
       oauth_base_uri     = options.fetch(:oauth_base_uri, DEFAULT_OAUTH_BASE_URI)
       @oauth = ::OAuth2::Client.new(@application_id, @application_secret, site: oauth_base_uri)
+
+      Unsplash::Connection.base_uri @api_base_uri
     end
 
     def authorization_url(requested_scopes)
@@ -27,7 +30,11 @@ module Unsplash
 
 
     def get(path, params = {})
-      request(:get, path, params)
+      request :get, path, params
+    end
+
+    def put(path, params)
+      request :put, path, params
     end
 
     private
@@ -40,19 +47,23 @@ module Unsplash
         # Anything else? User agent?
       }
 
-      response = if false  #@oauth_token
+      response = if @oauth_token
         @oauth_token = @oauth_token.refresh_token if @oauth_token.expired?
-        @oauth_token.public_send(verb,  @api_base_uri + path, headers: headers)
+        @oauth_token.public_send(verb,  @api_base_uri + path, params: params, headers: headers)
       else
 
-        http.public_send(verb) do |req|
-          req.url path, params
-          req.headers.merge! headers.merge(public_auth_header)
-        end
+        # http.public_send(verb) do |req|
+        #   req.url path, params
+        #   req.headers.merge! headers.merge(public_auth_header)
+        # end
         
+        self.class.public_send verb, path, query: params, headers: public_auth_header
+
       end
 
-      if !(200..299).include?(response.status)
+      status_code = response.respond_to?(:status) ? response.status : response.code
+
+      if !(200..299).include?(status_code)
         body = JSON.parse(response.body)
         msg = body["error"] || body["errors"].join(" ")
         raise Unsplash::Error.new msg
@@ -63,14 +74,6 @@ module Unsplash
 
     def public_auth_header
       { "Authorization" => "Client-ID #{@application_id}" }
-    end
-
-
-    def http
-      @conn ||= Faraday.new(url: @api_base_uri) do |faraday|
-        #faraday.response :logger if Unsplash.configuration.test?
-        faraday.request  :url_encoded
-      end
     end
   end
 

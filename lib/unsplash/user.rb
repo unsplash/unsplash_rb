@@ -20,7 +20,8 @@ module Unsplash
     end
 
     def update(params)
-      # TODO
+      @attributes = OpenStruct.new JSON.parse(connection.put("/me", params).body)
+      self
     end
 
 

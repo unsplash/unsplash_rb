@@ -1,5 +1,5 @@
 require "oauth2"
-require "faraday"
+require "httparty"
 
 require "unsplash/version"
 require "unsplash/configuration"
