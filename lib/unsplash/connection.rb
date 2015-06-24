@@ -13,7 +13,11 @@ module Unsplash
       @api_base_uri       = options.fetch(:api_base_uri, DEFAULT_API_BASE_URI)
       
       oauth_base_uri     = options.fetch(:oauth_base_uri, DEFAULT_OAUTH_BASE_URI)
-      @oauth = ::OAuth2::Client.new(@application_id, @application_secret, site: oauth_base_uri)
+      @oauth = ::OAuth2::Client.new(@application_id, @application_secret, site: oauth_base_uri) do |http|
+        http.request :multipart
+        http.request :url_encoded
+        http.adapter :net_http
+      end
 
       Unsplash::Connection.base_uri @api_base_uri
     end
@@ -33,8 +37,12 @@ module Unsplash
       request :get, path, params
     end
 
-    def put(path, params)
+    def put(path, params = {})
       request :put, path, params
+    end
+
+    def post(path, params = {})
+      request :post, path, params
     end
 
     private
@@ -48,17 +56,13 @@ module Unsplash
       }
 
       response = if @oauth_token
-        @oauth_token = @oauth_token.refresh_token if @oauth_token.expired?
-        @oauth_token.public_send(verb,  @api_base_uri + path, params: params, headers: headers)
-      else
+        refresh_token!
 
-        # http.public_send(verb) do |req|
-        #   req.url path, params
-        #   req.headers.merge! headers.merge(public_auth_header)
-        # end
-        
+        param_key = verb == :post ? :body : :params
+        @oauth_token.public_send(verb,  @api_base_uri + path, param_key => params, headers: headers)
+      
+      else        
         self.class.public_send verb, path, query: params, headers: public_auth_header
-
       end
 
       status_code = response.respond_to?(:status) ? response.status : response.code
@@ -74,6 +78,12 @@ module Unsplash
 
     def public_auth_header
       { "Authorization" => "Client-ID #{@application_id}" }
+    end
+
+    def refresh_token!
+      return if !@oauth_token.expired?
+
+      @oauth_token = @oauth_token.refresh_token
     end
   end
 

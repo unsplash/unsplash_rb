@@ -2,13 +2,6 @@ require "spec_helper"
 
 describe Unsplash::User do
 
-  def stub_oauth_authorization
-    token = "69cca388c56e64fc2ee1c9f7cfb0dcec1bf1b384957b61c9ec6764777b98554e"
-    client = Unsplash::User.connection.instance_variable_get(:@oauth)
-    access_token = ::OAuth2::AccessToken.new(client, token)
-    Unsplash::User.connection.instance_variable_set(:@oauth_token, access_token)
-  end
-
   let (:regularjoe) { "aarondev" }
   let (:photographer) { "lukechesser" }
   let (:fake) { "santa" }
@@ -99,7 +92,7 @@ describe Unsplash::User do
 
       it "fails without a Bearer token" do
         expect {
-          VCR.use_cassette("users", match_requests_on: [:headers, :uri], record: :new_episodes) do
+          VCR.use_cassette("users", match_requests_on: [:headers, :uri]) do
             @user = Unsplash::User.find("aarondev").update last_name: "Jangly"
           end
         }.to raise_error Unsplash::Error

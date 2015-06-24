@@ -334,7 +334,7 @@ http_interactions:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"username":"aarondev","first_name":"James","last_name":"TryAgain","portfolio_url":null,"bio":null,"uploads_remaining":10,"instagram_username":"aaron-klaassen","location":null,"email":"aaron@pickcrew.com","links":{"self":"http://api.lvh.me:3000/users/aarondev","html":"http://lvh.me:3000/aarondev","photos":"http://api.lvh.me:3000/users/aarondev/photos"}}'
+      string: '{"username":"aarondev","first_name":"James","last_name":"TryAgain","portfolio_url":null,"bio":null,"uploads_remaining":10,"instagram_username":"aaron-klaassen","location":null,"email":"aaron@example.com","links":{"self":"http://api.lvh.me:3000/users/aarondev","html":"http://lvh.me:3000/aarondev","photos":"http://api.lvh.me:3000/users/aarondev/photos"}}'
     http_version: 
   recorded_at: Wed, 24 Jun 2015 15:31:45 GMT
 - request:
@@ -389,7 +389,7 @@ http_interactions:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"username":"aarondev","first_name":"James","last_name":"Jangly","portfolio_url":null,"bio":null,"uploads_remaining":10,"instagram_username":"aaron-klaassen","location":null,"email":"aaron@pickcrew.com","links":{"self":"http://api.lvh.me:3000/users/aarondev","html":"http://lvh.me:3000/aarondev","photos":"http://api.lvh.me:3000/users/aarondev/photos"}}'
+      string: '{"username":"aarondev","first_name":"James","last_name":"Jangly","portfolio_url":null,"bio":null,"uploads_remaining":10,"instagram_username":"aaron-klaassen","location":null,"email":"aaron@example.com","links":{"self":"http://api.lvh.me:3000/users/aarondev","html":"http://lvh.me:3000/aarondev","photos":"http://api.lvh.me:3000/users/aarondev/photos"}}'
     http_version: 
   recorded_at: Wed, 24 Jun 2015 15:31:45 GMT
 - request:

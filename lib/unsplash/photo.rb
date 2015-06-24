@@ -24,8 +24,9 @@ module Unsplash
         parse_list connection.get("/photos/", params).body
       end
 
-      def create(params)
-        # TODO
+      def create(filepath)
+        file = Faraday::UploadIO.new(filepath, "image/jpeg")
+        new JSON.parse(connection.post("/photos", photo: file).body)
       end
 
       private
