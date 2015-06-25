@@ -1,7 +1,7 @@
 module Unsplash # nodoc:
 
   # Unsplash User operations.
-  class User < Model
+  class User < Client
 
     class << self
 

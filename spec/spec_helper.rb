@@ -19,7 +19,7 @@ RSpec.configure do |config|
   config.order = "random"
 
   config.before :each do
-    Unsplash::Model.connection = Unsplash::Connection.new(
+    Unsplash::Client.connection = Unsplash::Connection.new(
                                   api_base_uri:   "http://api.lvh.me:3000",
                                   oauth_base_uri: "http://www.lvh.me:3000")
   end
@@ -29,7 +29,7 @@ end
 
 def stub_oauth_authorization
   token = "69cca388c56e64fc2ee1c9f7cfb0dcec1bf1b384957b61c9ec6764777b98554e"
-  client = Unsplash::Model.connection.instance_variable_get(:@oauth)
+  client = Unsplash::Client.connection.instance_variable_get(:@oauth)
   access_token = ::OAuth2::AccessToken.new(client, token)
-  Unsplash::Model.connection.instance_variable_set(:@oauth_token, access_token)
+  Unsplash::Client.connection.instance_variable_set(:@oauth_token, access_token)
 end

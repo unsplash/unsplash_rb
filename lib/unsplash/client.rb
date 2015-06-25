@@ -1,7 +1,7 @@
 module Unsplash # :nodoc:
 
   # Common functionality across Unsplash API objects.
-  class Model
+  class Client
 
     # Build an Unsplash object with the given attributes.
     # @param attrs [Hash] 

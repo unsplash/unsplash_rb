@@ -1,7 +1,7 @@
 module Unsplash # :nodoc: 
 
   # Unsplash Curated Batch operations.
-  class CuratedBatch < Model
+  class CuratedBatch < Client
 
     class << self
 

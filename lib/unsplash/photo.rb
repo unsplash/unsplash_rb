@@ -1,7 +1,7 @@
 module Unsplash # :nodoc:
 
   # Unsplash Photo operations.
-  class Photo < Model
+  class Photo < Client
 
     class << self
 

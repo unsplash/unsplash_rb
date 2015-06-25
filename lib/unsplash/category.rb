@@ -1,7 +1,7 @@
 module Unsplash # :nodoc:
 
   # Unsplash Category operations.
-  class Category < Model
+  class Category < Client
 
     class << self
 
