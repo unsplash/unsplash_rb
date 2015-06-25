@@ -10,8 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["aaron@crew.co"]
 
   spec.summary       = %q{Ruby wrapper for the Unsplash API.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.homepage      = "https://github.com/CrewLabs/unsplash_rb"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
@@ -28,7 +27,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "httparty", "~> 0.13.5"
-  spec.add_dependency "oauth2",  "~> 1.0.0"
+  spec.add_dependency "oauth2",   "~> 1.0.0"
 
   spec.add_development_dependency "bundler", "~> 1.10"
   spec.add_development_dependency "rake",    "~> 10.0"
