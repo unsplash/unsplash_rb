@@ -1,5 +1,5 @@
-module Unsplash
-  class Configuration
+module Unsplash # :nodoc:
+  class Configuration # :nodoc:
     attr_accessor :application_id
     attr_accessor :application_secret
     attr_accessor :application_redirect_uri

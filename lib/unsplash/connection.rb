@@ -1,18 +1,29 @@
-module Unsplash
+module Unsplash #:nodoc:
+
+  # HTTP connection to and communication with the Unsplash API.
   class Connection
     include HTTParty
 
+    # The version of the API being used if unspecified.
     DEFAULT_VERSION  = "v1"
+
+    # Base URI for the Unsplash API..
     DEFAULT_API_BASE_URI   = "http://api.unsplash.com"
+
+    # Base URI for Unsplash OAuth.
     DEFAULT_OAUTH_BASE_URI = "http://www.unsplash.com"
 
-    def initialize(options = {})
+    # Create a Connection object.
+    # @param version [String] The Unsplash API version to use.
+    # @param api_base_uri [String] Base URI at which to make API calls.
+    # @param oauth_base_uri [String] Base URI for OAuth requests.
+    def initialize(version: DEFAULT_VERSION, api_base_uri: DEFAULT_API_BASE_URI, oauth_base_uri: DEFAULT_OAUTH_BASE_URI)
       @application_id     = Unsplash.configuration.application_id
       @application_secret = Unsplash.configuration.application_secret
-      @api_version        = options.fetch(:version, DEFAULT_VERSION)
-      @api_base_uri       = options.fetch(:api_base_uri, DEFAULT_API_BASE_URI)
+      @api_version        = version
+      @api_base_uri       = api_base_uri
       
-      oauth_base_uri     = options.fetch(:oauth_base_uri, DEFAULT_OAUTH_BASE_URI)
+      oauth_base_uri     = oauth_base_uri
       @oauth = ::OAuth2::Client.new(@application_id, @application_secret, site: oauth_base_uri) do |http|
         http.request :multipart
         http.request :url_encoded
@@ -22,25 +33,39 @@ module Unsplash
       Unsplash::Connection.base_uri @api_base_uri
     end
 
-    def authorization_url(requested_scopes)
+    # Get OAuth URL for user authentication and authorization.
+    # @param requested_scopes [Array] An array of permission scopes being requested.
+    # @return [String] The authorization URL.
+    def authorization_url(requested_scopes = ["public"])
       @oauth.auth_code.authorize_url(redirect_uri: Unsplash.configuration.application_redirect_uri,
                                      scope:        requested_scopes.join(" "))
     end
 
+    # Generate an access token given an auth code received from Unsplash.
+    # This is used internally to authenticate and authorize future user actions.
+    # @param auth_code [String] The OAuth authentication code from Unsplash.
     def authorize!(auth_code)
       @oauth_token = @oauth.auth_code.get_token(auth_code, redirect_uri: Unsplash.configuration.application_redirect_uri)
       # TODO check if it succeeded
     end
 
-
+    # Perform a GET request.
+    # @param path [String] The path at which to make ther request.
+    # @param params [Hash] A hash of request parameters.
     def get(path, params = {})
       request :get, path, params
     end
 
+    # Perform a PUT request.
+    # @param path [String] The path at which to make ther request.
+    # @param params [Hash] A hash of request parameters.
     def put(path, params = {})
       request :put, path, params
     end
 
+    # Perform a POST request.
+    # @param path [String] The path at which to make ther request.
+    # @param params [Hash] A hash of request parameters.
     def post(path, params = {})
       request :post, path, params
     end
