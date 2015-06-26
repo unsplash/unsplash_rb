@@ -8,10 +8,10 @@ module Unsplash #:nodoc:
     DEFAULT_VERSION  = "v1"
 
     # Base URI for the Unsplash API..
-    DEFAULT_API_BASE_URI   = "http://api.unsplash.com"
+    DEFAULT_API_BASE_URI   = "https://api.unsplash.com"
 
     # Base URI for Unsplash OAuth.
-    DEFAULT_OAUTH_BASE_URI = "http://www.unsplash.com"
+    DEFAULT_OAUTH_BASE_URI = "https://unsplash.com"
 
     # Create a Connection object.
     # @param version [String] The Unsplash API version to use.
