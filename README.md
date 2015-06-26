@@ -1,5 +1,7 @@
 # unsplash_rb
 
+[ ![Codeship Status for CrewLabs/unsplash_rb](https://codeship.com/projects/0d395ea0-fe45-0132-5e19-022bf5e0402e/status?branch=master)](https://codeship.com/projects/88039)
+
 A ruby client for the Unsplash API.
 
 ## Installation
