@@ -21,6 +21,14 @@ describe Unsplash::CuratedBatch do
         end
       }.to raise_error Unsplash::Error
     end
+
+    it "parses the nested user object" do
+      VCR.use_cassette("curated_batches") do
+        @batch = Unsplash::CuratedBatch.find(batch_id)
+      end
+
+      expect(@batch.curator).to be_an Unsplash::User
+    end
   end
 
   describe "#all" do
@@ -32,6 +40,15 @@ describe Unsplash::CuratedBatch do
       expect(@batches).to be_an Array
       expect(@batches.size).to eq 12
     end
+    
+    it "parses the nested user objects" do
+      VCR.use_cassette("curated_batches") do
+        @batches = Unsplash::CuratedBatch.all(1, 12)
+      end
+
+      expect(@batches.map(&:curator)).to all (be_an Unsplash::User)
+    end
+
   end
 
   describe "#photos" do

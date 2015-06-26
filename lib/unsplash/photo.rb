@@ -9,7 +9,9 @@ module Unsplash # :nodoc:
       # @param id [String] the ID of the photo to retrieve.
       # @return [Unsplash::Photo] the Unsplash Photo.
       def find(id)
-        new JSON.parse(connection.get("/photos/#{id}").body)
+        photo = Unsplash::Photo.new JSON.parse(connection.get("/photos/#{id}").body)
+        photo.user = Unsplash::User.new photo.user
+        photo
       end
 
       # Search for photos by keyword.
@@ -42,7 +44,9 @@ module Unsplash # :nodoc:
       # @return [Unsplash::Photo] The uploaded photo.
       def create(filepath)
         file = Faraday::UploadIO.new(filepath, "image/jpeg")
-        new JSON.parse(connection.post("/photos", photo: file).body)
+        photo = Unsplash::Photo.new JSON.parse(connection.post("/photos", photo: file).body)
+        photo.user = Unsplash::User.new photo.user
+        photo
       end
 
       private

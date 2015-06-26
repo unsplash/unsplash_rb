@@ -9,7 +9,9 @@ module Unsplash # :nodoc:
       # @param id [Integer] The ID of the batch.
       # @return [Unsplash::CuratedBatch] The requested batch.
       def find(id)
-        new JSON.parse(connection.get("/curated_batches/#{id}").body)
+        batch = Unsplash::CuratedBatch.new JSON.parse(connection.get("/curated_batches/#{id}").body)
+        batch.curator = Unsplash::User.new batch.curator
+        batch
       end
 
       # Get a list of all curated batches.
@@ -22,7 +24,11 @@ module Unsplash # :nodoc:
           per_page: per_page
         }
         list = JSON.parse(connection.get("/curated_batches/", params).body)
-        list.map { |cb| new cb }
+        list.map do |cb|
+          batch = Unsplash::CuratedBatch.new cb
+          batch.curator = Unsplash::User.new batch.curator
+          batch
+        end
       end
     end
 
@@ -32,5 +38,6 @@ module Unsplash # :nodoc:
       list = JSON.parse(connection.get("/curated_batches/#{id}/photos").body)
       list.map { |photo| Unsplash::Photo.new photo }
     end
+
   end
 end

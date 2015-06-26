@@ -21,6 +21,14 @@ describe Unsplash::Photo do
         end
       }.to raise_error Unsplash::Error
     end
+
+    it "parses the nested user object" do
+      VCR.use_cassette("photos") do
+        @photo = Unsplash::Photo.find(photo_id)
+      end
+
+      expect(@photo.user).to be_an Unsplash::User
+    end
   end
 
   describe "#search" do
@@ -64,6 +72,16 @@ describe Unsplash::Photo do
           @photo = Unsplash::Photo.create "spec/support/upload-2.txt"
         end
       }.to raise_error Unsplash::Error
+    end
+
+    it "parses the nested user object" do
+      stub_oauth_authorization
+
+      VCR.use_cassette("photos", match_requests_on: [:method, :path, :body]) do
+        @photo = Unsplash::Photo.create "spec/support/upload-1.txt"
+      end
+
+      expect(@photo.user).to be_an Unsplash::User
     end
   end
 
