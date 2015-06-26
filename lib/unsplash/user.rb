@@ -18,6 +18,13 @@ module Unsplash # nodoc:
         new JSON.parse(connection.get("/me").body)
       end
 
+      # Update the current user.
+      # @param params [Hash] the hash of attributes to update.
+      # @return [Unsplash::User] the updated user.
+      def update_current(params)
+        Unsplash::User.new JSON.parse(connection.put("/me", params).body)
+      end
+
     end
 
     # Get a list of photos uploaded by the user.
@@ -27,14 +34,6 @@ module Unsplash # nodoc:
       list.map do |photo|
         Unsplash::Photo.new photo.to_hash
       end
-    end
-
-    # Update the current user.
-    # @param params [Hash] the hash of attributes to update.
-    # @return [Unsplash::User] the updated user.
-    def update(params)
-      @attributes = OpenStruct.new JSON.parse(connection.put("/me", params).body)
-      self
     end
 
   end

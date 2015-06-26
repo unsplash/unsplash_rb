@@ -78,12 +78,12 @@ describe Unsplash::User do
       end
     end
 
-    describe "#update" do
+    describe "#update_current" do
       it "returns the updated current user" do
         stub_oauth_authorization
 
         VCR.use_cassette("users", match_requests_on: [:headers, :uri]) do
-          @user = Unsplash::User.find("aarondev").update last_name: "Jangly"
+          @user = Unsplash::User.update_current last_name: "Jangly"
         end
 
         expect(@user).to be_an Unsplash::User
@@ -93,7 +93,7 @@ describe Unsplash::User do
       it "fails without a Bearer token" do
         expect {
           VCR.use_cassette("users", match_requests_on: [:headers, :uri]) do
-            @user = Unsplash::User.find("aarondev").update last_name: "Jangly"
+            @user = Unsplash::User.update_current last_name: "Jangly"
           end
         }.to raise_error Unsplash::Error
       end
