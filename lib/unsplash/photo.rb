@@ -5,11 +5,19 @@ module Unsplash # :nodoc:
 
     class << self
 
-      # Get a user.
-      # @param id [String] the ID of the photo to retrieve.
-      # @return [Unsplash::Photo] the Unsplash Photo.
-      def find(id)
-        photo = Unsplash::Photo.new JSON.parse(connection.get("/photos/#{id}").body)
+      # Get a photo. Can be cropped or resized using the optional parameters.
+      # @param id [String] The ID of the photo to retrieve.
+      # @param width [Integer] Width of customized version of the photo.
+      # @param height [Integer] Height of the customized version of the photo.
+      # @param crop_rect [String] A comma-separated list (x,y,width,height) of the rectangle to crop from the photo.
+      # @return [Unsplash::Photo] The Unsplash Photo.
+      def find(id, width: nil, height: nil, crop_rect: nil)
+        custom = {
+          w:    width,
+          h:    height,
+          rect: crop_rect
+        }.delete_if { |k,v| !v }
+        photo = Unsplash::Photo.new JSON.parse(connection.get("/photos/#{id}", custom).body)
         photo.user = Unsplash::User.new photo.user
         photo
       end
