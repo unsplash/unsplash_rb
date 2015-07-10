@@ -228,7 +228,7 @@ http_interactions:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"error":"Couldn''t find User"}'
+      string: '{"errors":["Couldn''t find User"]}'
     http_version: 
   recorded_at: Mon, 22 Jun 2015 17:58:48 GMT
 - request:
@@ -432,7 +432,7 @@ http_interactions:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"error":"OAuth error: unauthorized"}'
+      string: '{"errors":["OAuth error: unauthorized"]}'
     http_version: 
   recorded_at: Wed, 24 Jun 2015 15:34:44 GMT
 - request:
@@ -475,7 +475,7 @@ http_interactions:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"error":"OAuth error: unauthorized"}'
+      string: '{"errors":["OAuth error: unauthorized"]}'
     http_version: 
   recorded_at: Wed, 24 Jun 2015 15:36:11 GMT
 recorded_with: VCR 2.9.3

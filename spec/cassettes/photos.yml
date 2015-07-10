@@ -86,7 +86,7 @@ http_interactions:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"error":"Couldn''t find Photo"}'
+      string: '{"errors":["Couldn''t find Photo"]}'
     http_version: 
   recorded_at: Mon, 22 Jun 2015 19:32:54 GMT
 - request:
@@ -293,7 +293,7 @@ http_interactions:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"error":"OAuth error: unauthorized"}'
+      string: '{"errors":["OAuth error: unauthorized"]}'
     http_version: 
   recorded_at: Wed, 24 Jun 2015 18:12:27 GMT
 recorded_with: VCR 2.9.3

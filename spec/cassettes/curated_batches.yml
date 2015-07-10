@@ -131,7 +131,7 @@ http_interactions:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"error":"Couldn''t find CuratedBatch with ''id''=1234"}'
+      string: '{"errors":["Couldn''t find CuratedBatch with ''id''=1234"]}'
     http_version: 
   recorded_at: Mon, 22 Jun 2015 21:19:34 GMT
 - request:

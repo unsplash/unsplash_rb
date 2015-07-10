@@ -137,7 +137,7 @@ http_interactions:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"error":"Couldn''t find Category with ''id''=42"}'
+      string: '{"errors":["Couldn''t find Category with ''id''=42"]}'
     http_version: 
   recorded_at: Mon, 22 Jun 2015 19:49:19 GMT
 - request:
