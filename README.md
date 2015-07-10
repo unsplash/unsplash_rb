@@ -2,7 +2,7 @@
 
 [ ![Codeship Status for CrewLabs/unsplash_rb](https://codeship.com/projects/0d395ea0-fe45-0132-5e19-022bf5e0402e/status?branch=master)](https://codeship.com/projects/88039)
 
-A ruby client for the Unsplash API.
+A ruby client for [the Unsplash API](https://unsplash.com/documentation).
 
 ## Installation
 
@@ -57,7 +57,7 @@ For a complete list of available actions, see our [documentation details]().
 ### User Authorization
 
 For non-public actions, you'll have to get your user's permission to access their data.
-Direct them to the Unsplash authorization url:
+Direct them to the Unsplash authorization URL:
 
 ```ruby
 requested_scopes = ["public", "read_user", "something_else_you_are_asking_for"]
