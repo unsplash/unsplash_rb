@@ -52,11 +52,11 @@ Want a bunch of pictures of cats? You're on the internet; of course you do.
 search_results = Unsplash::Photo.search("cats")
 ```
 
-For a complete list of available actions, see our [documentation details]().
+For a complete list of available actions, see our [documentation details](http://www.rubydoc.info/github/CrewLabs/unsplash_rb).
 
 ### User Authorization
 
-For non-public actions, you'll have to get your user's permission to access their data.
+For non-public actions, you'll have to get the user's permission to access their data.
 Direct them to the Unsplash authorization URL:
 
 ```ruby
