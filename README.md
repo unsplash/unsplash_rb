@@ -74,6 +74,10 @@ Unsplash::Client.connection.authorize!("the authentication code")
 And that's it. The API actions will be available to you according to whichever
 permission scopes you requested and the user authorized.
 
+### Hotlinking
+
+Unlike most APIs, Unsplash prefers for the image URLs returned by the API to be directly used or embedded in your applications (generally referred to as hotlinking). By using the CDN and embedding the photo URLs in your application, Unsplash can better track photo views and pass those stats on to the photographer, providing them with context for how popular their photo is and how it's being used.
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake rspec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
