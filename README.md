@@ -76,6 +76,8 @@ permission scopes you requested and the user authorized.
 
 ### Hotlinking
 
+Hotlinking the Unsplash image files is encouraged: https://unsplash.com/documentation#hotlinking
+
 Unlike most APIs, Unsplash prefers for the image URLs returned by the API to be directly used or embedded in your applications (generally referred to as hotlinking). By using the CDN and embedding the photo URLs in your application, Unsplash can better track photo views and pass those stats on to the photographer, providing them with context for how popular their photo is and how it's being used.
 
 ## Development
