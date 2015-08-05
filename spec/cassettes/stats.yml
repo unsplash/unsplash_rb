@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.lvh.me:3000/stats/total
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Client-ID baaa6a1214d50b3586bec6e06157aab859bd4d86dc0b755360f103f38974edc3
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      Cache-Control:
+      - max-age=7200, public
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Etag:
+      - W/"e65385200ca17b930ea4033e99ad801e"
+      X-Request-Id:
+      - d6e3f821-4687-4fe1-a185-cb61cb878c61
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4999'
+      X-Runtime:
+      - '0.020909'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.1.5/2014-11-13)
+      Date:
+      - Wed, 05 Aug 2015 15:09:25 GMT
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"photo_downloads":50,"batch_downloads":100}'
+    http_version: 
+  recorded_at: Wed, 05 Aug 2015 15:09:25 GMT
+recorded_with: VCR 2.9.3
