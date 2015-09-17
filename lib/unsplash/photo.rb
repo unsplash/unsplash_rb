@@ -16,8 +16,32 @@ module Unsplash # :nodoc:
           w:    width,
           h:    height,
           rect: crop_rect
-        }.delete_if { |k,v| !v }
+        }.select { |k,v| v }
         photo = Unsplash::Photo.new JSON.parse(connection.get("/photos/#{id}", custom).body)
+        photo.user = Unsplash::User.new photo.user
+        photo
+      end
+
+      # Get a random photo. The photo selection pool can be narrowed using
+      # a combination of optional parameters. Can also optionally specify a custom image size.
+      # @param categories [Array] Limit selection to given category ID's.
+      # @param featured [Boolean] Limit selection to featured photos.
+      # @param user [String] Limit selection to given User's ID.
+      # @param query [String] Limit selection to given search query.
+      # @param width [Integer] Width of customized version of the photo.
+      # @param height [Integer] Height of the customized version of the photo.
+      # @return [Unsplash::Photo] An Unsplash Photo.
+      def random(categories: nil, featured: nil, user: nil, query: nil, width: nil, height: nil)
+        params = {
+          category: (categories && categories.join(",")),
+          featured: featured,
+          username: user,
+          query:    query,
+          w:        width,
+          h:        height
+        }.select { |k,v| v }
+
+        photo = Unsplash::Photo.new JSON.parse(connection.get("/photos/random", params).body)
         photo.user = Unsplash::User.new photo.user
         photo
       end
