@@ -31,6 +31,63 @@ describe Unsplash::Photo do
     end
   end
 
+  describe "#random" do
+  
+    let(:params) do
+      {
+        categories: [2],
+        featured:   true,
+        width:      320,
+        height:     200
+      }
+    end
+
+    it "returns a Photo object" do
+      VCR.use_cassette("photos") do
+        @photo = Unsplash::Photo.random(params)
+      end
+
+      expect(@photo).to be_a Unsplash::Photo
+    end
+
+    it "errors if there are no photos to choose from" do
+      expect {
+        VCR.use_cassette("photos") do
+          @photo = Unsplash::Photo.random(user: "bigfoot")
+        end
+      }.to raise_error Unsplash::Error
+    end
+
+    it "parses the nested user object" do
+      VCR.use_cassette("photos") do
+        @photo = Unsplash::Photo.random(params)
+      end
+
+      expect(@photo.user).to be_an Unsplash::User
+    end
+
+    context "with categories" do
+      it "joins them" do
+        expect(Unsplash::Photo.connection)
+          .to receive(:get).with("/photos/random", category: "1,2,3")
+          .and_return double(body: "{}")
+
+        photo = Unsplash::Photo.random(categories: [1,2,3])
+      end
+    end
+
+    context "without categories" do
+      it "removes them" do
+        expect(Unsplash::Photo.connection)
+          .to receive(:get).with("/photos/random", {})
+          .and_return double(body: "{}")
+
+        photo = Unsplash::Photo.random
+      end
+    end
+
+  end
+
   describe "#search" do
     it "returns an array of Photos" do
       VCR.use_cassette("photos") do
