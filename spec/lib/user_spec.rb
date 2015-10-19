@@ -25,6 +25,25 @@ describe Unsplash::User do
     end
   end
 
+  describe "#likes" do
+    it "returns an array of Photos" do
+      VCR.use_cassette("users", record: :new_episodes) do
+        @liked = Unsplash::User.find("aaron").likes
+      end
+
+      expect(@liked).to be_an Array
+      expect(@liked.size).to eq 4
+    end
+
+    it "returns empty array if the user does not have any likes" do
+      VCR.use_cassette("users") do
+        @liked = Unsplash::User.find(photographer).likes
+      end
+
+      expect(@liked).to be_empty
+    end
+  end
+
   describe "#photos" do
 
     it "returns an array of Photos" do
