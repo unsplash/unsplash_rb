@@ -6,7 +6,14 @@ module Unsplash # :nodoc:
     # Like a photo for the current user.
     # @return [Boolean] True if successful. Will raise on error.
     def like!
-      JSON.parse(connection.post("/photos/#{id}/like").body)
+      connection.post("/photos/#{id}/like")
+      true
+    end
+
+    # Unlike a photo for the current user.
+    # @return [Boolean] True if successful. Will raise on error.
+    def unlike!
+      connection.delete("/photos/#{id}/like")
       true
     end
 
