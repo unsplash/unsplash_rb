@@ -142,5 +142,52 @@ describe Unsplash::Photo do
     end
   end
 
+  describe "#like!" do
+    let(:photo_id) { "tAKXap853rY" }
+
+    it "returns true on success" do
+      stub_oauth_authorization
+
+      VCR.use_cassette("photos") do
+        photo = Unsplash::Photo.find(photo_id)
+        expect(photo.like!).to eq true
+      end
+    end
+
+    it "raises on error" do
+      VCR.use_cassette("photos") do
+        photo = Unsplash::Photo.new(id: "abc123")
+        expect {
+          photo.like!
+        }.to raise_error Unsplash::Error
+      end
+    end
+   
+  end
+
+  describe "#unlike!" do
+    let(:photo_id) { "tAKXap853rY" }
+
+    it "returns true on success" do
+      stub_oauth_authorization
+
+      VCR.use_cassette("photos") do
+        photo = Unsplash::Photo.find(photo_id)
+        expect(photo.unlike!).to eq true
+      end
+    end
+
+    it "raises on error" do
+      VCR.use_cassette("photos") do
+        photo = Unsplash::Photo.new(id: "abc123")
+        expect {
+          photo.unlike!
+        }.to raise_error Unsplash::Error
+      end
+    end
+   
+  end
+
+
 
 end
