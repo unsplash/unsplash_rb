@@ -70,10 +70,17 @@ module Unsplash #:nodoc:
       request :post, path, params
     end
 
+    # Perform a DELETE request.
+    # @param path [String] The path at which to make ther request.
+    # @param params [Hash] A hash of request parameters.
+    def delete(path, params = {})
+      request :delete, path, params
+    end
+
     private
 
     def request(verb, path, params = {})
-      raise ArgumentError.new "Invalid http verb #{verb}" if ![:get, :post, :put].include?(verb)
+      raise ArgumentError.new "Invalid http verb #{verb}" if ![:get, :post, :put, :delete].include?(verb)
 
       headers = {
         "Accept-Version" => @api_version
