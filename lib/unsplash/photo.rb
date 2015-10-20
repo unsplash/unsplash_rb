@@ -3,6 +3,20 @@ module Unsplash # :nodoc:
   # Unsplash Photo operations.
   class Photo < Client
 
+    # Like a photo for the current user.
+    # @return [Boolean] True if successful. Will raise on error.
+    def like!
+      connection.post("/photos/#{id}/like")
+      true
+    end
+
+    # Unlike a photo for the current user.
+    # @return [Boolean] True if successful. Will raise on error.
+    def unlike!
+      connection.delete("/photos/#{id}/like")
+      true
+    end
+
     class << self
 
       # Get a photo. Can be cropped or resized using the optional parameters.

@@ -478,4 +478,168 @@ http_interactions:
       string: '{"errors":["OAuth error: unauthorized"]}'
     http_version: 
   recorded_at: Wed, 24 Jun 2015 15:36:11 GMT
+- request:
+    method: get
+    uri: http://api.lvh.me:3000/users/aaron
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Client-ID baaa6a1214d50b3586bec6e06157aab859bd4d86dc0b755360f103f38974edc3
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '319'
+      Etag:
+      - W/"57a206dcd605fd1635e88e6b3ff63481"
+      X-Request-Id:
+      - 2bfa1b49-e7a8-4941-8fe5-6404e4b021e0
+      X-Ratelimit-Limit:
+      - '100'
+      X-Ratelimit-Remaining:
+      - '90'
+      X-Runtime:
+      - '0.038704'
+      X-Miniprofiler-Ids:
+      - '["bo0bk38xwk0vcoigzbm","ovt8hnd10a63lt2vbv6q","mr43bgnz079unxuz07q6","lds0eiio177yvzfa79ym","5r3uoxva2k75xdby9axb","q0y4e7tnctrsv21k10ap","bvbe3vfd0uw9gjp2gjs0","933p7ctag5vs96fce0l1","ol1u0unya7i59g380h5b","5lcp3zt85s2z92qiuauc"]'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.1.6/2015-04-13)
+      Date:
+      - Mon, 19 Oct 2015 22:19:43 GMT
+      Connection:
+      - Keep-Alive
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+    body:
+      encoding: UTF-8
+      string: '{"username":"aaron","first_name":"Aaron","last_name":"Klaassen","portfolio_url":"http://www.outerspacehero.com/","downloads":0,"links":{"self":"http://api.lvh.me:3000/users/aaron","html":"http://lvh.me:3000/aaron","photos":"http://api.lvh.me:3000/users/aaron/photos","likes":"http://api.lvh.me:3000/users/aaron/likes"}}'
+    http_version: 
+  recorded_at: Mon, 19 Oct 2015 22:19:43 GMT
+- request:
+    method: get
+    uri: http://api.lvh.me:3000/users/aaron/likes
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Client-ID baaa6a1214d50b3586bec6e06157aab859bd4d86dc0b755360f103f38974edc3
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      X-Total:
+      - '4'
+      X-Per-Page:
+      - '10'
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '4493'
+      Etag:
+      - W/"5e1812b8a6ef7226fd29d19b64d09316"
+      X-Request-Id:
+      - bdba2408-a483-47c5-aa18-7dc01848dcf7
+      X-Ratelimit-Limit:
+      - '100'
+      X-Ratelimit-Remaining:
+      - '89'
+      X-Runtime:
+      - '0.079120'
+      X-Miniprofiler-Ids:
+      - '["1jdu8qubfqnfd3v681ws","ovt8hnd10a63lt2vbv6q","mr43bgnz079unxuz07q6","lds0eiio177yvzfa79ym","5r3uoxva2k75xdby9axb","q0y4e7tnctrsv21k10ap","bvbe3vfd0uw9gjp2gjs0","933p7ctag5vs96fce0l1","ol1u0unya7i59g380h5b","5lcp3zt85s2z92qiuauc"]'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.1.6/2015-04-13)
+      Date:
+      - Mon, 19 Oct 2015 22:19:43 GMT
+      Connection:
+      - Keep-Alive
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+    body:
+      encoding: UTF-8
+      string: '[{"id":"OzwSX5jZ2ws","width":4592,"height":3448,"color":"#7D6824","user":{"id":"92CGoy4mdaE","username":"ingeli","name":"ingeli","links":{"self":"http://api.lvh.me:3000/users/ingeli","html":"http://lvh.me:3000/ingeli","photos":"http://api.lvh.me:3000/users/ingeli/photos","likes":"http://api.lvh.me:3000/users/ingeli/likes"}},"urls":{"full":"https://images.unsplash.com/photo-1442307813867-9342c0762f76?q=80\u0026fm=jpg\u0026s=03dea8d316efab47535d8c353233f81b","regular":"https://images.unsplash.com/photo-1442307813867-9342c0762f76?q=80\u0026fm=jpg\u0026w=1080\u0026fit=max\u0026s=9ebdbc9375279b46459fe54d0b5ea721","small":"https://images.unsplash.com/photo-1442307813867-9342c0762f76?q=80\u0026fm=jpg\u0026w=400\u0026fit=max\u0026s=7f009d636d89ee3a4fe7db3e6a8b438e","thumb":"https://images.unsplash.com/photo-1442307813867-9342c0762f76?q=80\u0026fm=jpg\u0026w=200\u0026fit=max\u0026s=b35b554562310e0c0ee14058e5d323f9"},"links":{"self":"http://api.lvh.me:3000/photos/OzwSX5jZ2ws","html":"http://lvh.me:3000/photos/OzwSX5jZ2ws","download":"http://lvh.me:3000/photos/OzwSX5jZ2ws/download"}},{"id":"uDAA35_fzcs","width":5184,"height":3456,"color":"#A5A5A0","user":{"id":"Ud1-k3aekh0","username":"elijahhail","name":"Elijah
+        Hail","links":{"self":"http://api.lvh.me:3000/users/elijahhail","html":"http://lvh.me:3000/elijahhail","photos":"http://api.lvh.me:3000/users/elijahhail/photos","likes":"http://api.lvh.me:3000/users/elijahhail/likes"}},"urls":{"full":"https://images.unsplash.com/photo-1439003511744-2a0490ea0a88?q=80\u0026fm=jpg\u0026s=4dd5809698048edf8b82eedb82ca8cec","regular":"https://images.unsplash.com/photo-1439003511744-2a0490ea0a88?q=80\u0026fm=jpg\u0026w=1080\u0026fit=max\u0026s=f2606dd3fb87db03393357c58fb63938","small":"https://images.unsplash.com/photo-1439003511744-2a0490ea0a88?q=80\u0026fm=jpg\u0026w=400\u0026fit=max\u0026s=b3c947363fd9e5d93e47741309b1b4a5","thumb":"https://images.unsplash.com/photo-1439003511744-2a0490ea0a88?q=80\u0026fm=jpg\u0026w=200\u0026fit=max\u0026s=1e6107d892a6d05ebc959ba2f6141b83"},"links":{"self":"http://api.lvh.me:3000/photos/uDAA35_fzcs","html":"http://lvh.me:3000/photos/uDAA35_fzcs","download":"http://lvh.me:3000/photos/uDAA35_fzcs/download"}},{"id":"bLppF5sbXPo","width":5451,"height":3634,"color":"#9D9186","user":{"id":"TIBgqEZvAcM","username":"b3njamin","name":"Benjamin
+        Combs","links":{"self":"http://api.lvh.me:3000/users/b3njamin","html":"http://lvh.me:3000/b3njamin","photos":"http://api.lvh.me:3000/users/b3njamin/photos","likes":"http://api.lvh.me:3000/users/b3njamin/likes"}},"urls":{"full":"https://images.unsplash.com/photo-1438978280647-f359d95ebda4?q=80\u0026fm=jpg\u0026s=73cb1239b517411534379c92660b2660","regular":"https://images.unsplash.com/photo-1438978280647-f359d95ebda4?q=80\u0026fm=jpg\u0026w=1080\u0026fit=max\u0026s=355c7d3c1787b603d40aa7614e2cdc0b","small":"https://images.unsplash.com/photo-1438978280647-f359d95ebda4?q=80\u0026fm=jpg\u0026w=400\u0026fit=max\u0026s=929897a1b9f3913ef187ca3f5198a587","thumb":"https://images.unsplash.com/photo-1438978280647-f359d95ebda4?q=80\u0026fm=jpg\u0026w=200\u0026fit=max\u0026s=09cfd1afc6ccaf4b328566c0bd0ab7a7"},"links":{"self":"http://api.lvh.me:3000/photos/bLppF5sbXPo","html":"http://lvh.me:3000/photos/bLppF5sbXPo","download":"http://lvh.me:3000/photos/bLppF5sbXPo/download"}},{"id":"tAKXap853rY","width":5616,"height":3744,"color":"#755D47","user":{"id":"pXhwzz1JtQU","username":"alejandroescamilla","name":"Alejandro
+        Escamilla","links":{"self":"http://api.lvh.me:3000/users/alejandroescamilla","html":"http://lvh.me:3000/alejandroescamilla","photos":"http://api.lvh.me:3000/users/alejandroescamilla/photos","likes":"http://api.lvh.me:3000/users/alejandroescamilla/likes"}},"urls":{"full":"https://images.unsplash.com/1/macbook-air-all-faded-and-stuff.jpg?q=80\u0026fm=jpg\u0026s=aaf8c24379351a9333457d88e941ee36","regular":"https://images.unsplash.com/1/macbook-air-all-faded-and-stuff.jpg?q=80\u0026fm=jpg\u0026w=1080\u0026fit=max\u0026s=63b07a6fbb9ab6167e1b0ac6b33f601d","small":"https://images.unsplash.com/1/macbook-air-all-faded-and-stuff.jpg?q=80\u0026fm=jpg\u0026w=400\u0026fit=max\u0026s=7e94727b3dcd35c50ce6a1071a86009b","thumb":"https://images.unsplash.com/1/macbook-air-all-faded-and-stuff.jpg?q=80\u0026fm=jpg\u0026w=200\u0026fit=max\u0026s=8089f8e38db737c09c4f34037ee02832"},"links":{"self":"http://api.lvh.me:3000/photos/tAKXap853rY","html":"http://lvh.me:3000/photos/tAKXap853rY","download":"http://lvh.me:3000/photos/tAKXap853rY/download"}}]'
+    http_version: 
+  recorded_at: Mon, 19 Oct 2015 22:19:43 GMT
+- request:
+    method: get
+    uri: http://api.lvh.me:3000/users/lukechesser/likes
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Client-ID baaa6a1214d50b3586bec6e06157aab859bd4d86dc0b755360f103f38974edc3
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      X-Total:
+      - '0'
+      X-Per-Page:
+      - '10'
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '2'
+      Etag:
+      - W/"d751713988987e9331980363e24189ce"
+      X-Request-Id:
+      - 68015ffb-9d8a-430f-9d41-0d7c2f142116
+      X-Ratelimit-Limit:
+      - '100'
+      X-Ratelimit-Remaining:
+      - '88'
+      X-Runtime:
+      - '0.053792'
+      X-Miniprofiler-Ids:
+      - '["azs66zme4mm11y1u2j1u","ovt8hnd10a63lt2vbv6q","mr43bgnz079unxuz07q6","lds0eiio177yvzfa79ym","5r3uoxva2k75xdby9axb","q0y4e7tnctrsv21k10ap","bvbe3vfd0uw9gjp2gjs0","933p7ctag5vs96fce0l1","ol1u0unya7i59g380h5b","5lcp3zt85s2z92qiuauc"]'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.1.6/2015-04-13)
+      Date:
+      - Mon, 19 Oct 2015 22:22:46 GMT
+      Connection:
+      - Keep-Alive
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+    body:
+      encoding: UTF-8
+      string: "[]"
+    http_version: 
+  recorded_at: Mon, 19 Oct 2015 22:22:46 GMT
 recorded_with: VCR 2.9.3
