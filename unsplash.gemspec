@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["aaron@crew.co"]
 
   spec.summary       = %q{Ruby wrapper for the Unsplash API.}
-  spec.homepage      = "https://github.com/CrewLabs/unsplash_rb"
+  spec.homepage      = "https://github.com/unsplash/unsplash_rb"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
