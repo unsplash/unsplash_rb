@@ -3,6 +3,7 @@ require "spec_helper"
 describe Unsplash::Collection do
 
   let (:collection_id) { 201 }
+  let (:curated_id) { 90 }
   let (:fake_id)  { 1234 }
 
   describe "#find" do
@@ -34,8 +35,23 @@ describe Unsplash::Collection do
       VCR.use_cassette("collections") do
         @collection = Unsplash::Collection.find(collection_id)
       end
-
       expect(@collection.cover_photo).to be_an Unsplash::Photo
+    end
+
+    it "returns an uncurated collection" do
+      VCR.use_cassette("collections") do
+        @collection = Unsplash::Collection.find(collection_id)
+      end
+
+      expect(@collection.curated).to eq false
+    end
+
+    it "returns a curated collection" do
+      VCR.use_cassette("collections", record: :new_episodes) do
+        @collection = Unsplash::Collection.find(curated_id, true)
+      end
+
+      expect(@collection.curated).to eq true
     end
   end
 
