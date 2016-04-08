@@ -642,4 +642,208 @@ http_interactions:
       string: "[]"
     http_version: 
   recorded_at: Mon, 19 Oct 2015 22:22:46 GMT
+- request:
+    method: get
+    uri: http://api.lvh.me:3000/users/crew
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Client-ID baaa6a1214d50b3586bec6e06157aab859bd4d86dc0b755360f103f38974edc3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      Access-Control-Allow-Headers:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Link,X-Total,X-Per-Page,X-RateLimit-Limit,X-RateLimit-Remaining
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      Content-Type:
+      - application/json
+      Etag:
+      - W/"10d3e00fff1e35e9da6d26f670047fb1"
+      X-Request-Id:
+      - bf762e85-4844-4c24-83e3-1d6bf807480c
+      X-Ratelimit-Limit:
+      - '100'
+      X-Ratelimit-Remaining:
+      - '98'
+      X-Runtime:
+      - '0.029990'
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      X-Miniprofiler-Ids:
+      - '["f5dnndzvmjqp8jpsldeu","tklag0w5hvkn1t9wsbr7","y8jt1tiydp52t0qc4a9l","y6l70h07lvtas0q01rus","j5d80228amce8t5i1vhh","9hqcnbg26mwq9mjyu2d","ag74bnhwkzndi1tj72j6"]'
+      Content-Length:
+      - '914'
+    body:
+      encoding: UTF-8
+      string: '{"username":"crew","first_name":"Crew","last_name":null,"portfolio_url":"https://crew.co/","downloads":0,"profile_image":{"small":"https://images.unsplash.com/profile-1441298102341-b7ba36fdc35c?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=32\u0026w=32\u0026s=ed0b6a6c243464eeb611c3367be23258","medium":"https://images.unsplash.com/profile-1441298102341-b7ba36fdc35c?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=64\u0026w=64\u0026s=64d021b991cc086ee6d78b5a7fa76fb7","large":"https://images.unsplash.com/profile-1441298102341-b7ba36fdc35c?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=128\u0026w=128\u0026s=3735cd0e3aa230355b6e5d292e88af60"},"links":{"self":"http://api.lvh.me:3000/users/crew","html":"http://lvh.me:3000/crew","photos":"http://api.lvh.me:3000/users/crew/photos","likes":"http://api.lvh.me:3000/users/crew/likes"}}'
+    http_version: 
+  recorded_at: Fri, 08 Apr 2016 16:14:29 GMT
+- request:
+    method: get
+    uri: http://api.lvh.me:3000/users/crew/collections
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Client-ID baaa6a1214d50b3586bec6e06157aab859bd4d86dc0b755360f103f38974edc3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      Access-Control-Allow-Headers:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Link,X-Total,X-Per-Page,X-RateLimit-Limit,X-RateLimit-Remaining
+      Content-Type:
+      - application/json
+      Etag:
+      - W/"4766f4fa837e19132026606c90e0f3d2"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 51e3c940-a27f-46b9-ad15-a1d24ec56cdd
+      X-Ratelimit-Limit:
+      - '100'
+      X-Ratelimit-Remaining:
+      - '97'
+      X-Runtime:
+      - '0.098086'
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      X-Miniprofiler-Ids:
+      - '["x5hecvstlduek0ta4g5g","tklag0w5hvkn1t9wsbr7","y8jt1tiydp52t0qc4a9l","y6l70h07lvtas0q01rus","j5d80228amce8t5i1vhh","9hqcnbg26mwq9mjyu2d","ag74bnhwkzndi1tj72j6","f5dnndzvmjqp8jpsldeu"]'
+      Content-Length:
+      - '10393'
+    body:
+      encoding: UTF-8
+      string: '[{"id":205,"title":"Apple Watch","published_at":"2016-01-02T18:40:07-05:00","curated":false,"cover_photo":{"id":"JpY2rPHFL8E","width":4896,"height":3264,"color":"#443729","likes":0,"liked_by_user":false,"user":{"id":"eUO1o53muso","username":"crew","name":"Crew","profile_image":{"small":"https://images.unsplash.com/profile-1441298102341-b7ba36fdc35c?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=32\u0026w=32\u0026s=ed0b6a6c243464eeb611c3367be23258","medium":"https://images.unsplash.com/profile-1441298102341-b7ba36fdc35c?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=64\u0026w=64\u0026s=64d021b991cc086ee6d78b5a7fa76fb7","large":"https://images.unsplash.com/profile-1441298102341-b7ba36fdc35c?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=128\u0026w=128\u0026s=3735cd0e3aa230355b6e5d292e88af60"},"links":{"self":"http://api.lvh.me:3000/users/crew","html":"http://lvh.me:3000/crew","photos":"http://api.lvh.me:3000/users/crew/photos","likes":"http://api.lvh.me:3000/users/crew/likes"}},"urls":{"raw":"https://images.unsplash.com/photo-1434493907317-a46b5bbe7834","full":"https://images.unsplash.com/photo-1434493907317-a46b5bbe7834?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026s=93207d4b6484b00c1e8fc9b0466eee9f","regular":"https://images.unsplash.com/photo-1434493907317-a46b5bbe7834?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026w=1080\u0026fit=max\u0026s=4dc15543f6479746117955482a390d94","small":"https://images.unsplash.com/photo-1434493907317-a46b5bbe7834?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026w=400\u0026fit=max\u0026s=3b6b001ef394f7acd64e8abb5c54198f","thumb":"https://images.unsplash.com/photo-1434493907317-a46b5bbe7834?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026w=200\u0026fit=max\u0026s=8160a7ba4c09912fad3d6714b7da80ef"},"categories":[{"id":6,"title":"People","photo_count":9844,"links":{"self":"http://api.lvh.me:3000/categories/6","photos":"http://api.lvh.me:3000/categories/6/photos"}},{"id":7,"title":"Technology","photo_count":868,"links":{"self":"http://api.lvh.me:3000/categories/7","photos":"http://api.lvh.me:3000/categories/7/photos"}}],"links":{"self":"http://api.lvh.me:3000/photos/JpY2rPHFL8E","html":"http://lvh.me:3000/photos/JpY2rPHFL8E","download":"http://lvh.me:3000/photos/JpY2rPHFL8E/download"}},"user":{"id":"eUO1o53muso","username":"crew","name":"Crew","bio":"Work
+        with the best designers and developers without breaking the bank. Creators
+        of Unsplash.","profile_image":{"small":"https://images.unsplash.com/profile-1441298102341-b7ba36fdc35c?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=32\u0026w=32\u0026s=ed0b6a6c243464eeb611c3367be23258","medium":"https://images.unsplash.com/profile-1441298102341-b7ba36fdc35c?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=64\u0026w=64\u0026s=64d021b991cc086ee6d78b5a7fa76fb7","large":"https://images.unsplash.com/profile-1441298102341-b7ba36fdc35c?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=128\u0026w=128\u0026s=3735cd0e3aa230355b6e5d292e88af60"},"links":{"self":"http://api.lvh.me:3000/users/crew","html":"http://lvh.me:3000/crew","photos":"http://api.lvh.me:3000/users/crew/photos","likes":"http://api.lvh.me:3000/users/crew/likes"}},"links":{"self":"http://api.lvh.me:3000/collections/205","html":"http://lvh.me:3000/collections/205","photos":"http://api.lvh.me:3000/collections/205/photos"}},{"id":206,"title":"Makers:
+        Cat and Ben","published_at":"2016-01-12T18:16:09-05:00","curated":false,"cover_photo":{"id":"xCmvrpzctaQ","width":7360,"height":4912,"color":"#040C14","likes":0,"liked_by_user":false,"user":{"id":"eUO1o53muso","username":"crew","name":"Crew","profile_image":{"small":"https://images.unsplash.com/profile-1441298102341-b7ba36fdc35c?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=32\u0026w=32\u0026s=ed0b6a6c243464eeb611c3367be23258","medium":"https://images.unsplash.com/profile-1441298102341-b7ba36fdc35c?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=64\u0026w=64\u0026s=64d021b991cc086ee6d78b5a7fa76fb7","large":"https://images.unsplash.com/profile-1441298102341-b7ba36fdc35c?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=128\u0026w=128\u0026s=3735cd0e3aa230355b6e5d292e88af60"},"links":{"self":"http://api.lvh.me:3000/users/crew","html":"http://lvh.me:3000/crew","photos":"http://api.lvh.me:3000/users/crew/photos","likes":"http://api.lvh.me:3000/users/crew/likes"}},"urls":{"raw":"https://images.unsplash.com/photo-1452457807411-4979b707c5be","full":"https://images.unsplash.com/photo-1452457807411-4979b707c5be?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026s=6a769b5d5b284bb3304307d8b6575cdc","regular":"https://images.unsplash.com/photo-1452457807411-4979b707c5be?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026w=1080\u0026fit=max\u0026s=7a92227792ffdd453a658361bd2b4c2c","small":"https://images.unsplash.com/photo-1452457807411-4979b707c5be?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026w=400\u0026fit=max\u0026s=1d02daf541ca4d8f8c03bdfb436693a6","thumb":"https://images.unsplash.com/photo-1452457807411-4979b707c5be?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026w=200\u0026fit=max\u0026s=62d753a881d4f1c4ec5fc1a0674abd51"},"categories":[{"id":6,"title":"People","photo_count":9844,"links":{"self":"http://api.lvh.me:3000/categories/6","photos":"http://api.lvh.me:3000/categories/6/photos"}}],"links":{"self":"http://api.lvh.me:3000/photos/xCmvrpzctaQ","html":"http://lvh.me:3000/photos/xCmvrpzctaQ","download":"http://lvh.me:3000/photos/xCmvrpzctaQ/download"}},"user":{"id":"eUO1o53muso","username":"crew","name":"Crew","bio":"Work
+        with the best designers and developers without breaking the bank. Creators
+        of Unsplash.","profile_image":{"small":"https://images.unsplash.com/profile-1441298102341-b7ba36fdc35c?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=32\u0026w=32\u0026s=ed0b6a6c243464eeb611c3367be23258","medium":"https://images.unsplash.com/profile-1441298102341-b7ba36fdc35c?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=64\u0026w=64\u0026s=64d021b991cc086ee6d78b5a7fa76fb7","large":"https://images.unsplash.com/profile-1441298102341-b7ba36fdc35c?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=128\u0026w=128\u0026s=3735cd0e3aa230355b6e5d292e88af60"},"links":{"self":"http://api.lvh.me:3000/users/crew","html":"http://lvh.me:3000/crew","photos":"http://api.lvh.me:3000/users/crew/photos","likes":"http://api.lvh.me:3000/users/crew/likes"}},"links":{"self":"http://api.lvh.me:3000/collections/206","html":"http://lvh.me:3000/collections/206","photos":"http://api.lvh.me:3000/collections/206/photos"}},{"id":222,"title":"Makers:
+        Mercantile","published_at":"2016-01-22T12:58:05-05:00","curated":false,"cover_photo":{"id":"-UP9VOibb64","width":3303,"height":1997,"color":"#09090A","likes":0,"liked_by_user":false,"user":{"id":"eUO1o53muso","username":"crew","name":"Crew","profile_image":{"small":"https://images.unsplash.com/profile-1441298102341-b7ba36fdc35c?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=32\u0026w=32\u0026s=ed0b6a6c243464eeb611c3367be23258","medium":"https://images.unsplash.com/profile-1441298102341-b7ba36fdc35c?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=64\u0026w=64\u0026s=64d021b991cc086ee6d78b5a7fa76fb7","large":"https://images.unsplash.com/profile-1441298102341-b7ba36fdc35c?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=128\u0026w=128\u0026s=3735cd0e3aa230355b6e5d292e88af60"},"links":{"self":"http://api.lvh.me:3000/users/crew","html":"http://lvh.me:3000/crew","photos":"http://api.lvh.me:3000/users/crew/photos","likes":"http://api.lvh.me:3000/users/crew/likes"}},"urls":{"raw":"https://images.unsplash.com/photo-1453486250080-eff794c98b6c","full":"https://images.unsplash.com/photo-1453486250080-eff794c98b6c?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026s=d568692895efae7f67ea27bbd8a26804","regular":"https://images.unsplash.com/photo-1453486250080-eff794c98b6c?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026w=1080\u0026fit=max\u0026s=1efb1b2980f49aa4e724be3586142517","small":"https://images.unsplash.com/photo-1453486250080-eff794c98b6c?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026w=400\u0026fit=max\u0026s=d7bc7e3619223a6276e45fbbd6b079d5","thumb":"https://images.unsplash.com/photo-1453486250080-eff794c98b6c?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026w=200\u0026fit=max\u0026s=d6f74b3cdd6799c00d122f49d96bea5d"},"categories":[{"id":8,"title":"Objects","photo_count":6528,"links":{"self":"http://api.lvh.me:3000/categories/8","photos":"http://api.lvh.me:3000/categories/8/photos"}},{"id":6,"title":"People","photo_count":9844,"links":{"self":"http://api.lvh.me:3000/categories/6","photos":"http://api.lvh.me:3000/categories/6/photos"}}],"links":{"self":"http://api.lvh.me:3000/photos/-UP9VOibb64","html":"http://lvh.me:3000/photos/-UP9VOibb64","download":"http://lvh.me:3000/photos/-UP9VOibb64/download"}},"user":{"id":"eUO1o53muso","username":"crew","name":"Crew","bio":"Work
+        with the best designers and developers without breaking the bank. Creators
+        of Unsplash.","profile_image":{"small":"https://images.unsplash.com/profile-1441298102341-b7ba36fdc35c?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=32\u0026w=32\u0026s=ed0b6a6c243464eeb611c3367be23258","medium":"https://images.unsplash.com/profile-1441298102341-b7ba36fdc35c?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=64\u0026w=64\u0026s=64d021b991cc086ee6d78b5a7fa76fb7","large":"https://images.unsplash.com/profile-1441298102341-b7ba36fdc35c?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=128\u0026w=128\u0026s=3735cd0e3aa230355b6e5d292e88af60"},"links":{"self":"http://api.lvh.me:3000/users/crew","html":"http://lvh.me:3000/crew","photos":"http://api.lvh.me:3000/users/crew/photos","likes":"http://api.lvh.me:3000/users/crew/likes"}},"links":{"self":"http://api.lvh.me:3000/collections/222","html":"http://lvh.me:3000/collections/222","photos":"http://api.lvh.me:3000/collections/222/photos"}}]'
+    http_version: 
+  recorded_at: Fri, 08 Apr 2016 16:14:29 GMT
+- request:
+    method: get
+    uri: http://api.lvh.me:3000/users/mago
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Client-ID baaa6a1214d50b3586bec6e06157aab859bd4d86dc0b755360f103f38974edc3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      Access-Control-Allow-Headers:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Link,X-Total,X-Per-Page,X-RateLimit-Limit,X-RateLimit-Remaining
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      Content-Type:
+      - application/json
+      Etag:
+      - W/"26140de745d63debb89b3dfa8a656662"
+      X-Request-Id:
+      - b31973e6-dc56-434f-b0e5-c454d0e7b346
+      X-Ratelimit-Limit:
+      - '100'
+      X-Ratelimit-Remaining:
+      - '95'
+      X-Runtime:
+      - '0.045117'
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      X-Miniprofiler-Ids:
+      - '["2lio1oaz44zlfrpa4yh5","tklag0w5hvkn1t9wsbr7","y8jt1tiydp52t0qc4a9l","y6l70h07lvtas0q01rus","j5d80228amce8t5i1vhh","9hqcnbg26mwq9mjyu2d","ag74bnhwkzndi1tj72j6","f5dnndzvmjqp8jpsldeu","x5hecvstlduek0ta4g5g","srffo8hzjqvm4cqwf3pf"]'
+      Content-Length:
+      - '907'
+    body:
+      encoding: UTF-8
+      string: '{"username":"mago","first_name":"marco","last_name":"rossi","portfolio_url":null,"downloads":0,"profile_image":{"small":"https://images.unsplash.com/placeholder-avatars/extra-large.jpg?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=32\u0026w=32\u0026s=46caf91cf1f90b8b5ab6621512f102a8","medium":"https://images.unsplash.com/placeholder-avatars/extra-large.jpg?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=64\u0026w=64\u0026s=a8f67c4239956417401bf39b50c928cb","large":"https://images.unsplash.com/placeholder-avatars/extra-large.jpg?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=128\u0026w=128\u0026s=ec3c56c2ab6baef5d748cb58ccbc0efe"},"links":{"self":"http://api.lvh.me:3000/users/mago","html":"http://lvh.me:3000/mago","photos":"http://api.lvh.me:3000/users/mago/photos","likes":"http://api.lvh.me:3000/users/mago/likes"}}'
+    http_version: 
+  recorded_at: Fri, 08 Apr 2016 16:17:11 GMT
+- request:
+    method: get
+    uri: http://api.lvh.me:3000/users/mago/collections
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Client-ID baaa6a1214d50b3586bec6e06157aab859bd4d86dc0b755360f103f38974edc3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      Access-Control-Allow-Headers:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Link,X-Total,X-Per-Page,X-RateLimit-Limit,X-RateLimit-Remaining
+      Content-Type:
+      - application/json
+      Etag:
+      - W/"d751713988987e9331980363e24189ce"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 4b6f6477-3d01-418e-bc14-36d794d01b34
+      X-Ratelimit-Limit:
+      - '100'
+      X-Ratelimit-Remaining:
+      - '94'
+      X-Runtime:
+      - '0.030372'
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      X-Miniprofiler-Ids:
+      - '["1pquetshmkrovzl5lsoe","tklag0w5hvkn1t9wsbr7","y8jt1tiydp52t0qc4a9l","y6l70h07lvtas0q01rus","j5d80228amce8t5i1vhh","9hqcnbg26mwq9mjyu2d","ag74bnhwkzndi1tj72j6","f5dnndzvmjqp8jpsldeu","x5hecvstlduek0ta4g5g","srffo8hzjqvm4cqwf3pf"]'
+      Content-Length:
+      - '2'
+    body:
+      encoding: UTF-8
+      string: "[]"
+    http_version: 
+  recorded_at: Fri, 08 Apr 2016 16:17:11 GMT
 recorded_with: VCR 2.9.3
