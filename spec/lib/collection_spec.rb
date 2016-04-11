@@ -47,7 +47,7 @@ describe Unsplash::Collection do
     end
 
     it "returns a curated collection" do
-      VCR.use_cassette("collections", record: :new_episodes) do
+      VCR.use_cassette("collections") do
         @collection = Unsplash::Collection.find(curated_id, true)
       end
 
@@ -110,13 +110,13 @@ describe Unsplash::Collection do
   describe "#update" do
     before :each do
       stub_oauth_authorization
-      VCR.use_cassette("collections", record: :new_episodes) do
+      VCR.use_cassette("collections") do
         @collection = Unsplash::Collection.create(title: "Ultimate Faves")
       end
     end
 
     it "returns Collection object" do
-      VCR.use_cassette("collections", record: :new_episodes) do
+      VCR.use_cassette("collections") do
         @collection = @collection.update(title: "Penultimate Faves")
       end
       
@@ -124,7 +124,7 @@ describe Unsplash::Collection do
     end
 
     it "updates the Collection object" do
-      VCR.use_cassette("collections", record: :new_episodes) do
+      VCR.use_cassette("collections") do
         @collection = Unsplash::Collection.find(@collection.id)
         @collection.update(title: "Best Picturez")
       end
@@ -132,6 +132,29 @@ describe Unsplash::Collection do
       expect(@collection.title).to eq "Best Picturez"
     end
 
-    
   end
+
+  describe "#destroy" do
+
+    it "returns true on success" do
+      stub_oauth_authorization
+      VCR.use_cassette("collections") do
+        collection = Unsplash::Collection.find(302)
+        expect(collection.destroy).to eq true
+      end
+    end
+
+    it "raises on failure" do
+      expect {
+        stub_oauth_authorization
+        VCR.use_cassette("collections") do
+          collection = Unsplash::Collection.find(201) # exists but does not belong to user
+          collection.destroy
+        end
+      }.to raise_error OAuth2::Error
+    end
+
+  end
+
+
 end

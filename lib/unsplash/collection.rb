@@ -76,6 +76,11 @@ module Unsplash # :nodoc:
       self
     end
 
+    def destroy
+      response = connection.delete("/collections/#{id}")
+      response.status == 204
+    end
+
     # Get a list of the photos contained in this collection.
     # @return [Array] The list of +Unsplash::Photo+s in the collection.
     def photos
