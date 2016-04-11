@@ -156,5 +156,40 @@ describe Unsplash::Collection do
 
   end
 
+  describe "#add" do
+    before :each do
+      VCR.use_cassette("photos") do
+        @photo = Unsplash::Photo.find("tAKXap853rY")
+      end
+    end
+
+    it "returns a metadata hash" do
+      stub_oauth_authorization
+      
+      VCR.use_cassette("collections") do
+        collection = Unsplash::Collection.find(301)
+        meta = collection.add(@photo)
+        expect(meta[:collection_id]).to eq collection.id
+        expect(meta[:photo_id]).to eq @photo.id
+      end
+    end
+  end
+
+
+  describe "#remove" do
+    before :each do
+      VCR.use_cassette("photos") do
+        @photo = Unsplash::Photo.find("tAKXap853rY")
+      end
+    end
+
+    it "returns true on success" do
+      stub_oauth_authorization
+      VCR.use_cassette("collections") do
+        collection = Unsplash::Collection.find(301)
+        expect(collection.remove(@photo)).to be true
+      end
+    end
+  end
 
 end

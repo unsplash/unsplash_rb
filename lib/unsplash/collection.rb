@@ -76,6 +76,8 @@ module Unsplash # :nodoc:
       self
     end
 
+    # Delete the collection. This does not delete the photos it contains.
+    # @return [Boolean] +true+ on success.
     def destroy
       response = connection.delete("/collections/#{id}")
       response.status == 204
@@ -86,6 +88,29 @@ module Unsplash # :nodoc:
     def photos
       list = JSON.parse(connection.get("/collections/#{id}/photos").body)
       list.map { |photo| Unsplash::Photo.new photo }
+    end
+
+    # Add a photo to the collection. If the photo is already in the collection,
+    # this action has no effect.
+    # @param [Unsplash::Photo] The photo to add.
+    # @return [Hash] Collected photo metadata.
+    def add(photo)
+      response = JSON.parse(connection.post("/collections/#{id}/add", { photo_id: photo.id }).body)
+      {
+        photo_id:      response["photo"]["id"],
+        collection_id: response["collection"]["id"],
+        user_id:       response["user"]["id"],
+        created_at:    response["created_at"]
+      }
+    end
+
+    # Remove a photo from the collection. If the photo is not in the collection,
+    # this action has no effect.
+    # @param [Unsplash::Photo] The photo to remove.
+    # @return [Boolean] +true+ on success.
+    def remove(photo)
+      response = connection.delete("/collections/#{id}/remove", photo_id: photo.id)
+      response.status == 204
     end
 
   end
