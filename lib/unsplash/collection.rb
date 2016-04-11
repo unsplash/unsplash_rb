@@ -43,7 +43,7 @@ module Unsplash # :nodoc:
       # @param title [String] The title of the collection.
       # @param description [String] The collection's description. (optional)
       # @param private [Boolean] Whether to make the collection private. (optional, default +false+)
-      def create(title:, description: "", private: false)
+      def create(title: "", description: "", private: false)
         params = { 
           title:       title,
           description: description,
