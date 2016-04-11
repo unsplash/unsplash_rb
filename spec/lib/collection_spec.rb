@@ -87,4 +87,23 @@ describe Unsplash::Collection do
       expect(@photos).to all (be_an Unsplash::Photo)
     end
   end
+
+  describe "#create" do
+    it "returns Collection object" do
+      stub_oauth_authorization
+      VCR.use_cassette("collections") do
+        @collection = Unsplash::Collection.create(title: "Ultimate Faves", private: true)
+      end
+
+      expect(@collection).to be_a Unsplash::Collection
+    end
+
+    it "fails without Bearer token" do
+      expect {
+        VCR.use_cassette("collections", match_requests_on: [:method, :path, :body]) do
+          Unsplash::Collection.create(title: "Ultimate Faves", private: true)
+        end
+      }.to raise_error Unsplash::Error
+    end
+  end
 end

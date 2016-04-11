@@ -14,6 +14,9 @@ VCR.configure do |config|
   config.register_request_matcher :auth_header do |request_1, request_2|
     request_1.headers["Authorization"] == request_2.headers["Authorization"]
   end
+  config.before_record do |i|
+    i.response.body.force_encoding('UTF-8')
+  end
 end
 
 
