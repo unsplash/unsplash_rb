@@ -60,6 +60,22 @@ module Unsplash # :nodoc:
       super(options)
     end
 
+    # Update the collection's attributes.
+    # @param title [String] The title of the collection.
+    # @param description [String] The collection's description. (optional)
+    # @param private [Boolean] Whether to make the collection private. (optional)
+    def update(title: nil, description: nil, private: nil)
+      params = { 
+        title:       title,
+        description: description,
+        private:     private
+      }.select { |k,v| v }
+      updated = JSON.parse(connection.put("/collections/#{id}", params).body)
+      self.title = updated["title"]
+      self.description = updated["description"]
+      self
+    end
+
     # Get a list of the photos contained in this collection.
     # @return [Array] The list of +Unsplash::Photo+s in the collection.
     def photos

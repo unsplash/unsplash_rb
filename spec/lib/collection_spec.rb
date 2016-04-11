@@ -106,4 +106,32 @@ describe Unsplash::Collection do
       }.to raise_error Unsplash::Error
     end
   end
+
+  describe "#update" do
+    before :each do
+      stub_oauth_authorization
+      VCR.use_cassette("collections", record: :new_episodes) do
+        @collection = Unsplash::Collection.create(title: "Ultimate Faves")
+      end
+    end
+
+    it "returns Collection object" do
+      VCR.use_cassette("collections", record: :new_episodes) do
+        @collection = @collection.update(title: "Penultimate Faves")
+      end
+      
+      expect(@collection).to be_a Unsplash::Collection
+    end
+
+    it "updates the Collection object" do
+      VCR.use_cassette("collections", record: :new_episodes) do
+        @collection = Unsplash::Collection.find(@collection.id)
+        @collection.update(title: "Best Picturez")
+      end
+      
+      expect(@collection.title).to eq "Best Picturez"
+    end
+
+    
+  end
 end
