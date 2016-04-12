@@ -44,6 +44,16 @@ module Unsplash # nodoc:
         Unsplash::Photo.new photo.to_hash
       end
     end
+
+    # Get a list of photos liked by the user.
+    # @return [Array] a list of +Unsplash::Collection+ objects. 
+    def collections
+      list = JSON.parse(connection.get("/users/#{username}/collections").body)
+      list.map do |collection|
+        Unsplash::Collection.new collection.to_hash
+      end
+    end
+
   end
 
 end

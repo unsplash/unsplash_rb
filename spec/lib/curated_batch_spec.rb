@@ -32,7 +32,7 @@ describe Unsplash::CuratedBatch do
   end
 
   describe "#all" do
-    it "returns an array of Categories" do
+    it "returns an array of CuratedBatches" do
       VCR.use_cassette("curated_batches") do
         @batches = Unsplash::CuratedBatch.all(1, 12)
       end

@@ -10,6 +10,7 @@ require "unsplash/user"
 require "unsplash/photo"
 require "unsplash/category"
 require "unsplash/curated_batch"
+require "unsplash/collection"
 require "unsplash/stats"
 
 module Unsplash
