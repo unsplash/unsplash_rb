@@ -76,6 +76,17 @@ describe Unsplash::Photo do
       end
     end
 
+    context "with collections" do
+      it "joins them" do
+        expect(Unsplash::Photo.connection)
+          .to receive(:get).with("/photos/random", collections: "4,5,6")
+          .and_return double(body: "{}")
+
+        photo = Unsplash::Photo.random(collections: [4,5,6])
+      end
+    end
+
+
     context "without categories" do
       it "removes them" do
         expect(Unsplash::Photo.connection)

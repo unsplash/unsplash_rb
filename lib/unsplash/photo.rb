@@ -45,9 +45,10 @@ module Unsplash # :nodoc:
       # @param width [Integer] Width of customized version of the photo.
       # @param height [Integer] Height of the customized version of the photo.
       # @return [Unsplash::Photo] An Unsplash Photo.
-      def random(categories: nil, featured: nil, user: nil, query: nil, width: nil, height: nil)
+      def random(categories: nil, collections: nil, featured: nil, user: nil, query: nil, width: nil, height: nil)
         params = {
           category: (categories && categories.join(",")),
+          collections: (collections && collections.join(",")),
           featured: featured,
           username: user,
           query:    query,
