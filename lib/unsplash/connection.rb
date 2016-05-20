@@ -93,8 +93,12 @@ module Unsplash #:nodoc:
         param_key = verb == :post ? :body : :params
         @oauth_token.public_send(verb,  @api_base_uri + path, param_key => params, headers: headers)
       
-      else        
+      else
         self.class.public_send verb, path, query: params, headers: public_auth_header
+      end
+
+      if response.headers["Warning"]
+        Unsplash.configuration.logger.warn response.headers["Warning"]
       end
 
       status_code = response.respond_to?(:status) ? response.status : response.code
