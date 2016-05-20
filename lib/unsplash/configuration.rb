@@ -3,10 +3,12 @@ module Unsplash # :nodoc:
     attr_accessor :application_id
     attr_accessor :application_secret
     attr_accessor :application_redirect_uri
+    attr_accessor :logger
     attr_writer   :test
 
     def initialize
       @test = true
+      @logger = Logger.new(STDOUT)
     end
 
     def test?
