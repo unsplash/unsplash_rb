@@ -86,6 +86,20 @@ module Unsplash # :nodoc:
         parse_list connection.get("/photos/", params).body
       end
 
+      # Get a single page from the list of the curated photos (front-page’s photos).
+      # @param page [Integer] Which page of search results to return.
+      # @param per_page [Integer] The number of search results per page.
+      # @param order_by [String] How to sort the photos.
+      # @return [Array] A single page of +Unsplash::Photo+ search results.
+      def curated(page = 1, per_page = 10, order_by = "popular")
+        params = {
+          page:     page,
+          per_page: per_page,
+          order_by: order_by
+        }
+        parse_list connection.get("/photos/curated", params).body
+      end
+
       # Upload a photo on behalf of the current user.
       # @param filepath [String] The local path of the image file to upload.
       # @return [Unsplash::Photo] The uploaded photo.
