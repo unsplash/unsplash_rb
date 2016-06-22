@@ -121,6 +121,17 @@ describe Unsplash::Photo do
     end
   end
 
+  describe "#curated" do
+    it "returns an array of Photos" do
+      VCR.use_cassette("photos") do
+        @photos = Unsplash::Photo.curated(1, 6)
+      end
+
+      expect(@photos).to be_an Array
+      expect(@photos.size).to eq 6
+    end
+  end
+
   describe "#create" do
     let (:filepath) {  }
 
