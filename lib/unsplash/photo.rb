@@ -76,7 +76,7 @@ module Unsplash # :nodoc:
 
       # Get a list of all photos.
       # @param page  [Integer] Which page of search results to return.
-      # @param per_page [Integer] The number of search results per page. 
+      # @param per_page [Integer] The number of search results per page.
       # @return [Array] A single page of +Unsplash::Photo+ search results.
       def all(page = 1, per_page = 10)
         params = {
@@ -103,11 +103,9 @@ module Unsplash # :nodoc:
       # Upload a photo on behalf of the current user.
       # @param filepath [String] The local path of the image file to upload.
       # @return [Unsplash::Photo] The uploaded photo.
+      # <b>DEPRECATED</b>
       def create(filepath)
-        file = Faraday::UploadIO.new(filepath, "image/jpeg")
-        photo = Unsplash::Photo.new JSON.parse(connection.post("/photos", photo: file).body)
-        photo.user = Unsplash::User.new photo.user
-        photo
+        raise Unsplash::Error.new "API photo-upload endpoint has been deprecated and removed."
       end
 
       private
