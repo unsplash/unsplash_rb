@@ -44,8 +44,9 @@ module Unsplash # :nodoc:
       # @param query [String] Limit selection to given search query.
       # @param width [Integer] Width of customized version of the photo.
       # @param height [Integer] Height of the customized version of the photo.
+      # @param orientation [String] Filter by orientation of the photo. Valid values are landscape, portrait, and squarish.
       # @return [Unsplash::Photo] An Unsplash Photo.
-      def random(categories: nil, collections: nil, featured: nil, user: nil, query: nil, width: nil, height: nil)
+      def random(categories: nil, collections: nil, featured: nil, user: nil, query: nil, width: nil, height: nil, orientation: nil)
         params = {
           category: (categories && categories.join(",")),
           collections: (collections && collections.join(",")),
@@ -53,7 +54,8 @@ module Unsplash # :nodoc:
           username: user,
           query:    query,
           w:        width,
-          h:        height
+          h:        height,
+          orientation: orientation
         }.select { |k,v| v }
 
         photo = Unsplash::Photo.new JSON.parse(connection.get("/photos/random", params).body)
@@ -76,7 +78,7 @@ module Unsplash # :nodoc:
 
       # Get a list of all photos.
       # @param page  [Integer] Which page of search results to return.
-      # @param per_page [Integer] The number of search results per page. 
+      # @param per_page [Integer] The number of search results per page.
       # @return [Array] A single page of +Unsplash::Photo+ search results.
       def all(page = 1, per_page = 10)
         params = {

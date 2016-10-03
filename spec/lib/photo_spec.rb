@@ -32,7 +32,7 @@ describe Unsplash::Photo do
   end
 
   describe "#random" do
-  
+
     let(:params) do
       {
         categories: [2],
@@ -97,6 +97,17 @@ describe Unsplash::Photo do
       end
     end
 
+    context "with orientation" do
+      it "returns a landscaped photo" do
+
+        VCR.use_cassette("photos") do
+          @photo = Unsplash::Photo.random(orientation: :landscape)
+        end
+
+        expect(@photo).to be_a Unsplash::Photo
+      end
+    end
+
   end
 
   describe "#search" do
@@ -141,7 +152,7 @@ describe Unsplash::Photo do
       VCR.use_cassette("photos", match_requests_on: [:method, :path, :body]) do
         @photo = Unsplash::Photo.create "spec/support/upload-1.txt"
       end
-      
+
       expect(@photo).to be_an Unsplash::Photo
     end
 
@@ -184,7 +195,7 @@ describe Unsplash::Photo do
         }.to raise_error Unsplash::Error
       end
     end
-   
+
   end
 
   describe "#unlike!" do
@@ -207,7 +218,7 @@ describe Unsplash::Photo do
         }.to raise_error Unsplash::Error
       end
     end
-   
+
   end
 
 
