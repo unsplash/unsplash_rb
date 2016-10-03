@@ -105,11 +105,9 @@ module Unsplash # :nodoc:
       # Upload a photo on behalf of the current user.
       # @param filepath [String] The local path of the image file to upload.
       # @return [Unsplash::Photo] The uploaded photo.
+      # <b>DEPRECATED</b>
       def create(filepath)
-        file = Faraday::UploadIO.new(filepath, "image/jpeg")
-        photo = Unsplash::Photo.new JSON.parse(connection.post("/photos", photo: file).body)
-        photo.user = Unsplash::User.new photo.user
-        photo
+        raise Unsplash::Error.new "API photo-upload endpoint has been deprecated and removed."
       end
 
       private

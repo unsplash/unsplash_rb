@@ -144,35 +144,17 @@ describe Unsplash::Photo do
   end
 
   describe "#create" do
-    let (:filepath) {  }
 
-    it "returns a Photo object" do
+    it "errors on trying to upload a photo" do
       stub_oauth_authorization
 
-      VCR.use_cassette("photos", match_requests_on: [:method, :path, :body]) do
-        @photo = Unsplash::Photo.create "spec/support/upload-1.txt"
-      end
-
-      expect(@photo).to be_an Unsplash::Photo
-    end
-
-    it "fails without a Bearer token" do
       expect {
         VCR.use_cassette("photos", match_requests_on: [:method, :path, :body]) do
-          @photo = Unsplash::Photo.create "spec/support/upload-2.txt"
+          @photo = Unsplash::Photo.create "spec/support/upload-1.txt"
         end
       }.to raise_error Unsplash::Error
     end
 
-    it "parses the nested user object" do
-      stub_oauth_authorization
-
-      VCR.use_cassette("photos", match_requests_on: [:method, :path, :body]) do
-        @photo = Unsplash::Photo.create "spec/support/upload-1.txt"
-      end
-
-      expect(@photo.user).to be_an Unsplash::User
-    end
   end
 
   describe "#like!" do
