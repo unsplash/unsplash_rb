@@ -1,6 +1,6 @@
 # unsplash_rb
 
-[ ![Codeship Status for CrewLabs/unsplash_rb](https://codeship.com/projects/0d395ea0-fe45-0132-5e19-022bf5e0402e/status?branch=master)](https://codeship.com/projects/88039)
+[![Build Status](https://travis-ci.org/unsplash/unsplash_rb.svg?branch=travis)](https://travis-ci.org/unsplash/unsplash_rb)
 
 A ruby client for [the Unsplash API](https://unsplash.com/documentation).
 
@@ -52,7 +52,7 @@ Want a bunch of pictures of cats? You're on the internet; of course you do.
 search_results = Unsplash::Photo.search("cats")
 ```
 
-For a complete list of available actions, see our [documentation details](http://www.rubydoc.info/github/CrewLabs/unsplash_rb).
+For a complete list of available actions, see our [documentation details](http://www.rubydoc.info/github/unsplash/unsplash_rb/).
 
 ### User Authorization
 
@@ -88,7 +88,7 @@ To install this gem onto your local machine, run `bundle exec rake install`.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/crewlabs/unsplash_rb. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/unsplash/unsplash_rb. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 
 ## License
