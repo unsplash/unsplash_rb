@@ -2,6 +2,8 @@ $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 require 'unsplash'
 require 'vcr'
 require 'pry'
+require 'coveralls'
+Coveralls.wear!
 
 Unsplash.configure do |config|
   config.application_id = "baaa6a1214d50b3586bec6e06157aab859bd4d86dc0b755360f103f38974edc3"
