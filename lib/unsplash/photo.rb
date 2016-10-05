@@ -48,7 +48,7 @@ module Unsplash # :nodoc:
       # @param orientation [String] Filter by orientation of the photo. Valid values are landscape, portrait, and squarish.
       # @return [Unsplash::Photo] An Unsplash Photo if count parameter is omitted
       # @return [Array] An array of Unsplash Photos if the count parameter is specified. An array is returned even if count is 1
-      def random(count: nil,categories: nil, collections: nil, featured: nil, user: nil, query: nil, width: nil, height: nil)
+      def random(count: nil,categories: nil, collections: nil, featured: nil, user: nil, query: nil, width: nil, height: nil, orientation: nil)
         params = {
           category: (categories && categories.join(",")),
           collections: (collections && collections.join(",")),
