@@ -113,7 +113,7 @@ describe Unsplash::Photo do
   describe "#search" do
     it "returns an array of Photos" do
       VCR.use_cassette("photos") do
-        @photos = Unsplash::Photo.search("dog", 1, 4)
+        @photos = Unsplash::Photo.search("dog", 1)
       end
 
       expect(@photos).to be_an Array

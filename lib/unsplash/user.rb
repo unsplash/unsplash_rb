@@ -45,7 +45,7 @@ module Unsplash # nodoc:
       end
     end
 
-    # Get a list of photos liked by the user.
+    # Get a list of collections created by the user.
     # @return [Array] a list of +Unsplash::Collection+ objects. 
     def collections
       list = JSON.parse(connection.get("/users/#{username}/collections").body)
