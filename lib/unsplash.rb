@@ -12,6 +12,7 @@ require "unsplash/category"
 require "unsplash/curated_batch"
 require "unsplash/collection"
 require "unsplash/stats"
+require "unsplash/search"
 
 module Unsplash
   class << self

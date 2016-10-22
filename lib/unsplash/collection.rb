@@ -52,6 +52,18 @@ module Unsplash # :nodoc:
         Unsplash::Collection.new JSON.parse(connection.post("/collections", params).body)
       end
 
+      # Get a single page of collection results for a query.
+      # @param query [String] Keywords to search for.
+      # @param page  [Integer] Which page of search results to return.
+      # @return [Array] a list of +Unsplash::Collection+ objects. 
+      def search(query, page = 1)
+        params = {
+          query:    query,
+          page:     page
+        }
+        Unsplash::Search.search("/search/collections", self, params)
+      end
+
     end
 
     def initialize(options = {})

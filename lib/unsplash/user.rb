@@ -34,11 +34,7 @@ module Unsplash # nodoc:
           query:    query,
           page:     page
         }
-
-        list = JSON.parse(connection.get("/search/users", params).body)
-        list["results"].map do |user|
-          Unsplash::User.new user.to_hash
-        end
+        Unsplash::Search.search("/search/users", self, params)
       end
 
     end

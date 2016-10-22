@@ -143,7 +143,7 @@ http_interactions:
   recorded_at: Mon, 22 Jun 2015 19:34:34 GMT
 - request:
     method: get
-    uri: http://api.lvh.me:3000/search/photos/?page=1&query=dog
+    uri: http://api.lvh.me:3000/search/photos?page=1&query=dog
     body:
       encoding: US-ASCII
       string: ''

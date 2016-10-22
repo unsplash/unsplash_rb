@@ -71,9 +71,7 @@ module Unsplash # :nodoc:
           query:    query,
           page:     page
         }
-
-        list = JSON.parse(connection.get("/search/photos/", params).body)
-        list["results"].map { |photo| new photo.to_hash }
+        Unsplash::Search.search("/search/photos", self, params)
       end
 
       # Get a list of all photos.
