@@ -846,4 +846,108 @@ http_interactions:
       string: "[]"
     http_version: 
   recorded_at: Fri, 08 Apr 2016 16:17:11 GMT
+- request:
+    method: get
+    uri: http://api.lvh.me:3000/search/users?page=1&query=ches
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Client-ID baaa6a1214d50b3586bec6e06157aab859bd4d86dc0b755360f103f38974edc3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      Access-Control-Allow-Headers:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Link,X-Total,X-Per-Page,X-RateLimit-Limit,X-RateLimit-Remaining
+      Content-Type:
+      - application/json
+      Link:
+      - <http://api.lvh.me:3000/search/users?page=1&query=ches>; rel="last",
+        <http://api.lvh.me:3000/search/users?page=1&query=ches>; rel="next"
+      Etag:
+      - W/"d751713988987e9331980363e24189ce"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 4b6f6477-3d01-418e-bc14-36d794d01b34
+      X-Ratelimit-Limit:
+      - '100'
+      X-Ratelimit-Remaining:
+      - '94'
+      X-Runtime:
+      - '0.030372'
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      X-Miniprofiler-Ids:
+      - '["1pquetshmkrovzl5lsoe","tklag0w5hvkn1t9wsbr7","y8jt1tiydp52t0qc4a9l","y6l70h07lvtas0q01rus","j5d80228amce8t5i1vhh","9hqcnbg26mwq9mjyu2d","ag74bnhwkzndi1tj72j6","f5dnndzvmjqp8jpsldeu","x5hecvstlduek0ta4g5g","srffo8hzjqvm4cqwf3pf"]'
+      Content-Length:
+      - '2'
+    body:
+      encoding: UTF-8
+      string: '{"total":1,"total_pages":1,"results":[{"username":"lukechesser","first_name":"Luke","last_name":"Chesser","portfolio_url":"http://imluke.me/","links":{"self":"http://api.lvh.me:3000/users/lukechesser","html":"http://lvh.me:3000/lukechesser","photos":"http://api.lvh.me:3000/users/lukechesser/photos"}}]}'
+    http_version: 
+  recorded_at: Fri, 08 Apr 2016 16:17:11 GMT
+- request:
+    method: get
+    uri: http://api.lvh.me:3000/search/users?page=1&query=veryveryspecific
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Client-ID baaa6a1214d50b3586bec6e06157aab859bd4d86dc0b755360f103f38974edc3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      Access-Control-Allow-Headers:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Link,X-Total,X-Per-Page,X-RateLimit-Limit,X-RateLimit-Remaining
+      Content-Type:
+      - application/json
+      Link:
+      - <http://api.lvh.me:3000/search/users?page=1&query=ches>; rel="last",
+        <http://api.lvh.me:3000/search/users?page=1&query=ches>; rel="next"
+      Etag:
+      - W/"d751713988987e9331980363e24189ce"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 4b6f6477-3d01-418e-bc14-36d794d01b34
+      X-Ratelimit-Limit:
+      - '100'
+      X-Ratelimit-Remaining:
+      - '94'
+      X-Runtime:
+      - '0.030372'
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      X-Miniprofiler-Ids:
+      - '["1pquetshmkrovzl5lsoe","tklag0w5hvkn1t9wsbr7","y8jt1tiydp52t0qc4a9l","y6l70h07lvtas0q01rus","j5d80228amce8t5i1vhh","9hqcnbg26mwq9mjyu2d","ag74bnhwkzndi1tj72j6","f5dnndzvmjqp8jpsldeu","x5hecvstlduek0ta4g5g","srffo8hzjqvm4cqwf3pf"]'
+      Content-Length:
+      - '2'
+    body:
+      encoding: UTF-8
+      string: '{"total":0,"total_pages":1,"results":[]}'
+    http_version: 
+  recorded_at: Fri, 08 Apr 2016 16:17:11 GMT
 recorded_with: VCR 2.9.3

@@ -25,6 +25,22 @@ module Unsplash # nodoc:
         Unsplash::User.new JSON.parse(connection.put("/me", params).body)
       end
 
+      # Get a single page of user results for a query.
+      # @param query [String] Keywords to search for.
+      # @param page  [Integer] Which page of search results to return.
+      # @return [Array] a list of +Unsplash::User+ objects. 
+      def search(query, page = 1)
+        params = {
+          query:    query,
+          page:     page
+        }
+
+        list = JSON.parse(connection.get("/search/users", params).body)
+        list["results"].map do |user|
+          Unsplash::User.new user.to_hash
+        end
+      end
+
     end
 
     # Get a list of photos uploaded by the user.
