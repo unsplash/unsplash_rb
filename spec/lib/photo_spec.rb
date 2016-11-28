@@ -29,6 +29,14 @@ describe Unsplash::Photo do
 
       expect(@photo.user).to be_an Unsplash::User
     end
+
+    it "supports nested method access" do
+      VCR.use_cassette("photos") do
+        @photo = Unsplash::Photo.find(photo_id)
+      end
+
+      expect(@photo.user.links.html).to eq("http://lvh.me:3000/alejandroescamilla")
+    end
   end
 
   describe "#random" do
