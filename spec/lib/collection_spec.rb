@@ -55,6 +55,26 @@ describe Unsplash::Collection do
     end
   end
 
+  describe "#search" do
+    it "returns an array of Collections" do
+      VCR.use_cassette("collections") do
+        @collections = Unsplash::Collection.search("explore", 1)
+      end
+
+      expect(@collections).to be_an Array
+      expect(@collections.sample).to be_an Unsplash::Collection
+      expect(@collections.size).to eq 1
+    end
+
+    it "returns an empty array if there are no users found" do
+      VCR.use_cassette("collections") do
+        @collections = Unsplash::Collection.search("veryveryspecific", 1)
+      end
+
+      expect(@collections).to eq []
+    end
+  end
+
   describe "#all" do
     it "returns an array of Collections" do
       VCR.use_cassette("collections") do

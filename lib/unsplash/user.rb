@@ -25,6 +25,18 @@ module Unsplash # nodoc:
         Unsplash::User.new JSON.parse(connection.put("/me", params).body)
       end
 
+      # Get a single page of user results for a query.
+      # @param query [String] Keywords to search for.
+      # @param page  [Integer] Which page of search results to return.
+      # @return [Array] a list of +Unsplash::User+ objects. 
+      def search(query, page = 1)
+        params = {
+          query:    query,
+          page:     page
+        }
+        Unsplash::Search.search("/search/users", self, params)
+      end
+
     end
 
     # Get a list of photos uploaded by the user.
@@ -45,7 +57,7 @@ module Unsplash # nodoc:
       end
     end
 
-    # Get a list of photos liked by the user.
+    # Get a list of collections created by the user.
     # @return [Array] a list of +Unsplash::Collection+ objects. 
     def collections
       list = JSON.parse(connection.get("/users/#{username}/collections").body)

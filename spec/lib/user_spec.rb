@@ -25,6 +25,26 @@ describe Unsplash::User do
     end
   end
 
+  describe "#search" do
+    it "returns an array of Users" do
+      VCR.use_cassette("users") do
+        @users = Unsplash::User.search("ches", 1)
+      end
+
+      expect(@users).to be_an Array
+      expect(@users.sample).to be_an Unsplash::User
+      expect(@users.size).to eq 1
+    end
+
+    it "returns an empty array if there are no users found" do
+      VCR.use_cassette("users") do
+        @users = Unsplash::User.search("veryveryspecific", 1)
+      end
+
+      expect(@users).to eq []
+    end
+  end
+
   describe "#likes" do
     it "returns an array of Photos" do
       VCR.use_cassette("users") do
