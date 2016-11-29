@@ -28,7 +28,7 @@ module Unsplash # nodoc:
       # Get a single page of user results for a query.
       # @param query [String] Keywords to search for.
       # @param page  [Integer] Which page of search results to return.
-      # @return [Array] a list of +Unsplash::User+ objects. 
+      # @return [Array] a list of +Unsplash::User+ objects.
       def search(query, page = 1)
         params = {
           query:    query,
@@ -40,27 +40,48 @@ module Unsplash # nodoc:
     end
 
     # Get a list of photos uploaded by the user.
-    # @return [Array] a list of +Unsplash::Photo+ objects. 
-    def photos
-      list = JSON.parse(connection.get("/users/#{username}/photos").body)
+    # @param page  [Integer] Which page of results to return.
+    # @param per_page [Integer] The number of results per page.
+    # @return [Array] a list of +Unsplash::Photo+ objects.
+    def photos(page = 1, per_page = 10)
+      params = {
+        page:     page,
+        per_page: per_page
+      }
+
+      list = JSON.parse(connection.get("/users/#{username}/photos", params).body)
       list.map do |photo|
         Unsplash::Photo.new photo.to_hash
       end
     end
 
     # Get a list of photos liked by the user.
-    # @return [Array] a list of +Unsplash::Photo+ objects. 
-    def likes
-      list = JSON.parse(connection.get("/users/#{username}/likes").body)
+    # @param page  [Integer] Which page of results to return.
+    # @param per_page [Integer] The number of results per page.
+    # @return [Array] a list of +Unsplash::Photo+ objects.
+    def likes(page = 1, per_page = 10)
+      params = {
+        page:     page,
+        per_page: per_page
+      }
+
+      list = JSON.parse(connection.get("/users/#{username}/likes", params).body)
       list.map do |photo|
         Unsplash::Photo.new photo.to_hash
       end
     end
 
     # Get a list of collections created by the user.
-    # @return [Array] a list of +Unsplash::Collection+ objects. 
-    def collections
-      list = JSON.parse(connection.get("/users/#{username}/collections").body)
+    # @param page  [Integer] Which page of results to return.
+    # @param per_page [Integer] The number of results per page.
+    # @return [Array] a list of +Unsplash::Collection+ objects.
+    def collections(page = 1, per_page = 10)
+      params = {
+        page:     page,
+        per_page: per_page
+      }
+
+      list = JSON.parse(connection.get("/users/#{username}/collections", params).body)
       list.map do |collection|
         Unsplash::Collection.new collection.to_hash
       end
