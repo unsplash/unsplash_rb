@@ -38,8 +38,7 @@ end
 
 ### Public-scope actions
 
-If you are *only* making public requests (i.e. nothing requiring a specific logged-in user,
-for example photo uploads or private user details), then you're ready to go!
+If you are *only* making public requests (i.e. nothing requiring a specific logged-in user, for example liking photos or accessing private user details), then you're ready to go!
 
 Looking for details of a specific photo? Find it by ID:
 
