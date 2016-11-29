@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name          = "unsplash"
   spec.version       = Unsplash::VERSION
   spec.authors       = ["Aaron Klaassen"]
-  spec.email         = ["aaron@crew.co"]
+  spec.email         = ["aaron@unsplash.com"]
 
   spec.summary       = %q{Ruby wrapper for the Unsplash API.}
   spec.homepage      = "https://github.com/unsplash/unsplash_rb"
