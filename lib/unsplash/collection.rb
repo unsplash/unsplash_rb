@@ -97,8 +97,13 @@ module Unsplash # :nodoc:
 
     # Get a list of the photos contained in this collection.
     # @return [Array] The list of +Unsplash::Photo+s in the collection.
-    def photos
-      list = JSON.parse(connection.get("/collections/#{id}/photos").body)
+    def photos(page = 1, per_page = 10)
+      params = {
+        page: page,
+        per_page: per_page
+      }
+
+      list = JSON.parse(connection.get("/collections/#{id}/photos", params).body)
       list.map { |photo| Unsplash::Photo.new photo }
     end
 
