@@ -49,6 +49,19 @@ module Unsplash #:nodoc:
       # TODO check if it succeeded
     end
 
+    # Extract hash with OAuth token attributes.  Extracted token attributes can
+    # be used with create_and_assign_token to prevent the need for
+    # reauthorization.
+    def extract_token
+      @oauth_token.to_hash
+    end
+
+    # Create and assign new access token from extracted token.  To be used with
+    # extract_token to reauthorize app without api call.
+    def create_and_assign_token(token_extract = {})
+      @oauth_token = OAuth2::AccessToken.from_hash(@oauth, token_extract)
+    end
+
     # Perform a GET request.
     # @param path [String] The path at which to make ther request.
     # @param params [Hash] A hash of request parameters.
