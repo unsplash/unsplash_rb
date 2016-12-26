@@ -127,6 +127,14 @@ describe Unsplash::Photo do
       expect(@photos).to be_an Array
       expect(@photos.size).to eq 4
     end
+    it "let's you adjust the results per page" do
+      VCR.use_cassette("photos") do
+        @photos = Unsplash::Photo.search("dog", 1, 3)
+      end
+
+      expect(@photos).to be_an Array
+      expect(@photos.size).to eq 3
+    end
   end
 
   describe "#index" do
