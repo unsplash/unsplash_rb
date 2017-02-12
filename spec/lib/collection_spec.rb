@@ -73,6 +73,16 @@ describe Unsplash::Collection do
 
       expect(@collections).to eq []
     end
+
+    it "returns an array of Collections with number of elements per page defined" do
+      VCR.use_cassette("collections") do
+        @collections = Unsplash::Collection.search("explore", 1, 2)
+      end
+
+      expect(@collections).to be_an Array
+      expect(@collections.sample).to be_an Unsplash::Collection
+      expect(@collections.size).to eq 2
+    end
   end
 
   describe "#all" do

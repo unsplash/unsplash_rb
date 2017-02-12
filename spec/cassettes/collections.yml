@@ -911,7 +911,7 @@ http_interactions:
   recorded_at: Mon, 11 Apr 2016 20:41:21 GMT
 - request:
     method: get
-    uri: http://api.lvh.me:3000/search/collections?page=1&query=explore
+    uri: http://api.lvh.me:3000/search/collections?page=1&per_page=10&query=explore
     body:
       encoding: US-ASCII
       string: ''
@@ -962,7 +962,7 @@ http_interactions:
   recorded_at: Mon, 11 Apr 2016 17:54:49 GMT
 - request:
     method: get
-    uri: http://api.lvh.me:3000/search/collections?page=1&query=veryveryspecific
+    uri: http://api.lvh.me:3000/search/collections?page=1&per_page=10&query=veryveryspecific
     body:
       encoding: US-ASCII
       string: ''
@@ -1007,6 +1007,60 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"total":1,"total_pages":1,"results":[]}'
+    http_version:
+  recorded_at: Mon, 11 Apr 2016 17:54:49 GMT
+- request:
+    method: get
+    uri: http://api.lvh.me:3000/search/collections?page=1&per_page=2&query=explore
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Client-ID baaa6a1214d50b3586bec6e06157aab859bd4d86dc0b755360f103f38974edc3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      Access-Control-Allow-Headers:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Link,X-Total,X-Per-Page,X-RateLimit-Limit,X-RateLimit-Remaining
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      Content-Type:
+      - application/json
+      Etag:
+      - W/"d5d32fd7f45a292e2bc4a08125330024"
+      X-Request-Id:
+      - de15dff4-1f3d-48a2-93ca-9d6849c31d79
+      X-Ratelimit-Limit:
+      - '100'
+      X-Ratelimit-Remaining:
+      - '98'
+      X-Runtime:
+      - '0.094648'
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      X-Miniprofiler-Ids:
+      - '["85qlnh0mnvecgq0q3glt","w9ijlts0ho1zswwwsjbn","qk5n3yagrfu4nh2qyt7y"]'
+      Content-Length:
+      - '3364'
+    body:
+      encoding: UTF-8
+      string: '{"total":2,"total_pages":1,"results":[{"id":201,"title":"Explore Iceland","published_at":"2015-12-30T16:56:29-05:00","curated":false,"cover_photo":{"id":"uO4Au3LrCtk","width":3000,"height":2000,"color":"#565B63","likes":0,"liked_by_user":false,"user":{"id":"46rKBE69V4I","username":"andersjilden","name":"Anders
+        Jildén","profile_image":{"small":"https://images.unsplash.com/profile-1444219778067-a301067fdc5e?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=32\u0026w=32\u0026s=d78a65a5e29c45cdb790895d0587bafe","medium":"https://images.unsplash.com/profile-1444219778067-a301067fdc5e?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=64\u0026w=64\u0026s=e041071e984375a0f2ed01d340a3aa00","large":"https://images.unsplash.com/profile-1444219778067-a301067fdc5e?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=128\u0026w=128\u0026s=8c6a75b3379366defac8399dc8f30221"},"links":{"self":"http://api.lvh.me:3000/users/andersjilden","html":"http://lvh.me:3000/andersjilden","photos":"http://api.lvh.me:3000/users/andersjilden/photos","likes":"http://api.lvh.me:3000/users/andersjilden/likes"}},"urls":{"raw":"https://images.unsplash.com/photo-1445503058969-7ae8721cd8c1","full":"https://images.unsplash.com/photo-1445503058969-7ae8721cd8c1?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026s=75f81eef4dddc6d740a6903e0bef4dab","regular":"https://images.unsplash.com/photo-1445503058969-7ae8721cd8c1?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026w=1080\u0026fit=max\u0026s=7e069062d4af1ffc5f5a80107cf4302b","small":"https://images.unsplash.com/photo-1445503058969-7ae8721cd8c1?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026w=400\u0026fit=max\u0026s=ed45724e0b45053f46eccf9f6927cbd5","thumb":"https://images.unsplash.com/photo-1445503058969-7ae8721cd8c1?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026w=200\u0026fit=max\u0026s=40cf57127d49d8114fbc8bb22254a3ce"},"categories":[{"id":4,"title":"Nature","photo_count":31454,"links":{"self":"http://api.lvh.me:3000/categories/4","photos":"http://api.lvh.me:3000/categories/4/photos"}}],"links":{"self":"http://api.lvh.me:3000/photos/uO4Au3LrCtk","html":"http://lvh.me:3000/photos/uO4Au3LrCtk","download":"http://lvh.me:3000/photos/uO4Au3LrCtk/download"}},"user":{"id":"QV5S1rtoUJ0","username":"unsplash","name":"Unsplash","bio":"Make
+        something awesome.","profile_image":{"small":"https://images.unsplash.com/profile-1441945026710-480e4372a5b5?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=32\u0026w=32\u0026s=15dd677c95172edff29e9b7a3be052c1","medium":"https://images.unsplash.com/profile-1441945026710-480e4372a5b5?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=64\u0026w=64\u0026s=7ae2265df9881ef927465a3215b4de94","large":"https://images.unsplash.com/profile-1441945026710-480e4372a5b5?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=128\u0026w=128\u0026s=96b07acf064bb8ba33e257c9391b440a"},"links":{"self":"http://api.lvh.me:3000/users/unsplash","html":"http://lvh.me:3000/unsplash","photos":"http://api.lvh.me:3000/users/unsplash/photos","likes":"http://api.lvh.me:3000/users/unsplash/likes"}},"links":{"self":"http://api.lvh.me:3000/collections/201","html":"http://lvh.me:3000/collections/201","photos":"http://api.lvh.me:3000/collections/201/photos"}},
+        {"id":201,"title":"Explore Iceland","published_at":"2015-12-30T16:56:29-05:00","curated":false,"cover_photo":{"id":"uO4Au3LrCtk","width":3000,"height":2000,"color":"#565B63","likes":0,"liked_by_user":false,"user":{"id":"46rKBE69V4I","username":"andersjilden","name":"Anders
+        Jildén","profile_image":{"small":"https://images.unsplash.com/profile-1444219778067-a301067fdc5e?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=32\u0026w=32\u0026s=d78a65a5e29c45cdb790895d0587bafe","medium":"https://images.unsplash.com/profile-1444219778067-a301067fdc5e?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=64\u0026w=64\u0026s=e041071e984375a0f2ed01d340a3aa00","large":"https://images.unsplash.com/profile-1444219778067-a301067fdc5e?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=128\u0026w=128\u0026s=8c6a75b3379366defac8399dc8f30221"},"links":{"self":"http://api.lvh.me:3000/users/andersjilden","html":"http://lvh.me:3000/andersjilden","photos":"http://api.lvh.me:3000/users/andersjilden/photos","likes":"http://api.lvh.me:3000/users/andersjilden/likes"}},"urls":{"raw":"https://images.unsplash.com/photo-1445503058969-7ae8721cd8c1","full":"https://images.unsplash.com/photo-1445503058969-7ae8721cd8c1?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026s=75f81eef4dddc6d740a6903e0bef4dab","regular":"https://images.unsplash.com/photo-1445503058969-7ae8721cd8c1?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026w=1080\u0026fit=max\u0026s=7e069062d4af1ffc5f5a80107cf4302b","small":"https://images.unsplash.com/photo-1445503058969-7ae8721cd8c1?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026w=400\u0026fit=max\u0026s=ed45724e0b45053f46eccf9f6927cbd5","thumb":"https://images.unsplash.com/photo-1445503058969-7ae8721cd8c1?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026w=200\u0026fit=max\u0026s=40cf57127d49d8114fbc8bb22254a3ce"},"categories":[{"id":4,"title":"Nature","photo_count":31454,"links":{"self":"http://api.lvh.me:3000/categories/4","photos":"http://api.lvh.me:3000/categories/4/photos"}}],"links":{"self":"http://api.lvh.me:3000/photos/uO4Au3LrCtk","html":"http://lvh.me:3000/photos/uO4Au3LrCtk","download":"http://lvh.me:3000/photos/uO4Au3LrCtk/download"}},"user":{"id":"QV5S1rtoUJ0","username":"unsplash","name":"Unsplash","bio":"Make
+        something awesome.","profile_image":{"small":"https://images.unsplash.com/profile-1441945026710-480e4372a5b5?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=32\u0026w=32\u0026s=15dd677c95172edff29e9b7a3be052c1","medium":"https://images.unsplash.com/profile-1441945026710-480e4372a5b5?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=64\u0026w=64\u0026s=7ae2265df9881ef927465a3215b4de94","large":"https://images.unsplash.com/profile-1441945026710-480e4372a5b5?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=128\u0026w=128\u0026s=96b07acf064bb8ba33e257c9391b440a"},"links":{"self":"http://api.lvh.me:3000/users/unsplash","html":"http://lvh.me:3000/unsplash","photos":"http://api.lvh.me:3000/users/unsplash/photos","likes":"http://api.lvh.me:3000/users/unsplash/likes"}},"links":{"self":"http://api.lvh.me:3000/collections/201","html":"http://lvh.me:3000/collections/201","photos":"http://api.lvh.me:3000/collections/201/photos"}}]}'
     http_version:
   recorded_at: Mon, 11 Apr 2016 17:54:49 GMT
 recorded_with: VCR 2.9.3
