@@ -43,6 +43,16 @@ describe Unsplash::User do
 
       expect(@users).to eq []
     end
+
+    it "returns an array of Users with number of elements per page defined" do
+      VCR.use_cassette("users") do
+        @users = Unsplash::User.search("ches", 1, 2)
+      end
+
+      expect(@users).to be_an Array
+      expect(@users.sample).to be_an Unsplash::User
+      expect(@users.size).to eq 2
+    end
   end
 
   describe "#likes" do
@@ -111,9 +121,7 @@ describe Unsplash::User do
       end
     end
 
-
   end
-
 
   describe "non-public scope actions" do
 
