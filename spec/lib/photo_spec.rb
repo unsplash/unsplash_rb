@@ -147,6 +147,15 @@ describe Unsplash::Photo do
       expect(@photos).to be_an Array
       expect(@photos.size).to eq 6
     end
+
+    it "returns an array of Photos order by oldest criteria" do
+      VCR.use_cassette("photos") do
+        @photos = Unsplash::Photo.all(1, 6, "oldest")
+      end
+
+      expect(@photos).to be_an Array
+      expect(@photos.size).to eq 6
+    end
   end
 
   describe "#curated" do

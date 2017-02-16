@@ -1,4 +1,4 @@
-module Unsplash # nodoc:
+module Unsplash # :nodoc:
 
   # Unsplash User operations.
   class User < Client
