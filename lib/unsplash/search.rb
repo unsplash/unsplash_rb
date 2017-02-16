@@ -2,6 +2,7 @@ module Unsplash # :nodoc:
 
   # Unsplash Search operations
   class Search < Client
+
     class << self
       # Helper class to facilitate search on multiple classes
       # @param url [String] Url to be searched into

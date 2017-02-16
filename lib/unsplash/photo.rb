@@ -90,11 +90,13 @@ module Unsplash # :nodoc:
       # Get a list of all photos.
       # @param page  [Integer] Which page of search results to return.
       # @param per_page [Integer] The number of search results per page. (default: 10, maximum: 30)
+      # @param order_by [String] How to sort the photos.
       # @return [Array] A single page of +Unsplash::Photo+ search results.
-      def all(page = 1, per_page = 10)
+      def all(page = 1, per_page = 10, order_by = "latest")
         params = {
           page:     page,
-          per_page: per_page
+          per_page: per_page,
+          order_by: order_by
         }
         parse_list connection.get("/photos/", params).body
       end

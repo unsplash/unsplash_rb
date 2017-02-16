@@ -123,5 +123,4 @@ module Unsplash #:nodoc:
     end
   end
 
-
 end

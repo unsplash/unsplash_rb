@@ -91,7 +91,59 @@ http_interactions:
   recorded_at: Mon, 22 Jun 2015 19:32:54 GMT
 - request:
     method: get
-    uri: http://api.lvh.me:3000/photos/?page=1&per_page=6
+    uri: http://api.lvh.me:3000/photos/?order_by=latest&page=1&per_page=6
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Client-ID baaa6a1214d50b3586bec6e06157aab859bd4d86dc0b755360f103f38974edc3
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      Link:
+      - <http://api.lvh.me:3000/photos?page=576&per_page=6>; rel="last", <http://api.lvh.me:3000/photos?page=2&per_page=6>;
+        rel="next"
+      X-Total:
+      - '3454'
+      X-Per-Page:
+      - '6'
+      Cache-Control:
+      - max-age=7200, public
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '3943'
+      Etag:
+      - W/"26001960f0fca68e062b30fc44544084"
+      X-Request-Id:
+      - aaddd248-83f1-45d1-8cbc-5295420c11fb
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '960'
+      X-Runtime:
+      - '0.067624'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.1.5/2014-11-13)
+      Date:
+      - Mon, 22 Jun 2015 19:34:34 GMT
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '[{"id":"esm80lpf2kE","urls":{"regular":"https://ununsplash.imgix.net/photo-1433116209692-9330d85f1afb?q=75\u0026fm=jpg\u0026w=1080\u0026fit=max\u0026s=639d0f9069b778709d219781497f2268","small":"https://ununsplash.imgix.net/photo-1433116209692-9330d85f1afb?q=75\u0026fm=jpg\u0026w=400\u0026fit=max\u0026s=5619ece8766efd2bbaa3eb18521138ce","thumb":"https://ununsplash.imgix.net/photo-1433116209692-9330d85f1afb?q=75\u0026fm=jpg\u0026w=200\u0026fit=max\u0026s=a3ff5ea821f38e86daab7f9569d657b5"},"links":{"self":"http://api.lvh.me:3000/photos/esm80lpf2kE","html":"http://lvh.me:3000/photos/esm80lpf2kE","download":"http://lvh.me:3000/photos/esm80lpf2kE/download"}},{"id":"bUsIoLKTk18","urls":{"regular":"https://unsplash.imgix.net/photo-1433100325891-378af68b3b8e?q=75\u0026fm=jpg\u0026w=1080\u0026fit=max\u0026s=6d8a4dfeb744406f080c535afc01c65b","small":"https://unsplash.imgix.net/photo-1433100325891-378af68b3b8e?q=75\u0026fm=jpg\u0026w=400\u0026fit=max\u0026s=a89c66d2342239b76dd5de2776cdde86","thumb":"https://unsplash.imgix.net/photo-1433100325891-378af68b3b8e?q=75\u0026fm=jpg\u0026w=200\u0026fit=max\u0026s=b8d118a9ab354492259988d5e6811f94"},"links":{"self":"http://api.lvh.me:3000/photos/bUsIoLKTk18","html":"http://lvh.me:3000/photos/bUsIoLKTk18","download":"http://lvh.me:3000/photos/bUsIoLKTk18/download"}},{"id":"OVRxj5h6n7o","urls":{"regular":"https://ununsplash.imgix.net/photo-1433094657682-205abd5f883b?q=75\u0026fm=jpg\u0026w=1080\u0026fit=max\u0026s=7ab44e3617f1b122758155343b35a29b","small":"https://ununsplash.imgix.net/photo-1433094657682-205abd5f883b?q=75\u0026fm=jpg\u0026w=400\u0026fit=max\u0026s=d38ee958dad8a8390c015ab1765004a0","thumb":"https://ununsplash.imgix.net/photo-1433094657682-205abd5f883b?q=75\u0026fm=jpg\u0026w=200\u0026fit=max\u0026s=b4a97c22b3463303394c8f77d6f760d4"},"links":{"self":"http://api.lvh.me:3000/photos/OVRxj5h6n7o","html":"http://lvh.me:3000/photos/OVRxj5h6n7o","download":"http://lvh.me:3000/photos/OVRxj5h6n7o/download"}},{"id":"KGRZFB1U25I","urls":{"regular":"https://ununsplash.imgix.net/photo-1433093833773-10e0c78a401b?q=75\u0026fm=jpg\u0026w=1080\u0026fit=max\u0026s=38e144963a4a1dfc6c68692550bf9b04","small":"https://ununsplash.imgix.net/photo-1433093833773-10e0c78a401b?q=75\u0026fm=jpg\u0026w=400\u0026fit=max\u0026s=476ab6101647ac45786915537b199327","thumb":"https://ununsplash.imgix.net/photo-1433093833773-10e0c78a401b?q=75\u0026fm=jpg\u0026w=200\u0026fit=max\u0026s=315b37cf4dee17879d9016f6b026c826"},"links":{"self":"http://api.lvh.me:3000/photos/KGRZFB1U25I","html":"http://lvh.me:3000/photos/KGRZFB1U25I","download":"http://lvh.me:3000/photos/KGRZFB1U25I/download"}},{"id":"8CCQ-55MTUw","urls":{"regular":"https://unsplash.imgix.net/photo-1433087870301-b85d84efc18a?q=75\u0026fm=jpg\u0026w=1080\u0026fit=max\u0026s=72ba2c921b8d50bda6fd64a4a8310ef8","small":"https://unsplash.imgix.net/photo-1433087870301-b85d84efc18a?q=75\u0026fm=jpg\u0026w=400\u0026fit=max\u0026s=55a324883b24065a21c4cdc0c8877d90","thumb":"https://unsplash.imgix.net/photo-1433087870301-b85d84efc18a?q=75\u0026fm=jpg\u0026w=200\u0026fit=max\u0026s=a79f21313ff22e1532ee0f4203a9603c"},"links":{"self":"http://api.lvh.me:3000/photos/8CCQ-55MTUw","html":"http://lvh.me:3000/photos/8CCQ-55MTUw","download":"http://lvh.me:3000/photos/8CCQ-55MTUw/download"}},{"id":"0Ebrm0d-G_E","urls":{"regular":"https://unsplash.imgix.net/photo-1433087639215-37846ea63501?q=75\u0026fm=jpg\u0026w=1080\u0026fit=max\u0026s=4452fdb5f2afef59a7678c27bb6a86d5","small":"https://unsplash.imgix.net/photo-1433087639215-37846ea63501?q=75\u0026fm=jpg\u0026w=400\u0026fit=max\u0026s=9bd804a341ae0b704d453288543f0c0f","thumb":"https://unsplash.imgix.net/photo-1433087639215-37846ea63501?q=75\u0026fm=jpg\u0026w=200\u0026fit=max\u0026s=95450ed3f84177040e7395b8d324cbe6"},"links":{"self":"http://api.lvh.me:3000/photos/0Ebrm0d-G_E","html":"http://lvh.me:3000/photos/0Ebrm0d-G_E","download":"http://lvh.me:3000/photos/0Ebrm0d-G_E/download"}}]'
+    http_version:
+  recorded_at: Mon, 22 Jun 2015 19:34:34 GMT
+- request:
+    method: get
+    uri: http://api.lvh.me:3000/photos/?order_by=oldest&page=1&per_page=6
     body:
       encoding: US-ASCII
       string: ''
