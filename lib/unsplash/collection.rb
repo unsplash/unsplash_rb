@@ -26,6 +26,20 @@ module Unsplash # :nodoc:
         list.map { |data| Unsplash::Collection.new(data) }
       end
 
+
+      # Get a list of all featured collections.
+      # @param page [Integer] Which page of results to return.
+      # @param per_page [Integer] The number of results per page. (default: 10, maximum: 30)
+      # @return [Array] A single page of the +Unsplash::Collection+ list.      
+      def featured(page = 1, per_page = 10)
+        params = {
+          page:     page,
+          per_page: per_page
+        }
+        list = JSON.parse(connection.get("/collections/featured", params).body)
+        list.map { |data| Unsplash::Collection.new(data) }
+      end
+
       # Get a list of all curated collections.
       # @param page [Integer] Which page of search results to return.
       # @param per_page [Integer] The number of search results per page. (default: 10, maximum: 30)

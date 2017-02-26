@@ -102,7 +102,17 @@ describe Unsplash::Collection do
 
       expect(@collections.map(&:user)).to all (be_an Unsplash::User)
     end
+  end
 
+  describe "#featured" do
+    it "reutrns an array of featured collections" do
+      VCR.use_cassette("collections") do
+        @collections = Unsplash::Collection.featured(1, 3)
+      end
+
+      expect(@collections).to be_an Array
+      expect(@collections.size).to eq 3
+    end
   end
 
   describe "#photos" do
