@@ -21,6 +21,12 @@ module Unsplash # :nodoc:
       end
     end
 
+    # Raw JSON as returned by Unsplash API.
+    # @return [Hash] json
+    def to_h
+      @attributes.to_h
+    end
+
     # @private
     def method_missing(method, *args, &block)
       attribute = @attributes.send(method, *args, &block)

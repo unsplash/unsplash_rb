@@ -49,7 +49,7 @@ http_interactions:
       string: '{"id":201,"title":"Explore Iceland","published_at":"2015-12-30T16:56:29-05:00","curated":false,"cover_photo":{"id":"uO4Au3LrCtk","width":3000,"height":2000,"color":"#565B63","likes":0,"liked_by_user":false,"user":{"id":"46rKBE69V4I","username":"andersjilden","name":"Anders
         Jildén","profile_image":{"small":"https://images.unsplash.com/profile-1444219778067-a301067fdc5e?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=32\u0026w=32\u0026s=d78a65a5e29c45cdb790895d0587bafe","medium":"https://images.unsplash.com/profile-1444219778067-a301067fdc5e?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=64\u0026w=64\u0026s=e041071e984375a0f2ed01d340a3aa00","large":"https://images.unsplash.com/profile-1444219778067-a301067fdc5e?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=128\u0026w=128\u0026s=8c6a75b3379366defac8399dc8f30221"},"links":{"self":"http://api.lvh.me:3000/users/andersjilden","html":"http://lvh.me:3000/andersjilden","photos":"http://api.lvh.me:3000/users/andersjilden/photos","likes":"http://api.lvh.me:3000/users/andersjilden/likes"}},"urls":{"raw":"https://images.unsplash.com/photo-1445503058969-7ae8721cd8c1","full":"https://images.unsplash.com/photo-1445503058969-7ae8721cd8c1?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026s=75f81eef4dddc6d740a6903e0bef4dab","regular":"https://images.unsplash.com/photo-1445503058969-7ae8721cd8c1?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026w=1080\u0026fit=max\u0026s=7e069062d4af1ffc5f5a80107cf4302b","small":"https://images.unsplash.com/photo-1445503058969-7ae8721cd8c1?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026w=400\u0026fit=max\u0026s=ed45724e0b45053f46eccf9f6927cbd5","thumb":"https://images.unsplash.com/photo-1445503058969-7ae8721cd8c1?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026w=200\u0026fit=max\u0026s=40cf57127d49d8114fbc8bb22254a3ce"},"categories":[{"id":4,"title":"Nature","photo_count":31454,"links":{"self":"http://api.lvh.me:3000/categories/4","photos":"http://api.lvh.me:3000/categories/4/photos"}}],"links":{"self":"http://api.lvh.me:3000/photos/uO4Au3LrCtk","html":"http://lvh.me:3000/photos/uO4Au3LrCtk","download":"http://lvh.me:3000/photos/uO4Au3LrCtk/download"}},"user":{"id":"QV5S1rtoUJ0","username":"unsplash","name":"Unsplash","bio":"Make
         something awesome.","profile_image":{"small":"https://images.unsplash.com/profile-1441945026710-480e4372a5b5?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=32\u0026w=32\u0026s=15dd677c95172edff29e9b7a3be052c1","medium":"https://images.unsplash.com/profile-1441945026710-480e4372a5b5?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=64\u0026w=64\u0026s=7ae2265df9881ef927465a3215b4de94","large":"https://images.unsplash.com/profile-1441945026710-480e4372a5b5?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=128\u0026w=128\u0026s=96b07acf064bb8ba33e257c9391b440a"},"links":{"self":"http://api.lvh.me:3000/users/unsplash","html":"http://lvh.me:3000/unsplash","photos":"http://api.lvh.me:3000/users/unsplash/photos","likes":"http://api.lvh.me:3000/users/unsplash/likes"}},"links":{"self":"http://api.lvh.me:3000/collections/201","html":"http://lvh.me:3000/collections/201","photos":"http://api.lvh.me:3000/collections/201/photos"}}'
-    http_version: 
+    http_version:
   recorded_at: Mon, 11 Apr 2016 17:54:49 GMT
 - request:
     method: get
@@ -93,7 +93,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"errors":["Couldn''t find Collection with ''id''=1234"]}'
-    http_version: 
+    http_version:
   recorded_at: Mon, 11 Apr 2016 17:54:49 GMT
 - request:
     method: get
@@ -144,7 +144,7 @@ http_interactions:
       string: '{"id":90,"title":"Collection #90","published_at":"2015-11-01T12:31:45-05:00","curated":true,"cover_photo":{"id":"94sVs1D3Vvw","width":5184,"height":3456,"color":"#8A94A0","likes":0,"liked_by_user":false,"user":{"id":"mhySD134K-c","username":"caitlinwynne","name":"Caitlin
         Wynne","profile_image":{"small":"https://images.unsplash.com/placeholder-avatars/extra-large.jpg?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=32\u0026w=32\u0026s=46caf91cf1f90b8b5ab6621512f102a8","medium":"https://images.unsplash.com/placeholder-avatars/extra-large.jpg?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=64\u0026w=64\u0026s=a8f67c4239956417401bf39b50c928cb","large":"https://images.unsplash.com/placeholder-avatars/extra-large.jpg?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=128\u0026w=128\u0026s=ec3c56c2ab6baef5d748cb58ccbc0efe"},"links":{"self":"http://api.lvh.me:3000/users/caitlinwynne","html":"http://lvh.me:3000/caitlinwynne","photos":"http://api.lvh.me:3000/users/caitlinwynne/photos","likes":"http://api.lvh.me:3000/users/caitlinwynne/likes"}},"urls":{"raw":"https://images.unsplash.com/photo-1432057322224-8916b9ed202a","full":"https://images.unsplash.com/photo-1432057322224-8916b9ed202a?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026s=96ba854e20bae187d58f5a150ef331f6","regular":"https://images.unsplash.com/photo-1432057322224-8916b9ed202a?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026w=1080\u0026fit=max\u0026s=e437633f95d53e38fa65bf88985594e9","small":"https://images.unsplash.com/photo-1432057322224-8916b9ed202a?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026w=400\u0026fit=max\u0026s=0baf3c50b6c1b6ebbbdf7a422fa7865f","thumb":"https://images.unsplash.com/photo-1432057322224-8916b9ed202a?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026w=200\u0026fit=max\u0026s=da648ac8e40643a18a891068104512f2"},"categories":[{"id":4,"title":"Nature","photo_count":31454,"links":{"self":"http://api.lvh.me:3000/categories/4","photos":"http://api.lvh.me:3000/categories/4/photos"}}],"links":{"self":"http://api.lvh.me:3000/photos/94sVs1D3Vvw","html":"http://lvh.me:3000/photos/94sVs1D3Vvw","download":"http://lvh.me:3000/photos/94sVs1D3Vvw/download"}},"user":{"id":"nflSO2s8CFQ","username":"canopy","name":"Canopy","bio":"The
         best products on Amazon, curated by a community with great taste.","profile_image":{"small":"https://images.unsplash.com/profile-1443733841315-fe8c2ada4b69?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=32\u0026w=32\u0026s=346c34ba775bf49a12c142d83b8bb1d9","medium":"https://images.unsplash.com/profile-1443733841315-fe8c2ada4b69?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=64\u0026w=64\u0026s=e7a41de83fd3185e102e293535418412","large":"https://images.unsplash.com/profile-1443733841315-fe8c2ada4b69?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=128\u0026w=128\u0026s=0c1953284f3c778492917b252624e500"},"links":{"self":"http://api.lvh.me:3000/users/canopy","html":"http://lvh.me:3000/canopy","photos":"http://api.lvh.me:3000/users/canopy/photos","likes":"http://api.lvh.me:3000/users/canopy/likes"}},"links":{"self":"http://api.lvh.me:3000/collections/curated/90","html":"http://lvh.me:3000/collections/curated/90","photos":"http://api.lvh.me:3000/collections/curated/90/photos","download":"https://download.unsplash.com/zip-archives/96-archive.zip"}}'
-    http_version: 
+    http_version:
   recorded_at: Mon, 11 Apr 2016 17:54:49 GMT
 - request:
     method: post
@@ -201,7 +201,65 @@ http_interactions:
       encoding: UTF-8
       string: '{"id":303,"title":"Ultimate Faves","published_at":"2016-04-11T13:54:49-04:00","curated":false,"cover_photo":null,"user":{"id":"OuzxrCITLj8","username":"aaron","name":"Aaron
         K","bio":"Buildin'' Unsplash.","profile_image":{"small":"https://images.unsplash.com/profile-1444840959767-6286d046f7f2?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=32\u0026w=32\u0026s=73424ab49d29f06ff9479f8b9a2f88e5","medium":"https://images.unsplash.com/profile-1444840959767-6286d046f7f2?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=64\u0026w=64\u0026s=ecabb6576352ac5cf4bb061fb469c58c","large":"https://images.unsplash.com/profile-1444840959767-6286d046f7f2?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=128\u0026w=128\u0026s=1f9637444f57af3a471d40bf61e6d784"},"links":{"self":"http://api.lvh.me:3000/users/aaron","html":"http://lvh.me:3000/aaron","photos":"http://api.lvh.me:3000/users/aaron/photos","likes":"http://api.lvh.me:3000/users/aaron/likes"}},"links":{"self":"http://api.lvh.me:3000/collections/303","html":"http://lvh.me:3000/collections/303","photos":"http://api.lvh.me:3000/collections/303/photos"}}'
-    http_version: 
+    http_version:
+  recorded_at: Mon, 11 Apr 2016 17:54:49 GMT
+- request:
+    method: get
+    uri: http://api.lvh.me:3000/collections/featured?page=1&per_page=3
+    body:
+      encoding: UTF-8
+      string: description=&private=true&title=Ultimate+Faves
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Accept-Version:
+      - v1
+      Authorization:
+      - Bearer 69cca388c56e64fc2ee1c9f7cfb0dcec1bf1b384957b61c9ec6764777b98554e
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      Access-Control-Allow-Headers:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Link,X-Total,X-Per-Page,X-RateLimit-Limit,X-RateLimit-Remaining
+      Content-Type:
+      - application/json
+      Etag:
+      - W/"16796d23e28efadec93347e92f14f57e"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - fdbd9e8d-936d-4a05-9e94-81cda0b4aea4
+      X-Ratelimit-Limit:
+      - '20000'
+      X-Ratelimit-Remaining:
+      - '19998'
+      X-Runtime:
+      - '0.043740'
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      Content-Length:
+      - '1176'
+    body:
+      encoding: UTF-8
+      string: '[{"id":297,"title":"Sunsets","published_at":"2016-01-27T22:02:11-05:00","curated":false,"cover_photo":{"id":"W_9mOGUwR08","width":2173,"height":1449,"color":"#7F5D4C","likes":0,"liked_by_user":false,"user":{"id":"GlLG98iOHP8","username":"todddesantis","name":"Toddn        DeSantis","profile_image":{"small":"https://images.unsplash.com/profile-1443827319664-a9471e1b2f48?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=32&w=32&s=998ebe7fe1badd592772bef5d54753d8","medium":"https://images.unsplash.com/profile-1443827319664-a9471e1b2f48?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=64&w=64&s=8b80c98aae865dbd3827f9ed97b3acf0","large":"https://images.unsplash.com/profile-1443827319664-a9471e1b2f48?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=128&w=128&s=f8895bec671d47908c2de3d2da93b31f"},"links":{"self":"http://api.lvh.me:3000/users/todddesantis","html":"http://lvh.me:3000/todddesantis","photos":"http://api.lvh.me:3000/users/todddesantis/photos","likes":"http://api.lvh.me:3000/users/todddesantis/likes"}},"urls":{"raw":"https://images.unsplash.com/photo-1443827423664-eac70d49dd0d","full":"https://images.unsplash.com/photo-1443827423664-eac70d49dd0d?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=aca070f52c6e1e056b9588b16aeee799","regular":"https://images.unsplash.com/photo-1443827423664-eac70d49dd0d?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1080&fit=max&s=6ae60548b252d13b021f1a62eac8012e","small":"https://images.unsplash.com/photo-1443827423664-eac70d49dd0d?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=400&fit=max&s=ed8b2de57c753d096a46b32faf92e4cc","thumb":"https://images.unsplash.com/photo-1443827423664-eac70d49dd0d?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=200&fit=max&s=fb2ae11ef22382e75c29cca4816cb8a0"},"categories":[{"id":2,"title":"Buildings","photo_count":12192,"links":{"self":"http://api.lvh.me:3000/categories/2","photos":"http://api.lvh.me:3000/categories/2/photos"}},{"id":4,"title":"Nature","photo_count":31454,"links":{"self":"http://api.lvh.me:3000/categories/4","photos":"http://api.lvh.me:3000/categories/4/photos"}}],"links":{"self":"http://api.lvh.me:3000/photos/W_9mOGUwR08","html":"http://lvh.me:3000/photos/W_9mOGUwR08","download":"http://lvh.me:3000/photos/W_9mOGUwR08/download"}},"user":{"id":"3UBsTwgB73o","username":"hudako","name":"Andyn        Hawkes","bio":"","profile_image":{"small":"https://images.unsplash.com/placeholder-avatars/extra-large.jpg?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=32&w=32&s=46caf91cf1f90b8b5ab6621512f102a8","medium":"https://images.unsplash.com/placeholder-avatars/extra-large.jpg?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=64&w=64&s=a8f67c4239956417401bf39b50c928cb","large":"https://images.unsplash.com/placeholder-avatars/extra-large.jpg?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=128&w=128&s=ec3c56c2ab6baef5d748cb58ccbc0efe"},"links":{"self":"http://api.lvh.me:3000/users/hudako","html":"http://lvh.me:3000/hudako","photos":"http://api.lvh.me:3000/users/hudako/photos","likes":"http://api.lvh.me:3000/users/hudako/likes"}},"links":{"self":"http://api.lvh.me:3000/collections/297","html":"http://lvh.me:3000/collections/297","photos":"http://api.lvh.me:3000/collections/297/photos"}},
+        {"id":296,"title":"In        like a man with a beard.","published_at":"2016-01-27T18:47:13-05:00","curated":false,"cover_photo":{"id":"C-mxLOk6ANs","width":5616,"height":3744,"color":"#E4C6A2","likes":0,"liked_by_user":false,"user":{"id":"xlt1-UPW7FE","username":"lionsdenpro","name":"Gregn        Raines","profile_image":{"small":"https://images.unsplash.com/profile-1449546653256-0faea3006d34?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=32&w=32&s=7247b2cbb608a3b9e84d6747d7bacc54","medium":"https://images.unsplash.com/profile-1449546653256-0faea3006d34?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=64&w=64&s=c24bdf0c66b1656d6710ba1a301a12ef","large":"https://images.unsplash.com/profile-1449546653256-0faea3006d34?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=128&w=128&s=27988e65b7becabd4399ab794c687b02"},"links":{"self":"http://api.lvh.me:3000/users/lionsdenpro","html":"http://lvh.me:3000/lionsdenpro","photos":"http://api.lvh.me:3000/users/lionsdenpro/photos","likes":"http://api.lvh.me:3000/users/lionsdenpro/likes"}},"urls":{"raw":"https://images.unsplash.com/photo-1449614115178-cb924f730780","full":"https://images.unsplash.com/photo-1449614115178-cb924f730780?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=11d98e91b325b99cddf45d99c466f8cf","regular":"https://images.unsplash.com/photo-1449614115178-cb924f730780?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1080&fit=max&s=f5a78f2ba1546ee36997feccabc6dd83","small":"https://images.unsplash.com/photo-1449614115178-cb924f730780?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=400&fit=max&s=04aca088365a3eb59be550cebf7c8ae9","thumb":"https://images.unsplash.com/photo-1449614115178-cb924f730780?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=200&fit=max&s=f387ca147d076247d6f89c47a2ae17c6"},"categories":[{"id":4,"title":"Nature","photo_count":31454,"links":{"self":"http://api.lvh.me:3000/categories/4","photos":"http://api.lvh.me:3000/categories/4/photos"}},{"id":6,"title":"People","photo_count":9844,"links":{"self":"http://api.lvh.me:3000/categories/6","photos":"http://api.lvh.me:3000/categories/6/photos"}}],"links":{"self":"http://api.lvh.me:3000/photos/C-mxLOk6ANs","html":"http://lvh.me:3000/photos/C-mxLOk6ANs","download":"http://lvh.me:3000/photos/C-mxLOk6ANs/download"}},"user":{"id":"IFcEhJqem0Q","username":"fableandfolk","name":"Annien        Spratt","bio":"","profile_image":{"small":"https://images.unsplash.com/profile-1450003783594-db47c765cea3?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=32&w=32&s=9537967d3f49f7c29dbf5fddc0234f25","medium":"https://images.unsplash.com/profile-1450003783594-db47c765cea3?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=64&w=64&s=6409c86d3fc07729c4de82e5d83f8894","large":"https://images.unsplash.com/profile-1450003783594-db47c765cea3?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=128&w=128&s=43e0fdcd1757711df39538f690d0f46e"},"links":{"self":"http://api.lvh.me:3000/users/fableandfolk","html":"http://lvh.me:3000/fableandfolk","photos":"http://api.lvh.me:3000/users/fableandfolk/photos","likes":"http://api.lvh.me:3000/users/fableandfolk/likes"}},"links":{"self":"http://api.lvh.me:3000/collections/296","html":"http://lvh.me:3000/collections/296","photos":"http://api.lvh.me:3000/collections/296/photos"}},
+        {"id":295,"title":"Cabinn        life","published_at":"2016-01-27T17:06:54-05:00","curated":false,"cover_photo":{"id":"FKJgBUDoVC0","width":3000,"height":2000,"color":"#E6F1F8","likes":0,"liked_by_user":false,"user":{"id":"WuyQqnO5cEY","username":"olivier_twwli","name":"Oliviern        Guillard","profile_image":{"small":"https://images.unsplash.com/profile-1449158203825-f49792f065e8?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=32&w=32&s=bc3a3b23014aa93c2a1bb612bae8b9f5","medium":"https://images.unsplash.com/profile-1449158203825-f49792f065e8?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=64&w=64&s=d24a17a7a5eb3bb5447b8bd712458afd","large":"https://images.unsplash.com/profile-1449158203825-f49792f065e8?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=128&w=128&s=53ebae2a88d18233c28bfb8eb9aac94a"},"links":{"self":"http://api.lvh.me:3000/users/olivier_twwli","html":"http://lvh.me:3000/olivier_twwli","photos":"http://api.lvh.me:3000/users/olivier_twwli/photos","likes":"http://api.lvh.me:3000/users/olivier_twwli/likes"}},"urls":{"raw":"https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8","full":"https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=fc295d0c03d18059e16a82c8de904d83","regular":"https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1080&fit=max&s=dbb6d5543e6ed7302de1d28d29e850c2","small":"https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=400&fit=max&s=d2bac00f3162a253c3450323f01fef70","thumb":"https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=200&fit=max&s=4293da3ac086133c4740ad357fc852a3"},"categories":[{"id":2,"title":"Buildings","photo_count":12192,"links":{"self":"http://api.lvh.me:3000/categories/2","photos":"http://api.lvh.me:3000/categories/2/photos"}},{"id":4,"title":"Nature","photo_count":31454,"links":{"self":"http://api.lvh.me:3000/categories/4","photos":"http://api.lvh.me:3000/categories/4/photos"}}],"links":{"self":"http://api.lvh.me:3000/photos/FKJgBUDoVC0","html":"http://lvh.me:3000/photos/FKJgBUDoVC0","download":"http://lvh.me:3000/photos/FKJgBUDoVC0/download"}},"user":{"id":"ytzhVCIw5yc","username":"gemmagarner","name":"Gemman        Garner","bio":"Web designer, illustrator, blogger and crafter.","profile_image":{"small":"https://images.unsplash.com/profile-1453809082466-f34ff20e24ef?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=32&w=32&s=8c2f60a286ec41f58a41532f665df820","medium":"https://images.unsplash.com/profile-1453809082466-f34ff20e24ef?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=64&w=64&s=93b6892c25e8c2c235dda00581df570d","large":"https://images.unsplash.com/profile-1453809082466-f34ff20e24ef?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=128&w=128&s=10265039c25e901244c22047392b84f6"},"links":{"self":"http://api.lvh.me:3000/users/gemmagarner","html":"http://lvh.me:3000/gemmagarner","photos":"http://api.lvh.me:3000/users/gemmagarner/photos","likes":"http://api.lvh.me:3000/users/gemmagarner/likes"}},"links":{"self":"http://api.lvh.me:3000/collections/295","html":"http://lvh.me:3000/collections/295","photos":"http://api.lvh.me:3000/collections/295/photos"}}]'
+    http_version:
   recorded_at: Mon, 11 Apr 2016 17:54:49 GMT
 - request:
     method: get
@@ -287,11 +345,11 @@ http_interactions:
         the places you''ll go!","published_at":"2016-01-27T09:00:27-05:00","curated":false,"cover_photo":{"id":"mvNRuUKs6NA","width":5184,"height":3456,"color":"#606972","likes":0,"liked_by_user":false,"user":{"id":"yTSMIg77VO0","username":"johnmarkarnold","name":"John
         Mark Arnold","profile_image":{"small":"https://images.unsplash.com/profile-1443171385119-bbffaf38cd5a?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=32\u0026w=32\u0026s=0af042253a525843c5bfc1f5723d21bf","medium":"https://images.unsplash.com/profile-1443171385119-bbffaf38cd5a?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=64\u0026w=64\u0026s=60600e2614229bc388d92d999f209c4b","large":"https://images.unsplash.com/profile-1443171385119-bbffaf38cd5a?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=128\u0026w=128\u0026s=63e8c80f749a2455f3ca77b985ce95ad"},"links":{"self":"http://api.lvh.me:3000/users/johnmarkarnold","html":"http://lvh.me:3000/johnmarkarnold","photos":"http://api.lvh.me:3000/users/johnmarkarnold/photos","likes":"http://api.lvh.me:3000/users/johnmarkarnold/likes"}},"urls":{"raw":"https://images.unsplash.com/photo-1446475157725-e6dada23994e","full":"https://images.unsplash.com/photo-1446475157725-e6dada23994e?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026s=04bfab6db09bdbf70b1796477d4ecb39","regular":"https://images.unsplash.com/photo-1446475157725-e6dada23994e?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026w=1080\u0026fit=max\u0026s=65aed83e459a454b9289489364507e2a","small":"https://images.unsplash.com/photo-1446475157725-e6dada23994e?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026w=400\u0026fit=max\u0026s=14332db770f38eed2da781150cc12a89","thumb":"https://images.unsplash.com/photo-1446475157725-e6dada23994e?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026w=200\u0026fit=max\u0026s=80a8d8689d2e245c143865ad07e2a5f7"},"categories":[{"id":4,"title":"Nature","photo_count":31454,"links":{"self":"http://api.lvh.me:3000/categories/4","photos":"http://api.lvh.me:3000/categories/4/photos"}},{"id":6,"title":"People","photo_count":9844,"links":{"self":"http://api.lvh.me:3000/categories/6","photos":"http://api.lvh.me:3000/categories/6/photos"}}],"links":{"self":"http://api.lvh.me:3000/photos/mvNRuUKs6NA","html":"http://lvh.me:3000/photos/mvNRuUKs6NA","download":"http://lvh.me:3000/photos/mvNRuUKs6NA/download"}},"user":{"id":"IFcEhJqem0Q","username":"fableandfolk","name":"Annie
         Spratt","bio":"","profile_image":{"small":"https://images.unsplash.com/profile-1450003783594-db47c765cea3?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=32\u0026w=32\u0026s=9537967d3f49f7c29dbf5fddc0234f25","medium":"https://images.unsplash.com/profile-1450003783594-db47c765cea3?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=64\u0026w=64\u0026s=6409c86d3fc07729c4de82e5d83f8894","large":"https://images.unsplash.com/profile-1450003783594-db47c765cea3?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=128\u0026w=128\u0026s=43e0fdcd1757711df39538f690d0f46e"},"links":{"self":"http://api.lvh.me:3000/users/fableandfolk","html":"http://lvh.me:3000/fableandfolk","photos":"http://api.lvh.me:3000/users/fableandfolk/photos","likes":"http://api.lvh.me:3000/users/fableandfolk/likes"}},"links":{"self":"http://api.lvh.me:3000/collections/279","html":"http://lvh.me:3000/collections/279","photos":"http://api.lvh.me:3000/collections/279/photos"}}]'
-    http_version: 
+    http_version:
   recorded_at: Mon, 11 Apr 2016 17:54:50 GMT
 - request:
     method: get
-    uri: http://api.lvh.me:3000/collections/201/photos
+    uri: http://api.lvh.me:3000/collections/201/photos?page=1&per_page=10
     body:
       encoding: US-ASCII
       string: ''
@@ -353,7 +411,7 @@ http_interactions:
         Gialanella","profile_image":{"small":"https://images.unsplash.com/profile-1447756005042-88fba16e8752?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=32\u0026w=32\u0026s=2c8686b14af84b5de470526c14e434ed","medium":"https://images.unsplash.com/profile-1447756005042-88fba16e8752?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=64\u0026w=64\u0026s=f3b1c247b2a451988ad16703d8c0bdfd","large":"https://images.unsplash.com/profile-1447756005042-88fba16e8752?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=128\u0026w=128\u0026s=1a72e723504ea2069fa7732c915f83ea"},"links":{"self":"http://api.lvh.me:3000/users/dylangiala","html":"http://lvh.me:3000/dylangiala","photos":"http://api.lvh.me:3000/users/dylangiala/photos","likes":"http://api.lvh.me:3000/users/dylangiala/likes"}},"current_user_collections":[],"urls":{"raw":"https://images.unsplash.com/photo-1447757052757-5391690dca67","full":"https://images.unsplash.com/photo-1447757052757-5391690dca67?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026s=4ae43dbb5ed892387ed7bfbde0140abf","regular":"https://images.unsplash.com/photo-1447757052757-5391690dca67?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026w=1080\u0026fit=max\u0026s=ab2d984e59535b166cc5165600027995","small":"https://images.unsplash.com/photo-1447757052757-5391690dca67?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026w=400\u0026fit=max\u0026s=e6a13848e8560df9699c1134591255a7","thumb":"https://images.unsplash.com/photo-1447757052757-5391690dca67?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026w=200\u0026fit=max\u0026s=81747586d5127432b3487018a8285369"},"categories":[{"id":4,"title":"Nature","photo_count":31454,"links":{"self":"http://api.lvh.me:3000/categories/4","photos":"http://api.lvh.me:3000/categories/4/photos"}}],"links":{"self":"http://api.lvh.me:3000/photos/96KUGPHRbUU","html":"http://lvh.me:3000/photos/96KUGPHRbUU","download":"http://lvh.me:3000/photos/96KUGPHRbUU/download"}},{"id":"w-ck6df_-jI","width":1920,"height":1280,"color":"#908D7C","likes":0,"liked_by_user":false,"user":{"id":"4o_AKip-8tY","username":"dylangiala","name":"Dylan
         Gialanella","profile_image":{"small":"https://images.unsplash.com/profile-1447756005042-88fba16e8752?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=32\u0026w=32\u0026s=2c8686b14af84b5de470526c14e434ed","medium":"https://images.unsplash.com/profile-1447756005042-88fba16e8752?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=64\u0026w=64\u0026s=f3b1c247b2a451988ad16703d8c0bdfd","large":"https://images.unsplash.com/profile-1447756005042-88fba16e8752?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=128\u0026w=128\u0026s=1a72e723504ea2069fa7732c915f83ea"},"links":{"self":"http://api.lvh.me:3000/users/dylangiala","html":"http://lvh.me:3000/dylangiala","photos":"http://api.lvh.me:3000/users/dylangiala/photos","likes":"http://api.lvh.me:3000/users/dylangiala/likes"}},"current_user_collections":[],"urls":{"raw":"https://images.unsplash.com/photo-1447756905006-7f41fc2a2bc9","full":"https://images.unsplash.com/photo-1447756905006-7f41fc2a2bc9?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026s=098fc01651f63bc7b82ea2e22f3b5b43","regular":"https://images.unsplash.com/photo-1447756905006-7f41fc2a2bc9?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026w=1080\u0026fit=max\u0026s=e6e509643f3f24d8cf496febb523db9b","small":"https://images.unsplash.com/photo-1447756905006-7f41fc2a2bc9?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026w=400\u0026fit=max\u0026s=b8f644a46f31173d16e3b5197e7643f8","thumb":"https://images.unsplash.com/photo-1447756905006-7f41fc2a2bc9?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026w=200\u0026fit=max\u0026s=93d85b020b7f67c1305a2f3d6df561d4"},"categories":[{"id":4,"title":"Nature","photo_count":31454,"links":{"self":"http://api.lvh.me:3000/categories/4","photos":"http://api.lvh.me:3000/categories/4/photos"}}],"links":{"self":"http://api.lvh.me:3000/photos/w-ck6df_-jI","html":"http://lvh.me:3000/photos/w-ck6df_-jI","download":"http://lvh.me:3000/photos/w-ck6df_-jI/download"}},{"id":"hVanQeSqDNo","width":1920,"height":1280,"color":"#939493","likes":0,"liked_by_user":false,"user":{"id":"4o_AKip-8tY","username":"dylangiala","name":"Dylan
         Gialanella","profile_image":{"small":"https://images.unsplash.com/profile-1447756005042-88fba16e8752?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=32\u0026w=32\u0026s=2c8686b14af84b5de470526c14e434ed","medium":"https://images.unsplash.com/profile-1447756005042-88fba16e8752?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=64\u0026w=64\u0026s=f3b1c247b2a451988ad16703d8c0bdfd","large":"https://images.unsplash.com/profile-1447756005042-88fba16e8752?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=128\u0026w=128\u0026s=1a72e723504ea2069fa7732c915f83ea"},"links":{"self":"http://api.lvh.me:3000/users/dylangiala","html":"http://lvh.me:3000/dylangiala","photos":"http://api.lvh.me:3000/users/dylangiala/photos","likes":"http://api.lvh.me:3000/users/dylangiala/likes"}},"current_user_collections":[],"urls":{"raw":"https://images.unsplash.com/photo-1447756825380-8ba1f7ed3b22","full":"https://images.unsplash.com/photo-1447756825380-8ba1f7ed3b22?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026s=e890efcb2d54f2a57ffc3db8bc187263","regular":"https://images.unsplash.com/photo-1447756825380-8ba1f7ed3b22?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026w=1080\u0026fit=max\u0026s=83d32f24bdac78f11c3b3a96518dec09","small":"https://images.unsplash.com/photo-1447756825380-8ba1f7ed3b22?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026w=400\u0026fit=max\u0026s=688fa8b43c653bda22a5e9aec30f66b6","thumb":"https://images.unsplash.com/photo-1447756825380-8ba1f7ed3b22?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026w=200\u0026fit=max\u0026s=f64ecaccfb8f03c89cab72b92a3f9bbf"},"categories":[{"id":4,"title":"Nature","photo_count":31454,"links":{"self":"http://api.lvh.me:3000/categories/4","photos":"http://api.lvh.me:3000/categories/4/photos"}}],"links":{"self":"http://api.lvh.me:3000/photos/hVanQeSqDNo","html":"http://lvh.me:3000/photos/hVanQeSqDNo","download":"http://lvh.me:3000/photos/hVanQeSqDNo/download"}}]'
-    http_version: 
+    http_version:
   recorded_at: Mon, 11 Apr 2016 17:54:50 GMT
 - request:
     method: post
@@ -397,7 +455,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"errors":["OAuth error: The access token is invalid"]}'
-    http_version: 
+    http_version:
   recorded_at: Mon, 11 Apr 2016 18:00:17 GMT
 - request:
     method: get
@@ -455,7 +513,7 @@ http_interactions:
       encoding: UTF-8
       string: '{"id":303,"title":"Updated Title","published_at":"2016-04-11T13:54:49-04:00","curated":false,"cover_photo":null,"user":{"id":"OuzxrCITLj8","username":"aaron","name":"Aaron
         K","bio":"Buildin'' Unsplash.","profile_image":{"small":"https://images.unsplash.com/profile-1444840959767-6286d046f7f2?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=32\u0026w=32\u0026s=73424ab49d29f06ff9479f8b9a2f88e5","medium":"https://images.unsplash.com/profile-1444840959767-6286d046f7f2?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=64\u0026w=64\u0026s=ecabb6576352ac5cf4bb061fb469c58c","large":"https://images.unsplash.com/profile-1444840959767-6286d046f7f2?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=128\u0026w=128\u0026s=1f9637444f57af3a471d40bf61e6d784"},"links":{"self":"http://api.lvh.me:3000/users/aaron","html":"http://lvh.me:3000/aaron","photos":"http://api.lvh.me:3000/users/aaron/photos","likes":"http://api.lvh.me:3000/users/aaron/likes"}},"links":{"self":"http://api.lvh.me:3000/collections/303","html":"http://lvh.me:3000/collections/303","photos":"http://api.lvh.me:3000/collections/303/photos"}}'
-    http_version: 
+    http_version:
   recorded_at: Mon, 11 Apr 2016 18:45:36 GMT
 - request:
     method: put
@@ -515,7 +573,7 @@ http_interactions:
       encoding: UTF-8
       string: '{"id":303,"title":"Best Picturez","published_at":"2016-04-11T13:54:49-04:00","curated":false,"cover_photo":null,"user":{"id":"OuzxrCITLj8","username":"aaron","name":"Aaron
         K","bio":"Buildin'' Unsplash.","profile_image":{"small":"https://images.unsplash.com/profile-1444840959767-6286d046f7f2?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=32\u0026w=32\u0026s=73424ab49d29f06ff9479f8b9a2f88e5","medium":"https://images.unsplash.com/profile-1444840959767-6286d046f7f2?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=64\u0026w=64\u0026s=ecabb6576352ac5cf4bb061fb469c58c","large":"https://images.unsplash.com/profile-1444840959767-6286d046f7f2?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=128\u0026w=128\u0026s=1f9637444f57af3a471d40bf61e6d784"},"links":{"self":"http://api.lvh.me:3000/users/aaron","html":"http://lvh.me:3000/aaron","photos":"http://api.lvh.me:3000/users/aaron/photos","likes":"http://api.lvh.me:3000/users/aaron/likes"}},"links":{"self":"http://api.lvh.me:3000/collections/303","html":"http://lvh.me:3000/collections/303","photos":"http://api.lvh.me:3000/collections/303/photos"}}'
-    http_version: 
+    http_version:
   recorded_at: Mon, 11 Apr 2016 18:45:36 GMT
 - request:
     method: put
@@ -575,7 +633,7 @@ http_interactions:
       encoding: UTF-8
       string: '{"id":303,"title":"Penultimate Faves","published_at":"2016-04-11T13:54:49-04:00","curated":false,"cover_photo":null,"user":{"id":"OuzxrCITLj8","username":"aaron","name":"Aaron
         K","bio":"Buildin'' Unsplash.","profile_image":{"small":"https://images.unsplash.com/profile-1444840959767-6286d046f7f2?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=32\u0026w=32\u0026s=73424ab49d29f06ff9479f8b9a2f88e5","medium":"https://images.unsplash.com/profile-1444840959767-6286d046f7f2?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=64\u0026w=64\u0026s=ecabb6576352ac5cf4bb061fb469c58c","large":"https://images.unsplash.com/profile-1444840959767-6286d046f7f2?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=128\u0026w=128\u0026s=1f9637444f57af3a471d40bf61e6d784"},"links":{"self":"http://api.lvh.me:3000/users/aaron","html":"http://lvh.me:3000/aaron","photos":"http://api.lvh.me:3000/users/aaron/photos","likes":"http://api.lvh.me:3000/users/aaron/likes"}},"links":{"self":"http://api.lvh.me:3000/collections/303","html":"http://lvh.me:3000/collections/303","photos":"http://api.lvh.me:3000/collections/303/photos"}}'
-    http_version: 
+    http_version:
   recorded_at: Mon, 11 Apr 2016 18:46:10 GMT
 - request:
     method: get
@@ -633,7 +691,7 @@ http_interactions:
       encoding: UTF-8
       string: '{"id":302,"title":"Ultimate Faves","published_at":"2016-04-11T13:53:49-04:00","curated":false,"cover_photo":null,"user":{"id":"OuzxrCITLj8","username":"aaron","name":"Aaron
         K","bio":"Buildin'' Unsplash.","profile_image":{"small":"https://images.unsplash.com/profile-1444840959767-6286d046f7f2?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=32\u0026w=32\u0026s=73424ab49d29f06ff9479f8b9a2f88e5","medium":"https://images.unsplash.com/profile-1444840959767-6286d046f7f2?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=64\u0026w=64\u0026s=ecabb6576352ac5cf4bb061fb469c58c","large":"https://images.unsplash.com/profile-1444840959767-6286d046f7f2?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=128\u0026w=128\u0026s=1f9637444f57af3a471d40bf61e6d784"},"links":{"self":"http://api.lvh.me:3000/users/aaron","html":"http://lvh.me:3000/aaron","photos":"http://api.lvh.me:3000/users/aaron/photos","likes":"http://api.lvh.me:3000/users/aaron/likes"}},"links":{"self":"http://api.lvh.me:3000/collections/302","html":"http://lvh.me:3000/collections/302","photos":"http://api.lvh.me:3000/collections/302/photos"}}'
-    http_version: 
+    http_version:
   recorded_at: Mon, 11 Apr 2016 19:15:46 GMT
 - request:
     method: delete
@@ -681,7 +739,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: ''
-    http_version: 
+    http_version:
   recorded_at: Mon, 11 Apr 2016 19:15:46 GMT
 - request:
     method: delete
@@ -733,7 +791,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"errors":["Couldn''t find Collection with ''id''=201"]}'
-    http_version: 
+    http_version:
   recorded_at: Mon, 11 Apr 2016 19:16:00 GMT
 - request:
     method: get
@@ -792,7 +850,7 @@ http_interactions:
       string: '{"id":301,"title":"Ultimate Faves","published_at":"2016-04-11T12:51:17-04:00","curated":false,"cover_photo":{"id":"Bg6MLGaiuFY","width":null,"height":null,"color":null,"likes":0,"liked_by_user":false,"user":{"id":"Z4hPZdsRla8","username":"oscartothekeys","name":"Oscar
         Keys","profile_image":{"small":"https://images.unsplash.com/profile-1453284965521-5bd2363623de?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=32\u0026w=32\u0026s=eb67f738e828508b0cc8de656ecf633d","medium":"https://images.unsplash.com/profile-1453284965521-5bd2363623de?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=64\u0026w=64\u0026s=948f5ff29f14fbfcf4c2b4a047110f96","large":"https://images.unsplash.com/profile-1453284965521-5bd2363623de?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=128\u0026w=128\u0026s=56675f5d6de4127ef78dbd97eee55454"},"links":{"self":"http://api.lvh.me:3000/users/oscartothekeys","html":"http://lvh.me:3000/oscartothekeys","photos":"http://api.lvh.me:3000/users/oscartothekeys/photos","likes":"http://api.lvh.me:3000/users/oscartothekeys/likes"}},"urls":{"raw":"https://images.unsplash.com/development/38361-beautiful-birds-big-colorful-bird.jpg","full":"https://images.unsplash.com/development/38361-beautiful-birds-big-colorful-bird.jpg?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026s=d28c2214975b75a11be5dec1892fc5fe","regular":"https://images.unsplash.com/development/38361-beautiful-birds-big-colorful-bird.jpg?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026w=1080\u0026fit=max\u0026s=bfb9932194a154f89996ea319b1bef2b","small":"https://images.unsplash.com/development/38361-beautiful-birds-big-colorful-bird.jpg?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026w=400\u0026fit=max\u0026s=bc37694981d0749a29a7fa607ce670e7","thumb":"https://images.unsplash.com/development/38361-beautiful-birds-big-colorful-bird.jpg?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026w=200\u0026fit=max\u0026s=ad3999d02c9e22af98aa1845b3e973f5"},"categories":[],"links":{"self":"http://api.lvh.me:3000/photos/Bg6MLGaiuFY","html":"http://lvh.me:3000/photos/Bg6MLGaiuFY","download":"http://lvh.me:3000/photos/Bg6MLGaiuFY/download"}},"user":{"id":"OuzxrCITLj8","username":"aaron","name":"Aaron
         K","bio":"Buildin'' Unsplash.","profile_image":{"small":"https://images.unsplash.com/profile-1444840959767-6286d046f7f2?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=32\u0026w=32\u0026s=73424ab49d29f06ff9479f8b9a2f88e5","medium":"https://images.unsplash.com/profile-1444840959767-6286d046f7f2?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=64\u0026w=64\u0026s=ecabb6576352ac5cf4bb061fb469c58c","large":"https://images.unsplash.com/profile-1444840959767-6286d046f7f2?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=128\u0026w=128\u0026s=1f9637444f57af3a471d40bf61e6d784"},"links":{"self":"http://api.lvh.me:3000/users/aaron","html":"http://lvh.me:3000/aaron","photos":"http://api.lvh.me:3000/users/aaron/photos","likes":"http://api.lvh.me:3000/users/aaron/likes"}},"links":{"self":"http://api.lvh.me:3000/collections/301","html":"http://lvh.me:3000/collections/301","photos":"http://api.lvh.me:3000/collections/301/photos"}}'
-    http_version: 
+    http_version:
   recorded_at: Mon, 11 Apr 2016 20:32:55 GMT
 - request:
     method: post
@@ -859,7 +917,7 @@ http_interactions:
         \u0026 Drink","photo_count":1558,"links":{"self":"http://api.lvh.me:3000/categories/3","photos":"http://api.lvh.me:3000/categories/3/photos"}},{"id":8,"title":"Objects","photo_count":6528,"links":{"self":"http://api.lvh.me:3000/categories/8","photos":"http://api.lvh.me:3000/categories/8/photos"}},{"id":7,"title":"Technology","photo_count":868,"links":{"self":"http://api.lvh.me:3000/categories/7","photos":"http://api.lvh.me:3000/categories/7/photos"}}],"links":{"self":"http://api.lvh.me:3000/photos/tAKXap853rY","html":"http://lvh.me:3000/photos/tAKXap853rY","download":"http://lvh.me:3000/photos/tAKXap853rY/download"}},"user":{"id":"OuzxrCITLj8","username":"aaron","name":"Aaron
         K","bio":"Buildin'' Unsplash.","profile_image":{"small":"https://images.unsplash.com/profile-1444840959767-6286d046f7f2?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=32\u0026w=32\u0026s=73424ab49d29f06ff9479f8b9a2f88e5","medium":"https://images.unsplash.com/profile-1444840959767-6286d046f7f2?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=64\u0026w=64\u0026s=ecabb6576352ac5cf4bb061fb469c58c","large":"https://images.unsplash.com/profile-1444840959767-6286d046f7f2?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=128\u0026w=128\u0026s=1f9637444f57af3a471d40bf61e6d784"},"links":{"self":"http://api.lvh.me:3000/users/aaron","html":"http://lvh.me:3000/aaron","photos":"http://api.lvh.me:3000/users/aaron/photos","likes":"http://api.lvh.me:3000/users/aaron/likes"}},"links":{"self":"http://api.lvh.me:3000/collections/301","html":"http://lvh.me:3000/collections/301","photos":"http://api.lvh.me:3000/collections/301/photos"}},"user":{"id":"OuzxrCITLj8","username":"aaron","name":"Aaron
         K","profile_image":{"small":"https://images.unsplash.com/profile-1444840959767-6286d046f7f2?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=32\u0026w=32\u0026s=73424ab49d29f06ff9479f8b9a2f88e5","medium":"https://images.unsplash.com/profile-1444840959767-6286d046f7f2?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=64\u0026w=64\u0026s=ecabb6576352ac5cf4bb061fb469c58c","large":"https://images.unsplash.com/profile-1444840959767-6286d046f7f2?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=128\u0026w=128\u0026s=1f9637444f57af3a471d40bf61e6d784"},"links":{"self":"http://api.lvh.me:3000/users/aaron","html":"http://lvh.me:3000/aaron","photos":"http://api.lvh.me:3000/users/aaron/photos","likes":"http://api.lvh.me:3000/users/aaron/likes"}},"created_at":"2016-04-11T16:32:55.856-04:00"}'
-    http_version: 
+    http_version:
   recorded_at: Mon, 11 Apr 2016 20:32:55 GMT
 - request:
     method: delete
@@ -907,11 +965,11 @@ http_interactions:
     body:
       encoding: UTF-8
       string: ''
-    http_version: 
+    http_version:
   recorded_at: Mon, 11 Apr 2016 20:41:21 GMT
 - request:
     method: get
-    uri: http://api.lvh.me:3000/search/collections?page=1&query=explore
+    uri: http://api.lvh.me:3000/search/collections?page=1&per_page=10&query=explore
     body:
       encoding: US-ASCII
       string: ''
@@ -958,11 +1016,11 @@ http_interactions:
       string: '{"total":1,"total_pages":1,"results":[{"id":201,"title":"Explore Iceland","published_at":"2015-12-30T16:56:29-05:00","curated":false,"cover_photo":{"id":"uO4Au3LrCtk","width":3000,"height":2000,"color":"#565B63","likes":0,"liked_by_user":false,"user":{"id":"46rKBE69V4I","username":"andersjilden","name":"Anders
         Jildén","profile_image":{"small":"https://images.unsplash.com/profile-1444219778067-a301067fdc5e?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=32\u0026w=32\u0026s=d78a65a5e29c45cdb790895d0587bafe","medium":"https://images.unsplash.com/profile-1444219778067-a301067fdc5e?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=64\u0026w=64\u0026s=e041071e984375a0f2ed01d340a3aa00","large":"https://images.unsplash.com/profile-1444219778067-a301067fdc5e?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=128\u0026w=128\u0026s=8c6a75b3379366defac8399dc8f30221"},"links":{"self":"http://api.lvh.me:3000/users/andersjilden","html":"http://lvh.me:3000/andersjilden","photos":"http://api.lvh.me:3000/users/andersjilden/photos","likes":"http://api.lvh.me:3000/users/andersjilden/likes"}},"urls":{"raw":"https://images.unsplash.com/photo-1445503058969-7ae8721cd8c1","full":"https://images.unsplash.com/photo-1445503058969-7ae8721cd8c1?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026s=75f81eef4dddc6d740a6903e0bef4dab","regular":"https://images.unsplash.com/photo-1445503058969-7ae8721cd8c1?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026w=1080\u0026fit=max\u0026s=7e069062d4af1ffc5f5a80107cf4302b","small":"https://images.unsplash.com/photo-1445503058969-7ae8721cd8c1?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026w=400\u0026fit=max\u0026s=ed45724e0b45053f46eccf9f6927cbd5","thumb":"https://images.unsplash.com/photo-1445503058969-7ae8721cd8c1?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026w=200\u0026fit=max\u0026s=40cf57127d49d8114fbc8bb22254a3ce"},"categories":[{"id":4,"title":"Nature","photo_count":31454,"links":{"self":"http://api.lvh.me:3000/categories/4","photos":"http://api.lvh.me:3000/categories/4/photos"}}],"links":{"self":"http://api.lvh.me:3000/photos/uO4Au3LrCtk","html":"http://lvh.me:3000/photos/uO4Au3LrCtk","download":"http://lvh.me:3000/photos/uO4Au3LrCtk/download"}},"user":{"id":"QV5S1rtoUJ0","username":"unsplash","name":"Unsplash","bio":"Make
         something awesome.","profile_image":{"small":"https://images.unsplash.com/profile-1441945026710-480e4372a5b5?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=32\u0026w=32\u0026s=15dd677c95172edff29e9b7a3be052c1","medium":"https://images.unsplash.com/profile-1441945026710-480e4372a5b5?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=64\u0026w=64\u0026s=7ae2265df9881ef927465a3215b4de94","large":"https://images.unsplash.com/profile-1441945026710-480e4372a5b5?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=128\u0026w=128\u0026s=96b07acf064bb8ba33e257c9391b440a"},"links":{"self":"http://api.lvh.me:3000/users/unsplash","html":"http://lvh.me:3000/unsplash","photos":"http://api.lvh.me:3000/users/unsplash/photos","likes":"http://api.lvh.me:3000/users/unsplash/likes"}},"links":{"self":"http://api.lvh.me:3000/collections/201","html":"http://lvh.me:3000/collections/201","photos":"http://api.lvh.me:3000/collections/201/photos"}}]}'
-    http_version: 
+    http_version:
   recorded_at: Mon, 11 Apr 2016 17:54:49 GMT
 - request:
     method: get
-    uri: http://api.lvh.me:3000/search/collections?page=1&query=veryveryspecific
+    uri: http://api.lvh.me:3000/search/collections?page=1&per_page=10&query=veryveryspecific
     body:
       encoding: US-ASCII
       string: ''
@@ -1007,6 +1065,60 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"total":1,"total_pages":1,"results":[]}'
-    http_version: 
+    http_version:
+  recorded_at: Mon, 11 Apr 2016 17:54:49 GMT
+- request:
+    method: get
+    uri: http://api.lvh.me:3000/search/collections?page=1&per_page=2&query=explore
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Client-ID baaa6a1214d50b3586bec6e06157aab859bd4d86dc0b755360f103f38974edc3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      Access-Control-Allow-Headers:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Link,X-Total,X-Per-Page,X-RateLimit-Limit,X-RateLimit-Remaining
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      Content-Type:
+      - application/json
+      Etag:
+      - W/"d5d32fd7f45a292e2bc4a08125330024"
+      X-Request-Id:
+      - de15dff4-1f3d-48a2-93ca-9d6849c31d79
+      X-Ratelimit-Limit:
+      - '100'
+      X-Ratelimit-Remaining:
+      - '98'
+      X-Runtime:
+      - '0.094648'
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      X-Miniprofiler-Ids:
+      - '["85qlnh0mnvecgq0q3glt","w9ijlts0ho1zswwwsjbn","qk5n3yagrfu4nh2qyt7y"]'
+      Content-Length:
+      - '3364'
+    body:
+      encoding: UTF-8
+      string: '{"total":2,"total_pages":1,"results":[{"id":201,"title":"Explore Iceland","published_at":"2015-12-30T16:56:29-05:00","curated":false,"cover_photo":{"id":"uO4Au3LrCtk","width":3000,"height":2000,"color":"#565B63","likes":0,"liked_by_user":false,"user":{"id":"46rKBE69V4I","username":"andersjilden","name":"Anders
+        Jildén","profile_image":{"small":"https://images.unsplash.com/profile-1444219778067-a301067fdc5e?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=32\u0026w=32\u0026s=d78a65a5e29c45cdb790895d0587bafe","medium":"https://images.unsplash.com/profile-1444219778067-a301067fdc5e?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=64\u0026w=64\u0026s=e041071e984375a0f2ed01d340a3aa00","large":"https://images.unsplash.com/profile-1444219778067-a301067fdc5e?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=128\u0026w=128\u0026s=8c6a75b3379366defac8399dc8f30221"},"links":{"self":"http://api.lvh.me:3000/users/andersjilden","html":"http://lvh.me:3000/andersjilden","photos":"http://api.lvh.me:3000/users/andersjilden/photos","likes":"http://api.lvh.me:3000/users/andersjilden/likes"}},"urls":{"raw":"https://images.unsplash.com/photo-1445503058969-7ae8721cd8c1","full":"https://images.unsplash.com/photo-1445503058969-7ae8721cd8c1?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026s=75f81eef4dddc6d740a6903e0bef4dab","regular":"https://images.unsplash.com/photo-1445503058969-7ae8721cd8c1?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026w=1080\u0026fit=max\u0026s=7e069062d4af1ffc5f5a80107cf4302b","small":"https://images.unsplash.com/photo-1445503058969-7ae8721cd8c1?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026w=400\u0026fit=max\u0026s=ed45724e0b45053f46eccf9f6927cbd5","thumb":"https://images.unsplash.com/photo-1445503058969-7ae8721cd8c1?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026w=200\u0026fit=max\u0026s=40cf57127d49d8114fbc8bb22254a3ce"},"categories":[{"id":4,"title":"Nature","photo_count":31454,"links":{"self":"http://api.lvh.me:3000/categories/4","photos":"http://api.lvh.me:3000/categories/4/photos"}}],"links":{"self":"http://api.lvh.me:3000/photos/uO4Au3LrCtk","html":"http://lvh.me:3000/photos/uO4Au3LrCtk","download":"http://lvh.me:3000/photos/uO4Au3LrCtk/download"}},"user":{"id":"QV5S1rtoUJ0","username":"unsplash","name":"Unsplash","bio":"Make
+        something awesome.","profile_image":{"small":"https://images.unsplash.com/profile-1441945026710-480e4372a5b5?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=32\u0026w=32\u0026s=15dd677c95172edff29e9b7a3be052c1","medium":"https://images.unsplash.com/profile-1441945026710-480e4372a5b5?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=64\u0026w=64\u0026s=7ae2265df9881ef927465a3215b4de94","large":"https://images.unsplash.com/profile-1441945026710-480e4372a5b5?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=128\u0026w=128\u0026s=96b07acf064bb8ba33e257c9391b440a"},"links":{"self":"http://api.lvh.me:3000/users/unsplash","html":"http://lvh.me:3000/unsplash","photos":"http://api.lvh.me:3000/users/unsplash/photos","likes":"http://api.lvh.me:3000/users/unsplash/likes"}},"links":{"self":"http://api.lvh.me:3000/collections/201","html":"http://lvh.me:3000/collections/201","photos":"http://api.lvh.me:3000/collections/201/photos"}},
+        {"id":201,"title":"Explore Iceland","published_at":"2015-12-30T16:56:29-05:00","curated":false,"cover_photo":{"id":"uO4Au3LrCtk","width":3000,"height":2000,"color":"#565B63","likes":0,"liked_by_user":false,"user":{"id":"46rKBE69V4I","username":"andersjilden","name":"Anders
+        Jildén","profile_image":{"small":"https://images.unsplash.com/profile-1444219778067-a301067fdc5e?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=32\u0026w=32\u0026s=d78a65a5e29c45cdb790895d0587bafe","medium":"https://images.unsplash.com/profile-1444219778067-a301067fdc5e?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=64\u0026w=64\u0026s=e041071e984375a0f2ed01d340a3aa00","large":"https://images.unsplash.com/profile-1444219778067-a301067fdc5e?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=128\u0026w=128\u0026s=8c6a75b3379366defac8399dc8f30221"},"links":{"self":"http://api.lvh.me:3000/users/andersjilden","html":"http://lvh.me:3000/andersjilden","photos":"http://api.lvh.me:3000/users/andersjilden/photos","likes":"http://api.lvh.me:3000/users/andersjilden/likes"}},"urls":{"raw":"https://images.unsplash.com/photo-1445503058969-7ae8721cd8c1","full":"https://images.unsplash.com/photo-1445503058969-7ae8721cd8c1?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026s=75f81eef4dddc6d740a6903e0bef4dab","regular":"https://images.unsplash.com/photo-1445503058969-7ae8721cd8c1?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026w=1080\u0026fit=max\u0026s=7e069062d4af1ffc5f5a80107cf4302b","small":"https://images.unsplash.com/photo-1445503058969-7ae8721cd8c1?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026w=400\u0026fit=max\u0026s=ed45724e0b45053f46eccf9f6927cbd5","thumb":"https://images.unsplash.com/photo-1445503058969-7ae8721cd8c1?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026w=200\u0026fit=max\u0026s=40cf57127d49d8114fbc8bb22254a3ce"},"categories":[{"id":4,"title":"Nature","photo_count":31454,"links":{"self":"http://api.lvh.me:3000/categories/4","photos":"http://api.lvh.me:3000/categories/4/photos"}}],"links":{"self":"http://api.lvh.me:3000/photos/uO4Au3LrCtk","html":"http://lvh.me:3000/photos/uO4Au3LrCtk","download":"http://lvh.me:3000/photos/uO4Au3LrCtk/download"}},"user":{"id":"QV5S1rtoUJ0","username":"unsplash","name":"Unsplash","bio":"Make
+        something awesome.","profile_image":{"small":"https://images.unsplash.com/profile-1441945026710-480e4372a5b5?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=32\u0026w=32\u0026s=15dd677c95172edff29e9b7a3be052c1","medium":"https://images.unsplash.com/profile-1441945026710-480e4372a5b5?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=64\u0026w=64\u0026s=7ae2265df9881ef927465a3215b4de94","large":"https://images.unsplash.com/profile-1441945026710-480e4372a5b5?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026fit=crop\u0026h=128\u0026w=128\u0026s=96b07acf064bb8ba33e257c9391b440a"},"links":{"self":"http://api.lvh.me:3000/users/unsplash","html":"http://lvh.me:3000/unsplash","photos":"http://api.lvh.me:3000/users/unsplash/photos","likes":"http://api.lvh.me:3000/users/unsplash/likes"}},"links":{"self":"http://api.lvh.me:3000/collections/201","html":"http://lvh.me:3000/collections/201","photos":"http://api.lvh.me:3000/collections/201/photos"}}]}'
+    http_version:
   recorded_at: Mon, 11 Apr 2016 17:54:49 GMT
 recorded_with: VCR 2.9.3

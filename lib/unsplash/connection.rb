@@ -140,6 +140,4 @@ module Unsplash #:nodoc:
       @oauth_token = @oauth_token.refresh_token
     end
   end
-
-
 end

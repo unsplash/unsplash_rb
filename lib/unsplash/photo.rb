@@ -62,7 +62,7 @@ module Unsplash # :nodoc:
         if count
           params[:count] = count
           photos = parse_list connection.get("/photos/random/", params).body
-          photos.map { |photo| 
+          photos.map { |photo|
             photo.user = Unsplash::User.new photo[:user]
             photo
           }
@@ -76,29 +76,34 @@ module Unsplash # :nodoc:
       # Search for photos by keyword.
       # @param query [String] Keywords to search for.
       # @param page  [Integer] Which page of search results to return.
-      def search(query, page = 1)
+      # @param per_page [Integer] The number of users search result per page. (default: 10, maximum: 30)
+      # @return [Array] a list of +Unsplash::Photo+ objects.
+      def search(query, page = 1, per_page = 10)
         params = {
           query:    query,
-          page:     page
+          page:     page,
+          per_page: per_page
         }
         Unsplash::Search.search("/search/photos", self, params)
       end
 
       # Get a list of all photos.
       # @param page  [Integer] Which page of search results to return.
-      # @param per_page [Integer] The number of search results per page.
+      # @param per_page [Integer] The number of search results per page. (default: 10, maximum: 30)
+      # @param order_by [String] How to sort the photos.
       # @return [Array] A single page of +Unsplash::Photo+ search results.
-      def all(page = 1, per_page = 10)
+      def all(page = 1, per_page = 10, order_by = "latest")
         params = {
           page:     page,
-          per_page: per_page
+          per_page: per_page,
+          order_by: order_by
         }
         parse_list connection.get("/photos/", params).body
       end
 
       # Get a single page from the list of the curated photos (front-page’s photos).
       # @param page [Integer] Which page of search results to return.
-      # @param per_page [Integer] The number of search results per page.
+      # @param per_page [Integer] The number of search results per page. (default: 10, maximum: 30)
       # @param order_by [String] How to sort the photos.
       # @return [Array] A single page of +Unsplash::Photo+ search results.
       def curated(page = 1, per_page = 10, order_by = "popular")

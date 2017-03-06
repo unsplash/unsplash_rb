@@ -15,7 +15,7 @@ module Unsplash # :nodoc:
 
       # Get a list of all collections.
       # @param page [Integer] Which page of search results to return.
-      # @param per_page [Integer] The number of search results per page.
+      # @param per_page [Integer] The number of search results per page. (default: 10, maximum: 30)
       # @return [Array] A single page of the +Unsplash::Collection+ list.
       def all(page = 1, per_page = 10)
         params = {
@@ -26,9 +26,23 @@ module Unsplash # :nodoc:
         list.map { |data| Unsplash::Collection.new(data) }
       end
 
+
+      # Get a list of all featured collections.
+      # @param page [Integer] Which page of results to return.
+      # @param per_page [Integer] The number of results per page. (default: 10, maximum: 30)
+      # @return [Array] A single page of the +Unsplash::Collection+ list.      
+      def featured(page = 1, per_page = 10)
+        params = {
+          page:     page,
+          per_page: per_page
+        }
+        list = JSON.parse(connection.get("/collections/featured", params).body)
+        list.map { |data| Unsplash::Collection.new(data) }
+      end
+
       # Get a list of all curated collections.
       # @param page [Integer] Which page of search results to return.
-      # @param per_page [Integer] The number of search results per page.
+      # @param per_page [Integer] The number of search results per page. (default: 10, maximum: 30)
       # @return [Array] A single page of the +Unsplash::Collection+ list.
       def curated(page = 1, per_page = 10)
         params = {
@@ -55,11 +69,13 @@ module Unsplash # :nodoc:
       # Get a single page of collection results for a query.
       # @param query [String] Keywords to search for.
       # @param page  [Integer] Which page of search results to return.
+      # @param per_page [Integer] The number of collections search result per page. (default: 10, maximum: 30)
       # @return [Array] a list of +Unsplash::Collection+ objects. 
-      def search(query, page = 1)
+      def search(query, page = 1, per_page = 10)
         params = {
           query:    query,
-          page:     page
+          page:     page,
+          per_page: per_page
         }
         Unsplash::Search.search("/search/collections", self, params)
       end
@@ -96,9 +112,16 @@ module Unsplash # :nodoc:
     end
 
     # Get a list of the photos contained in this collection.
+    # @param page [Integer] Which page of photos collection to return.
+    # @param per_page [Integer] The number of photos per page. (default: 10, maximum: 30)
     # @return [Array] The list of +Unsplash::Photo+s in the collection.
-    def photos
-      list = JSON.parse(connection.get("/collections/#{id}/photos").body)
+    def photos(page = 1, per_page = 10)
+      params = {
+        page: page,
+        per_page: per_page
+      }
+
+      list = JSON.parse(connection.get("/collections/#{id}/photos", params).body)
       list.map { |photo| Unsplash::Photo.new photo }
     end
 
