@@ -947,7 +947,7 @@ http_interactions:
       - '2'
     body:
       encoding: UTF-8
-      string: '{"total":0,"total_pages":1,"results":[]}'
+      string: '{"total":0,"total_pages":0,"results":[]}'
     http_version:
   recorded_at: Fri, 08 Apr 2016 16:17:11 GMT
 - request:

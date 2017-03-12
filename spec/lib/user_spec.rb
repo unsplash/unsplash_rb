@@ -28,30 +28,36 @@ describe Unsplash::User do
   describe "#search" do
     it "returns an array of Users" do
       VCR.use_cassette("users") do
-        @users = Unsplash::User.search("ches", 1)
+        @response = Unsplash::User.search("ches", 1)
       end
 
-      expect(@users).to be_an Array
-      expect(@users.sample).to be_an Unsplash::User
-      expect(@users.size).to eq 1
+      expect(@response[:total]).to eq 1
+      expect(@response[:total_pages]).to eq 1
+      expect(@response[:results]).to be_an Array
+      expect(@response[:results].sample).to be_an Unsplash::User
+      expect(@response[:results].size).to eq 1
     end
 
     it "returns an empty array if there are no users found" do
       VCR.use_cassette("users") do
-        @users = Unsplash::User.search("veryveryspecific", 1)
+        @response = Unsplash::User.search("veryveryspecific", 1)
       end
 
-      expect(@users).to eq []
+      expect(@response[:total]).to eq 0
+      expect(@response[:total_pages]).to eq 0
+      expect(@response[:results]).to eq []
     end
 
     it "returns an array of Users with number of elements per page defined" do
       VCR.use_cassette("users") do
-        @users = Unsplash::User.search("ches", 1, 2)
+        @response = Unsplash::User.search("ches", 1, 2)
       end
 
-      expect(@users).to be_an Array
-      expect(@users.sample).to be_an Unsplash::User
-      expect(@users.size).to eq 2
+      expect(@response[:total]).to eq 2
+      expect(@response[:total_pages]).to eq 1
+      expect(@response[:results]).to be_an Array
+      expect(@response[:results].sample).to be_an Unsplash::User
+      expect(@response[:results].size).to eq 2
     end
   end
 

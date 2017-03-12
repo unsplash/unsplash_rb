@@ -29,7 +29,7 @@ module Unsplash # :nodoc:
       # @param query [String] Keywords to search for.
       # @param page  [Integer] Which page of search results to return.
       # @param per_page [Integer] The number of users search result per page. (default: 10, maximum: 30)
-      # @return [Array] a list of +Unsplash::User+ objects.
+      # @return [Hash] with :total and :total_pages keys from pagination metada and :results, a [Array] list of +Unsplash::User+ objects.
       def search(query, page = 1, per_page = 10)
         params = {
           query:    query,
