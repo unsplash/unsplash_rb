@@ -22,8 +22,8 @@ module Unsplash #:nodoc:
       @application_secret = Unsplash.configuration.application_secret
       @api_version        = version
       @api_base_uri       = api_base_uri
-      
-      oauth_base_uri     = oauth_base_uri
+
+      oauth_base_uri = oauth_base_uri
       @oauth = ::OAuth2::Client.new(@application_id, @application_secret, site: oauth_base_uri) do |http|
         http.request :multipart
         http.request :url_encoded
@@ -100,6 +100,13 @@ module Unsplash #:nodoc:
     def request(verb, path, params = {})
       raise ArgumentError.new "Invalid http verb #{verb}" if ![:get, :post, :put, :delete].include?(verb)
 
+      params.merge!(utm_params)
+
+      if !Unsplash.configuration.utm_source
+        url = "https://community.unsplash.com/developersblog/unsplash-api-guidelines"
+        Unsplash.configuration.logger.warn "utm_source is required as part of API Terms: #{url}"
+      end
+
       headers = {
         "Accept-Version" => @api_version
         # Anything else? User agent?
@@ -110,7 +117,6 @@ module Unsplash #:nodoc:
 
         param_key = verb == :post ? :body : :params
         @oauth_token.public_send(verb,  @api_base_uri + path, param_key => params, headers: headers)
-      
       else
         self.class.public_send verb, path, query: params, headers: public_auth_header
       end
@@ -132,6 +138,14 @@ module Unsplash #:nodoc:
 
     def public_auth_header
       { "Authorization" => "Client-ID #{@application_id}" }
+    end
+
+    def utm_params
+      {
+        utm_source:   Unsplash.configuration.utm_source || "api_app",
+        utm_medium:   "referral",
+        utm_campaign: "api-credit"
+      }
     end
 
     def refresh_token!
