@@ -33,8 +33,13 @@ Unsplash.configure do |config|
   config.application_id     = "YOUR APPLICATION ID"    
   config.application_secret = "YOUR APPLICATION SECRET"
   config.application_redirect_uri = "https://your-application.com/oauth/callback"
+  config.utm_source = "alices_terrific_client_app"
 end
 ```
+
+#### UTM parameters
+
+As part of [the API guidelines](https://community.unsplash.com/developersblog/unsplash-api-guidelines), all API uses are required to use utm links when providing credit to photographers and Unsplash. Set the `config.utm_source` to your app's name to automatically append the utm source.
 
 ### Public-scope actions
 

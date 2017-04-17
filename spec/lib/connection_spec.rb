@@ -4,6 +4,45 @@ describe Unsplash::Connection do
 
   let(:connection) { Unsplash::Client.connection }
 
+  describe "utm params", utm: true do
+    before :each do
+      response = double("response", status: 200, headers: {})
+      allow(Unsplash::Connection).to receive(:get).and_return(response)
+      Unsplash.configuration.logger = double("logger", warn: nil)
+    end
+
+    after :each do
+      Unsplash.configuration.utm_source = "unsplash_rb_specs"
+      Unsplash.configuration.logger = Logger.new(STDOUT)
+    end
+
+    it "warns if you don't have a utm_source" do
+      Unsplash.configuration.utm_source = nil
+      connection.get("/example.json")
+      expect(Unsplash.configuration.logger).to have_received(:warn)
+    end
+
+    it "does not warn if you do have a utm_source" do
+      Unsplash.configuration.utm_source = "my_app"
+      connection.get("/example.json")
+      expect(Unsplash.configuration.logger).to_not have_received(:warn)
+    end
+
+    it "appends the utm params" do
+      headers = { "Authorization"=> "Client-ID #{Unsplash.configuration.application_id}" }
+      params = {
+        foo: "bar",
+        utm_source:   "my_app",
+        utm_medium:   "referral",
+        utm_campaign: "api-credit"
+      }
+
+      Unsplash.configuration.utm_source = "my_app"
+      connection.get("/example.json", { foo: "bar" })
+      expect(Unsplash::Connection).to have_received(:get).with("/example.json", query: params, headers: headers)
+    end
+  end
+
   describe "#extract_token" do
     context "with an established connection" do
       it "returns @oauth_token converted to a hash" do

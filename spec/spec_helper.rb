@@ -8,6 +8,7 @@ Coveralls.wear!
 Unsplash.configure do |config|
   config.application_id = "baaa6a1214d50b3586bec6e06157aab859bd4d86dc0b755360f103f38974edc3"
   config.application_secret = "bb834160d12304045c55d0c0ec2eb0fe62a5fe249bc1a392386120d55eb2793a"
+  config.utm_source = "unsplash_rb_specs"
 end
 
 VCR.configure do |config|
@@ -26,12 +27,15 @@ RSpec.configure do |config|
 
   config.order = "random"
 
-  config.before :each do
+  config.before :each do |example|
     Unsplash::Client.connection = Unsplash::Connection.new(
                                   api_base_uri:   "http://api.lvh.me:3000",
                                   oauth_base_uri: "http://www.lvh.me:3000")
-  end
 
+    if !example.metadata[:utm]
+      allow_any_instance_of(Unsplash::Connection).to receive(:utm_params).and_return({})
+    end
+  end
 end
 
 
