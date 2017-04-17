@@ -4,7 +4,7 @@ describe Unsplash::Connection do
 
   let(:connection) { Unsplash::Client.connection }
 
-  describe "utm_source params" do
+  describe "utm params", utm: true do
     before :each do
       response = double("response", status: 200, headers: {})
       allow(Unsplash::Connection).to receive(:get).and_return(response)
@@ -12,11 +12,12 @@ describe Unsplash::Connection do
     end
 
     after :each do
-      Unsplash.configuration.utm_source = nil
+      Unsplash.configuration.utm_source = "unsplash_rb_specs"
       Unsplash.configuration.logger = Logger.new(STDOUT)
     end
 
     it "warns if you don't have a utm_source" do
+      Unsplash.configuration.utm_source = nil
       connection.get("/example.json")
       expect(Unsplash.configuration.logger).to have_received(:warn)
     end
