@@ -37,6 +37,10 @@ Unsplash.configure do |config|
 end
 ```
 
+#### UTM parameters
+
+As part of [the API guidelines](https://community.unsplash.com/developersblog/unsplash-api-guidelines), all API uses are required to use utm links when providing credit to photographers and Unsplash. Set the `config.utm_source` to your app's name to automatically append the utm source.
+
 ### Public-scope actions
 
 If you are *only* making public requests (i.e. nothing requiring a specific logged-in user, for example liking photos or accessing private user details), then you're ready to go!
