@@ -1,4 +1,4 @@
-module Unsplash # :nodoc: 
+module Unsplash # :nodoc:
 
   # Unsplash Collection operations.
   class Collection < Client
@@ -30,7 +30,7 @@ module Unsplash # :nodoc:
       # Get a list of all featured collections.
       # @param page [Integer] Which page of results to return.
       # @param per_page [Integer] The number of results per page. (default: 10, maximum: 30)
-      # @return [Array] A single page of the +Unsplash::Collection+ list.      
+      # @return [Array] A single page of the +Unsplash::Collection+ list.
       def featured(page = 1, per_page = 10)
         params = {
           page:     page,
@@ -58,7 +58,7 @@ module Unsplash # :nodoc:
       # @param description [String] The collection's description. (optional)
       # @param private [Boolean] Whether to make the collection private. (optional, default +false+)
       def create(title: "", description: "", private: false)
-        params = { 
+        params = {
           title:       title,
           description: description,
           private:     private
@@ -70,7 +70,7 @@ module Unsplash # :nodoc:
       # @param query [String] Keywords to search for.
       # @param page  [Integer] Which page of search results to return.
       # @param per_page [Integer] The number of collections search result per page. (default: 10, maximum: 30)
-      # @return [Array] a list of +Unsplash::Collection+ objects. 
+      # @return [SearchResult] a list of +Unsplash::Collection+ objects.
       def search(query, page = 1, per_page = 10)
         params = {
           query:    query,
@@ -93,7 +93,7 @@ module Unsplash # :nodoc:
     # @param description [String] The collection's description. (optional)
     # @param private [Boolean] Whether to make the collection private. (optional)
     def update(title: nil, description: nil, private: nil)
-      params = { 
+      params = {
         title:       title,
         description: description,
         private:     private
