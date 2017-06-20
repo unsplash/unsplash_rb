@@ -121,20 +121,24 @@ describe Unsplash::Photo do
   describe "#search" do
     it "returns an array of Photos" do
       VCR.use_cassette("photos") do
-        @photos = Unsplash::Photo.search("dog", 1)
+        @response = Unsplash::Photo.search("dog", 1)
       end
 
-      expect(@photos).to be_an Array
-      expect(@photos.size).to eq 4
+      expect(@response[:total]).to eq 4
+      expect(@response[:total_pages]).to eq 1
+      expect(@response[:results]).to be_an Array
+      expect(@response[:results].size).to eq 4
     end
 
     it "returns an array of Photos with number of elements per page defined" do
       VCR.use_cassette("photos") do
-        @photos = Unsplash::Photo.search("dog", 1, 3)
+        @response = Unsplash::Photo.search("dog", 1, 3)
       end
 
-      expect(@photos).to be_an Array
-      expect(@photos.size).to eq 3
+      expect(@response[:total]).to eq 3
+      expect(@response[:total_pages]).to eq 1
+      expect(@response[:results]).to be_an Array
+      expect(@response[:results].size).to eq 3
     end
   end
 

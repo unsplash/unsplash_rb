@@ -1064,7 +1064,7 @@ http_interactions:
       - '3364'
     body:
       encoding: UTF-8
-      string: '{"total":1,"total_pages":1,"results":[]}'
+      string: '{"total":0,"total_pages":0,"results":[]}'
     http_version:
   recorded_at: Mon, 11 Apr 2016 17:54:49 GMT
 - request:

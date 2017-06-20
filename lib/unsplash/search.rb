@@ -10,8 +10,22 @@ module Unsplash # :nodoc:
       # @param params [Hash] Params for the search
       def search(url, klass, params)
         list = JSON.parse(connection.get(url, params).body)
+        
+        process_response(list, klass)
+      end
 
-        list["results"].map do |content|
+      private
+
+      def process_response(list, klass)
+        result = {}
+        result[:total] = list["total"]
+        result[:total_pages] = list["total_pages"]
+        result[:results] = create_objects(list["results"], klass)
+        result
+      end
+
+      def create_objects(results, klass)
+        results.map do |content|
           klass.new content.to_hash
         end
       end
