@@ -56,32 +56,38 @@ describe Unsplash::Collection do
   end
 
   describe "#search" do
-    it "returns an array of Collections" do
+    it "returns a SearchResult of Collections" do
       VCR.use_cassette("collections") do
         @collections = Unsplash::Collection.search("explore", 1)
       end
 
-      expect(@collections).to be_an Array
+      expect(@collections).to be_an Unsplash::SearchResult
       expect(@collections.sample).to be_an Unsplash::Collection
       expect(@collections.size).to eq 1
+      expect(@collections.total).to eq 1
+      expect(@collections.total_pages).to eq 1
     end
 
-    it "returns an empty array if there are no users found" do
+    it "returns an empty SearchResult if there are no users found" do
       VCR.use_cassette("collections") do
         @collections = Unsplash::Collection.search("veryveryspecific", 1)
       end
 
       expect(@collections).to eq []
+      expect(@collections.total).to eq 1
+      expect(@collections.total_pages).to eq 1
     end
 
-    it "returns an array of Collections with number of elements per page defined" do
+    it "returns a SearchResult of Collections with number of elements per page defined" do
       VCR.use_cassette("collections") do
         @collections = Unsplash::Collection.search("explore", 1, 2)
       end
 
-      expect(@collections).to be_an Array
+      expect(@collections).to be_an Unsplash::SearchResult
       expect(@collections.sample).to be_an Unsplash::Collection
       expect(@collections.size).to eq 2
+      expect(@collections.total).to eq 2
+      expect(@collections.total_pages).to eq 1
     end
   end
 
@@ -94,7 +100,7 @@ describe Unsplash::Collection do
       expect(@collections).to be_an Array
       expect(@collections.size).to eq 12
     end
-    
+
     it "parses the nested user objects" do
       VCR.use_cassette("collections") do
         @collections = Unsplash::Collection.all(1, 12)
@@ -159,7 +165,7 @@ describe Unsplash::Collection do
       VCR.use_cassette("collections") do
         @collection = @collection.update(title: "Penultimate Faves")
       end
-      
+
       expect(@collection).to be_a Unsplash::Collection
     end
 
@@ -168,7 +174,7 @@ describe Unsplash::Collection do
         @collection = Unsplash::Collection.find(@collection.id)
         @collection.update(title: "Best Picturez")
       end
-      
+
       expect(@collection.title).to eq "Best Picturez"
     end
 
@@ -205,7 +211,7 @@ describe Unsplash::Collection do
 
     it "returns a metadata hash" do
       stub_oauth_authorization
-      
+
       VCR.use_cassette("collections") do
         collection = Unsplash::Collection.find(301)
         meta = collection.add(@photo)

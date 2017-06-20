@@ -77,7 +77,7 @@ module Unsplash # :nodoc:
       # @param query [String] Keywords to search for.
       # @param page  [Integer] Which page of search results to return.
       # @param per_page [Integer] The number of users search result per page. (default: 10, maximum: 30)
-      # @return [Array] a list of +Unsplash::Photo+ objects.
+      # @return [SearchResult] a list of +Unsplash::Photo+ objects.
       def search(query, page = 1, per_page = 10)
         params = {
           query:    query,
