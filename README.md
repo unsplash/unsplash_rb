@@ -37,9 +37,11 @@ Unsplash.configure do |config|
 end
 ```
 
-#### UTM parameters
+#### API Guidelines
 
-As part of [the API guidelines](https://community.unsplash.com/developersblog/unsplash-api-guidelines), all API uses are required to use utm links when providing credit to photographers and Unsplash. Set the `config.utm_source` to your app's name to automatically append the utm source.
+All API applications must abide by the [API Guidelines](https://medium.com/unsplash/unsplash-api-guidelines-28e0216e6daa).
+
+As part of [the API guidelines](https://medium.com/unsplash/unsplash-api-guidelines-28e0216e6daa), all API uses are required to use utm links when providing credit to photographers and Unsplash. Set the `config.utm_source` to your app's name to automatically append the utm source.
 
 ### Public-scope actions
 
@@ -81,9 +83,9 @@ permission scopes you requested and the user authorized.
 
 ### Hotlinking
 
-Hotlinking the Unsplash image files is encouraged: https://unsplash.com/documentation#hotlinking
+Hotlinking the [Unsplash image files is required](https://medium.com/@lukechesser/unsplash-api-guidelines-hotlinking-images-6c6b51030d2a)
 
-Unlike most APIs, Unsplash prefers for the image URLs returned by the API to be directly used or embedded in your applications (generally referred to as hotlinking). By using the CDN and embedding the photo URLs in your application, Unsplash can better track photo views and pass those stats on to the photographer, providing them with context for how popular their photo is and how it's being used.
+Unlike most APIs, Unsplash requires for the image URLs returned by the API to be directly used or embedded in your applications (generally referred to as hotlinking). By using the CDN and embedding the photo URLs in your application, Unsplash can better track photo views and pass those stats on to the photographer, providing them with context for how popular their photo is and how it's being used.
 
 ## Development
 
