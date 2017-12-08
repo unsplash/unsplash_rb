@@ -4,7 +4,7 @@ describe Unsplash::Collection do
 
   let (:collection_id) { 201 }
   let (:curated_id) { 90 }
-  let (:fake_id)  { 1234 }
+  let (:fake_id)  { 987654321 }
 
   describe "#find" do
     it "returns a Collection object" do
@@ -63,9 +63,9 @@ describe Unsplash::Collection do
 
       expect(@collections).to be_an Unsplash::SearchResult
       expect(@collections.sample).to be_an Unsplash::Collection
-      expect(@collections.size).to eq 1
-      expect(@collections.total).to eq 1
-      expect(@collections.total_pages).to eq 1
+      expect(@collections.size).to eq 10
+      expect(@collections.total).to eq 334
+      expect(@collections.total_pages).to eq 34
     end
 
     it "returns an empty SearchResult if there are no users found" do
@@ -74,8 +74,8 @@ describe Unsplash::Collection do
       end
 
       expect(@collections).to eq []
-      expect(@collections.total).to eq 1
-      expect(@collections.total_pages).to eq 1
+      expect(@collections.total).to eq 0
+      expect(@collections.total_pages).to eq 0
     end
 
     it "returns a SearchResult of Collections with number of elements per page defined" do
@@ -86,8 +86,8 @@ describe Unsplash::Collection do
       expect(@collections).to be_an Unsplash::SearchResult
       expect(@collections.sample).to be_an Unsplash::Collection
       expect(@collections.size).to eq 2
-      expect(@collections.total).to eq 2
-      expect(@collections.total_pages).to eq 1
+      expect(@collections.total).to eq 334
+      expect(@collections.total_pages).to eq 167
     end
   end
 

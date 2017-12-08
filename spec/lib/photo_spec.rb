@@ -35,7 +35,7 @@ describe Unsplash::Photo do
         @photo = Unsplash::Photo.find(photo_id)
       end
 
-      expect(@photo.user.links.html).to eq("http://lvh.me:3000/alejandroescamilla")
+      expect(@photo.user.links.html).to eq("http://lvh.me:3000/@alejandroescamilla")
     end
   end
 
@@ -125,9 +125,9 @@ describe Unsplash::Photo do
       end
 
       expect(@photos).to be_an Unsplash::SearchResult
-      expect(@photos.size).to eq 4
-      expect(@photos.total).to eq 10
-      expect(@photos.total_pages).to eq 1
+      expect(@photos.size).to eq 10
+      expect(@photos.total).to eq 541
+      expect(@photos.total_pages).to eq 55
     end
 
     it "returns a SearchResult of Photos with number of elements per page defined" do
@@ -137,8 +137,8 @@ describe Unsplash::Photo do
 
       expect(@photos).to be_an Unsplash::SearchResult
       expect(@photos.size).to eq 3
-      expect(@photos.total).to eq 10
-      expect(@photos.total_pages).to eq 1
+      expect(@photos.total).to eq 541
+      expect(@photos.total_pages).to eq 181
     end
   end
 
@@ -207,7 +207,6 @@ describe Unsplash::Photo do
         }.to raise_error Unsplash::Error
       end
     end
-
   end
 
   describe "#unlike!" do
@@ -230,9 +229,5 @@ describe Unsplash::Photo do
         }.to raise_error Unsplash::Error
       end
     end
-
   end
-
-
-
 end

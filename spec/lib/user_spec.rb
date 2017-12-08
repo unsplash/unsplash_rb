@@ -33,8 +33,8 @@ describe Unsplash::User do
 
       expect(@users).to be_an Unsplash::SearchResult
       expect(@users.sample).to be_an Unsplash::User
-      expect(@users.size).to eq 1
-      expect(@users.total).to eq 1
+      expect(@users.size).to eq 2
+      expect(@users.total).to eq 2
       expect(@users.total_pages).to eq 1
     end
 
@@ -45,7 +45,7 @@ describe Unsplash::User do
 
       expect(@users).to eq []
       expect(@users.total).to eq 0
-      expect(@users.total_pages).to eq 1
+      expect(@users.total_pages).to eq 0
     end
 
     it "returns a SearchResult of Users with number of elements per page defined" do
@@ -64,11 +64,11 @@ describe Unsplash::User do
   describe "#likes" do
     it "returns an array of Photos" do
       VCR.use_cassette("users") do
-        @liked = Unsplash::User.find("aaron").likes
+        @liked = Unsplash::User.find(regularjoe).likes
       end
 
       expect(@liked).to be_an Array
-      expect(@liked.size).to eq 4
+      expect(@liked.size).to eq 10
     end
 
     it "returns empty array if the user does not have any likes" do
@@ -106,27 +106,25 @@ describe Unsplash::User do
         end
       }.to raise_error Unsplash::Error
     end
+  end
 
-
-    describe "#collections" do
-      it "returns an array of Collections" do
-        VCR.use_cassette("users") do
-          @collections = Unsplash::User.find("crew").collections
-        end
-
-        expect(@collections).to all (be_an Unsplash::Collection)
-        expect(@collections.size).to eq 3
+  describe "#collections" do
+    it "returns an array of Collections" do
+      VCR.use_cassette("users") do
+        @collections = Unsplash::User.find("crew").collections
       end
 
-      it "returns empty array if the user does not have any collections" do
-        VCR.use_cassette("users") do
-          @collections = Unsplash::User.find("mago").collections
-        end
-
-        expect(@collections).to be_empty
-      end
+      expect(@collections).to all (be_an Unsplash::Collection)
+      expect(@collections.size).to eq 10
     end
 
+    it "returns empty array if the user does not have any collections" do
+      VCR.use_cassette("users") do
+        @collections = Unsplash::User.find("mago").collections
+      end
+
+      expect(@collections).to be_empty
+    end
   end
 
   describe "non-public scope actions" do

@@ -108,7 +108,7 @@ module Unsplash # :nodoc:
     # @return [Boolean] +true+ on success.
     def destroy
       response = connection.delete("/collections/#{id}")
-      response.status == 204
+      (200..299).include?(response.status)
     end
 
     # Get a list of the photos contained in this collection.
@@ -145,7 +145,7 @@ module Unsplash # :nodoc:
     # @return [Boolean] +true+ on success.
     def remove(photo)
       response = connection.delete("/collections/#{id}/remove", photo_id: photo.id)
-      response.status == 204
+      (200..299).include?(response.status)
     end
 
   end

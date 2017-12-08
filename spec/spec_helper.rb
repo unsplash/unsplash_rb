@@ -12,7 +12,7 @@ Unsplash.configure do |config|
 end
 
 VCR.configure do |config|
-  config.default_cassette_options = { match_requests_on: [:method, :path, :query] }
+  config.default_cassette_options = { match_requests_on: [:method, :path, :query], record: :new_episodes }
   config.cassette_library_dir = "spec/cassettes"
   config.hook_into :webmock
   config.register_request_matcher :auth_header do |request_1, request_2|
