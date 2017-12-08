@@ -230,4 +230,23 @@ describe Unsplash::Photo do
       end
     end
   end
+
+  describe "#download!" do
+    it "returns the URL" do
+      VCR.use_cassette("photos") do
+        photo = Unsplash::Photo.find("tAKXap853rY")
+        expect(photo.download!).to eq "https://images.unsplash.com/1/macbook-air-all-faded-and-stuff.jpg?ixlib=rb-0.3.5&q=85&fm=jpg&crop=entropy&cs=srgb&s=f33f08b334c34ffe513f1a0fdf72bb71"
+      end
+    end
+
+    it "makes a request to Unsplash" do
+      allow(Unsplash::Photo.connection).to receive(:get).and_call_original
+
+      VCR.use_cassette("photos") do
+        photo = Unsplash::Photo.find("tAKXap853rY")
+        photo.download!
+        expect(Unsplash::Photo.connection).to have_received(:get).with(photo.links.download_location)
+      end
+    end
+  end
 end
