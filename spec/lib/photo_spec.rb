@@ -35,7 +35,7 @@ describe Unsplash::Photo do
         @photo = Unsplash::Photo.find(photo_id)
       end
 
-      expect(@photo.user.links.html).to eq("http://lvh.me:3000/alejandroescamilla")
+      expect(@photo.user.links.html).to eq("http://lvh.me:3000/@alejandroescamilla")
     end
   end
 
@@ -125,9 +125,9 @@ describe Unsplash::Photo do
       end
 
       expect(@photos).to be_an Unsplash::SearchResult
-      expect(@photos.size).to eq 4
-      expect(@photos.total).to eq 10
-      expect(@photos.total_pages).to eq 1
+      expect(@photos.size).to eq 10
+      expect(@photos.total).to eq 541
+      expect(@photos.total_pages).to eq 55
     end
 
     it "returns a SearchResult of Photos with number of elements per page defined" do
@@ -137,8 +137,8 @@ describe Unsplash::Photo do
 
       expect(@photos).to be_an Unsplash::SearchResult
       expect(@photos.size).to eq 3
-      expect(@photos.total).to eq 10
-      expect(@photos.total_pages).to eq 1
+      expect(@photos.total).to eq 541
+      expect(@photos.total_pages).to eq 181
     end
   end
 
@@ -207,7 +207,6 @@ describe Unsplash::Photo do
         }.to raise_error Unsplash::Error
       end
     end
-
   end
 
   describe "#unlike!" do
@@ -230,9 +229,24 @@ describe Unsplash::Photo do
         }.to raise_error Unsplash::Error
       end
     end
-
   end
 
+  describe "#download!" do
+    it "returns the URL" do
+      VCR.use_cassette("photos") do
+        photo = Unsplash::Photo.find("tAKXap853rY")
+        expect(photo.download!).to eq "https://images.unsplash.com/1/macbook-air-all-faded-and-stuff.jpg?ixlib=rb-0.3.5&q=85&fm=jpg&crop=entropy&cs=srgb&s=f33f08b334c34ffe513f1a0fdf72bb71"
+      end
+    end
 
+    it "makes a request to Unsplash" do
+      allow(Unsplash::Photo.connection).to receive(:get).and_call_original
 
+      VCR.use_cassette("photos") do
+        photo = Unsplash::Photo.find("tAKXap853rY")
+        photo.download!
+        expect(Unsplash::Photo.connection).to have_received(:get).with(photo.links.download_location)
+      end
+    end
+  end
 end

@@ -12,37 +12,37 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 'OK '
+      message: OK
     headers:
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Request-Method:
       - "*"
-      Cache-Control:
-      - max-age=7200, public
+      Access-Control-Allow-Headers:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Link,X-Total,X-Per-Page,X-RateLimit-Limit,X-RateLimit-Remaining
       Content-Type:
       - application/json
-      Content-Length:
-      - '41'
       Etag:
-      - W/"e65385200ca17b930ea4033e99ad801e"
-      X-Request-Id:
-      - d6e3f821-4687-4fe1-a185-cb61cb878c61
+      - W/"957c050f6b8d03eba2ca48eb005cd62e"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
       X-Ratelimit-Limit:
-      - '5000'
+      - '10000'
       X-Ratelimit-Remaining:
-      - '4999'
+      - '9841'
+      X-Request-Id:
+      - f82c4be3-1d83-4761-8cfd-6fa4d16c422c
       X-Runtime:
-      - '0.020909'
-      Server:
-      - WEBrick/1.3.1 (Ruby/2.1.5/2014-11-13)
-      Date:
-      - Wed, 05 Aug 2015 15:09:25 GMT
-      Connection:
-      - Keep-Alive
+      - '0.100250'
+      Vary:
+      - Origin
+      Content-Length:
+      - '203'
     body:
       encoding: UTF-8
-      string: '{"photo_downloads":50,"batch_downloads":100}'
-    http_version: 
-  recorded_at: Wed, 05 Aug 2015 15:09:25 GMT
-recorded_with: VCR 2.9.3
+      string: '{"total_photos": 373132, "photo_downloads": 265475445, "photos": 373132, "downloads": 265475445, "views": 38628516221, "likes": 7020656, "photographers": 62861, "pixels": 5414747434353, "downloads_per_second": 8, "views_per_second": 1904, "developers": 20974, "applications": 1226, "requests": 4591220993 }'
+    http_version:
+  recorded_at: Fri, 08 Dec 2017 18:49:38 GMT
+recorded_with: VCR 3.0.3
