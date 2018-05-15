@@ -29,7 +29,7 @@ describe Unsplash::Connection do
     end
 
     it "appends the utm params" do
-      headers = { "Authorization"=> "Client-ID #{Unsplash.configuration.application_id}" }
+      headers = { "Authorization"=> "Client-ID #{Unsplash.configuration.application_access_key}" }
       params = {
         foo: "bar",
         utm_source:   "my_app",

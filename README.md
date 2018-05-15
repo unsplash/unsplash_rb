@@ -26,11 +26,11 @@ Or install it yourself as:
 ### Configuration
 
 Before making requests, you must configure the gem with your application ID
-and secret. If you are using Rails, you can do this in an initializer. 
+and secret. If you are using Rails, you can do this in an initializer.
 
 ```ruby
-Unsplash.configure do |config|    
-  config.application_id     = "YOUR ACCESS KEY"    
+Unsplash.configure do |config|
+  config.application_access_key = "YOUR ACCESS KEY"
   config.application_secret = "YOUR APPLICATION SECRET"
   config.application_redirect_uri = "https://your-application.com/oauth/callback"
   config.utm_source = "alices_terrific_client_app"
@@ -91,7 +91,7 @@ Unlike most APIs, Unsplash requires for the image URLs returned by the API to be
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake rspec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
-To install this gem onto your local machine, run `bundle exec rake install`. 
+To install this gem onto your local machine, run `bundle exec rake install`.
 
 ## Contributing
 
