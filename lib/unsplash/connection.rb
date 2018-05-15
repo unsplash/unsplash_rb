@@ -18,13 +18,13 @@ module Unsplash #:nodoc:
     # @param api_base_uri [String] Base URI at which to make API calls.
     # @param oauth_base_uri [String] Base URI for OAuth requests.
     def initialize(version: DEFAULT_VERSION, api_base_uri: DEFAULT_API_BASE_URI, oauth_base_uri: DEFAULT_OAUTH_BASE_URI)
-      @application_id     = Unsplash.configuration.application_id
+      @application_access_key = Unsplash.configuration.application_access_key
       @application_secret = Unsplash.configuration.application_secret
       @api_version        = version
       @api_base_uri       = api_base_uri
 
       oauth_base_uri = oauth_base_uri
-      @oauth = ::OAuth2::Client.new(@application_id, @application_secret, site: oauth_base_uri) do |http|
+      @oauth = ::OAuth2::Client.new(@application_access_key, @application_secret, site: oauth_base_uri) do |http|
         http.request :multipart
         http.request :url_encoded
         http.adapter :net_http
@@ -137,7 +137,7 @@ module Unsplash #:nodoc:
     end
 
     def public_auth_header
-      { "Authorization" => "Client-ID #{@application_id}" }
+      { "Authorization" => "Client-ID #{@application_access_key}" }
     end
 
     def utm_params
