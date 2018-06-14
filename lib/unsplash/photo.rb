@@ -54,7 +54,7 @@ module Unsplash # :nodoc:
       # @param orientation [String] Filter by orientation of the photo. Valid values are landscape, portrait, and squarish.
       # @return [Unsplash::Photo] An Unsplash Photo if count parameter is omitted
       # @return [Array] An array of Unsplash Photos if the count parameter is specified. An array is returned even if count is 1
-      def random(count: nil,categories: nil, collections: nil, featured: nil, user: nil, query: nil, width: nil, height: nil, orientation: nil)
+      def random(count: nil, categories: nil, collections: nil, featured: nil, user: nil, query: nil, width: nil, height: nil, orientation: nil)
         params = {
           category: (categories && categories.join(",")),
           collections: (collections && collections.join(",")),
@@ -83,12 +83,14 @@ module Unsplash # :nodoc:
       # @param query [String] Keywords to search for.
       # @param page  [Integer] Which page of search results to return.
       # @param per_page [Integer] The number of users search result per page. (default: 10, maximum: 30)
+      # @param orientation [String] Filter by orientation of the photo. Valid values are landscape, portrait, and squarish.
       # @return [SearchResult] a list of +Unsplash::Photo+ objects.
-      def search(query, page = 1, per_page = 10)
+      def search(query, page = 1, per_page = 10, orientation = nil)
         params = {
           query:    query,
           page:     page,
-          per_page: per_page
+          per_page: per_page,
+          orientation: orientation
         }
         Unsplash::Search.search("/search/photos", self, params)
       end

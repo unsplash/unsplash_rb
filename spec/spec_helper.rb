@@ -23,9 +23,7 @@ VCR.configure do |config|
   end
 end
 
-
 RSpec.configure do |config|
-
   config.order = "random"
 
   config.before :each do |example|
@@ -38,7 +36,6 @@ RSpec.configure do |config|
     end
   end
 end
-
 
 def stub_oauth_authorization
   token = "69cca388c56e64fc2ee1c9f7cfb0dcec1bf1b384957b61c9ec6764777b98554e"
