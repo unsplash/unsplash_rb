@@ -195,7 +195,7 @@ describe Unsplash::Photo do
         VCR.use_cassette("photos", match_requests_on: [:method, :path, :body]) do
           @photo = Unsplash::Photo.create "spec/support/upload-1.txt"
         end
-      }.to raise_error Unsplash::Error
+      }.to raise_error Unsplash::DeprecationError
     end
 
   end

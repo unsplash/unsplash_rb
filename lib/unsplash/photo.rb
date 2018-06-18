@@ -128,7 +128,7 @@ module Unsplash # :nodoc:
       # @return [Unsplash::Photo] The uploaded photo.
       # <b>DEPRECATED</b>
       def create(filepath)
-        raise Unsplash::Error.new "API photo-upload endpoint has been deprecated and removed."
+        raise Unsplash::DeprecationError.new "API photo-upload endpoint has been deprecated and removed."
       end
 
       private
