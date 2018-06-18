@@ -98,7 +98,7 @@ module Unsplash # :nodoc:
       # Get a list of all photos.
       # @param page  [Integer] Which page of search results to return.
       # @param per_page [Integer] The number of search results per page. (default: 10, maximum: 30)
-      # @param order_by [String] How to sort the photos.
+      # @param order_by [String] How to sort the photos. (Valid values: latest, oldest, popular; default: latest)
       # @return [Array] A single page of +Unsplash::Photo+ search results.
       def all(page = 1, per_page = 10, order_by = "latest")
         params = {
@@ -112,9 +112,9 @@ module Unsplash # :nodoc:
       # Get a single page from the list of the curated photos (front-page’s photos).
       # @param page [Integer] Which page of search results to return.
       # @param per_page [Integer] The number of search results per page. (default: 10, maximum: 30)
-      # @param order_by [String] How to sort the photos.
+      # @param order_by [String] How to sort the photos. (Valid values: latest, oldest, popular; default: latest)
       # @return [Array] A single page of +Unsplash::Photo+ search results.
-      def curated(page = 1, per_page = 10, order_by = "popular")
+      def curated(page = 1, per_page = 10, order_by = "latest")
         params = {
           page:     page,
           per_page: per_page,
