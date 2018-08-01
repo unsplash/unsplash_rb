@@ -91,7 +91,7 @@ module Unsplash # :nodoc:
           page:     page,
           per_page: per_page,
           orientation: orientation
-        }.compact
+        }.select { |_k, v| v }
         Unsplash::Search.search("/search/photos", self, params)
       end
 
