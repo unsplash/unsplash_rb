@@ -130,8 +130,8 @@ describe Unsplash::Photo do
 
       expect(@photos).to be_an Unsplash::SearchResult
       expect(@photos.size).to eq 10
-      expect(@photos.total).to eq 1001
-      expect(@photos.total_pages).to eq 101
+      expect(@photos.total).to eq 541
+      expect(@photos.total_pages).to eq 55
     end
 
     it "returns a SearchResult of Photos with number of elements per page defined" do
@@ -141,8 +141,8 @@ describe Unsplash::Photo do
 
       expect(@photos).to be_an Unsplash::SearchResult
       expect(@photos.size).to eq 3
-      expect(@photos.total).to eq 1001
-      expect(@photos.total_pages).to eq 334
+      expect(@photos.total).to eq 541
+      expect(@photos.total_pages).to eq 181
     end
 
     it "returns a SearchResult of Photos with orientation parameter" do
