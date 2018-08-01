@@ -119,10 +119,6 @@ describe Unsplash::Photo do
   end
 
   describe "#search" do
-    before do
-      Unsplash::Client.connection = Unsplash::Connection.new(api_base_uri: "https://api.unsplash.com/")
-    end
-
     it "returns a SearchResult of Photos" do
       VCR.use_cassette("photos") do
         @photos = Unsplash::Photo.search("dog", 1)
@@ -176,10 +172,6 @@ describe Unsplash::Photo do
   end
 
   describe "#curated" do
-    before do
-      Unsplash::Client.connection = Unsplash::Connection.new(api_base_uri: "https://api.unsplash.com/")
-    end
-
     it "returns an array of Photos" do
       VCR.use_cassette("photos") do
         @photos = Unsplash::Photo.curated(1, 6)
