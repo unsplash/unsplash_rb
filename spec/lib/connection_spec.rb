@@ -111,4 +111,3 @@ describe Unsplash::Connection do
     end
   end
 end
-
