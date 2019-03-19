@@ -28,6 +28,7 @@ VCR.configure do |config|
 
   config.filter_sensitive_data("<ACCESS_KEY>") { Unsplash.configuration.application_access_key }
   config.filter_sensitive_data("<APP_SECRET>") { Unsplash.configuration.application_secret }
+  config.filter_sensitive_data("<BEARER_TOKEN>") { ENV["UNSPLASH_BEARER_TOKEN"] }
   config.filter_sensitive_data("<API_URI>") { ENV.fetch("UNSPLASH_API_URI", "https://api.unsplash.com/") }
   config.filter_sensitive_data("<OAUTH_URI>") { ENV.fetch("UNSPLASH_OAUTH_URI", "https://unsplash.com/") }
 end
