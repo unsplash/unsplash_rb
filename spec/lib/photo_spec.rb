@@ -43,7 +43,6 @@ describe Unsplash::Photo do
 
     let(:params) do
       {
-        categories: [2],
         featured:   true,
         width:      320,
         height:     200
@@ -74,16 +73,6 @@ describe Unsplash::Photo do
       expect(@photo.user).to be_an Unsplash::User
     end
 
-    context "with categories" do
-      it "joins them" do
-        expect(Unsplash::Photo.connection)
-          .to receive(:get).with("/photos/random", category: "1,2,3")
-          .and_return double(body: "{}")
-
-        photo = Unsplash::Photo.random(categories: [1,2,3])
-      end
-    end
-
     context "with collections" do
       it "joins them" do
         expect(Unsplash::Photo.connection)
@@ -91,17 +80,6 @@ describe Unsplash::Photo do
           .and_return double(body: "{}")
 
         photo = Unsplash::Photo.random(collections: [4,5,6])
-      end
-    end
-
-
-    context "without categories" do
-      it "removes them" do
-        expect(Unsplash::Photo.connection)
-          .to receive(:get).with("/photos/random", {})
-          .and_return double(body: "{}")
-
-        photo = Unsplash::Photo.random
       end
     end
 

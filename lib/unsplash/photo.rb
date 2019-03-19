@@ -45,7 +45,6 @@ module Unsplash # :nodoc:
       # Get a random photo or set of photos. The photo selection pool can be narrowed using
       # a combination of optional parameters. Can also optionally specify a custom image size.
       # @param count [Integer] Number of photos required. Default=1, Max=30
-      # @param categories [Array] Limit selection to given category ID's.
       # @param featured [Boolean] Limit selection to featured photos.
       # @param user [String] Limit selection to given User's ID.
       # @param query [String] Limit selection to given search query.
@@ -54,9 +53,8 @@ module Unsplash # :nodoc:
       # @param orientation [String] Filter by orientation of the photo. Valid values are landscape, portrait, and squarish.
       # @return [Unsplash::Photo] An Unsplash Photo if count parameter is omitted
       # @return [Array] An array of Unsplash Photos if the count parameter is specified. An array is returned even if count is 1
-      def random(count: nil, categories: nil, collections: nil, featured: nil, user: nil, query: nil, width: nil, height: nil, orientation: nil)
+      def random(count: nil, collections: nil, featured: nil, user: nil, query: nil, width: nil, height: nil, orientation: nil)
         params = {
-          category: (categories && categories.join(",")),
           collections: (collections && collections.join(",")),
           featured: featured,
           username: user,
