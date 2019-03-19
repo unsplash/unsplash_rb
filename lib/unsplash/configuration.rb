@@ -15,15 +15,5 @@ module Unsplash # :nodoc:
     def test?
       !!@test
     end
-
-    def application_id=(key)
-      logger.warn "Configuring application_id is deprecated. Use application_access_key."
-      self.application_access_key = key
-    end
-
-    def application_id
-      application_access_key
-    end
-
   end
 end
