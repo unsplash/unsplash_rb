@@ -2,18 +2,22 @@
 http_interactions:
 - request:
     method: get
-    uri: http://api.lvh.me:3000/stats/total
+    uri: "<API_URI>stats/total"
     body:
       encoding: US-ASCII
       string: ''
     headers:
       Authorization:
-      - Client-ID baaa6a1214d50b3586bec6e06157aab859bd4d86dc0b755360f103f38974edc3
+      - Client-ID <ACCESS_KEY>
   response:
     status:
       code: 200
       message: OK
     headers:
+      Server:
+      - Cowboy
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Request-Method:
@@ -24,25 +28,41 @@ http_interactions:
       - Link,X-Total,X-Per-Page,X-RateLimit-Limit,X-RateLimit-Remaining
       Content-Type:
       - application/json
-      Etag:
-      - W/"957c050f6b8d03eba2ca48eb005cd62e"
-      Cache-Control:
-      - max-age=0, private, must-revalidate
       X-Ratelimit-Limit:
-      - '10000'
+      - '100'
       X-Ratelimit-Remaining:
-      - '9841'
+      - '100'
       X-Request-Id:
-      - f82c4be3-1d83-4761-8cfd-6fa4d16c422c
+      - 7d2bfc17-e619-4610-bbc0-1c998663d6e8
       X-Runtime:
-      - '0.100250'
-      Vary:
-      - Origin
+      - '0.013063'
+      Via:
+      - 1.1 varnish
+      - 1.1 varnish
+      - 1.1 vegur
       Content-Length:
       - '203'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Tue, 19 Mar 2019 23:10:33 GMT
+      Age:
+      - '0'
+      Connection:
+      - keep-alive
+      X-Served-By:
+      - cache-iad2131-IAD, cache-mdw17329-MDW
+      X-Cache:
+      - MISS, MISS
+      X-Cache-Hits:
+      - 0, 0
+      X-Timer:
+      - S1553037034.795434,VS0,VE62
+      Vary:
+      - Origin, Authorization
     body:
       encoding: UTF-8
-      string: '{"total_photos": 373132, "photo_downloads": 265475445, "photos": 373132, "downloads": 265475445, "views": 38628516221, "likes": 7020656, "photographers": 62861, "pixels": 5414747434353, "downloads_per_second": 8, "views_per_second": 1904, "developers": 20974, "applications": 1226, "requests": 4591220993 }'
-    http_version:
-  recorded_at: Fri, 08 Dec 2017 18:49:38 GMT
+      string: '{"total_photos":0,"photo_downloads":0,"photos":0,"downloads":0,"views":0,"likes":0,"photographers":0,"pixels":0,"downloads_per_second":0,"views_per_second":0,"developers":0,"applications":0,"requests":0}'
+    http_version: 
+  recorded_at: Tue, 19 Mar 2019 23:10:33 GMT
 recorded_with: VCR 3.0.3
