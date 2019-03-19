@@ -127,14 +127,13 @@ module Unsplash #:nodoc:
 
       status_code = response.respond_to?(:status) ? response.status : response.code
 
-      begin
-        if !(200..299).include?(status_code)
-          body = JSON.parse(response.body)
-          msg = body["error"] || body["errors"].join(" ")
-          raise Unsplash::Error.new msg
-        end
-      rescue JSON::ParserError
-        raise Unsplash::Error.new response.body
+      case status_code
+      when 200..299
+        response
+      when 404
+        raise Unsplash::NotFoundError.new(error_message(response))
+      else
+        raise Unsplash::Error.new(error_message(response))
       end
 
       response
@@ -156,6 +155,13 @@ module Unsplash #:nodoc:
       return if !@oauth_token.expired?
 
       @oauth_token = @oauth_token.refresh_token
+    end
+
+    def error_message(response)
+      body = JSON.parse(response.body)
+      body["error"] || body["errors"].join(" ")
+    rescue JSON::ParserError
+      raise Unsplash::Error.new(response.body)
     end
   end
 end

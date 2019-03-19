@@ -21,7 +21,7 @@ describe Unsplash::User do
         VCR.use_cassette("users") do
           @user = Unsplash::User.find(fake)
         end
-      }.to raise_error Unsplash::Error
+      }.to raise_error Unsplash::NotFoundError
     end
   end
 
@@ -104,7 +104,7 @@ describe Unsplash::User do
         VCR.use_cassette("users") do
           @user = Unsplash::User.find(fake).photos
         end
-      }.to raise_error Unsplash::Error
+      }.to raise_error Unsplash::NotFoundError
     end
   end
 

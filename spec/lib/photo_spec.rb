@@ -18,7 +18,7 @@ describe Unsplash::Photo do
         VCR.use_cassette("photos") do
           @photo = Unsplash::Photo.find(fake_id)
         end
-      }.to raise_error Unsplash::Error
+      }.to raise_error Unsplash::NotFoundError
     end
 
     it "parses the nested user object" do
@@ -50,7 +50,7 @@ describe Unsplash::Photo do
         VCR.use_cassette("photos") do
           Unsplash::Photo.random(user: "bigfoot_aint_real_either")
         end
-      }.to raise_error Unsplash::Error
+      }.to raise_error Unsplash::NotFoundError
     end
 
     it "parses the nested user object" do

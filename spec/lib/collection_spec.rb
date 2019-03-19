@@ -18,7 +18,7 @@ describe Unsplash::Collection do
         VCR.use_cassette("collections") do
           Unsplash::Collection.find(fake_id)
         end
-      }.to raise_error Unsplash::Error
+      }.to raise_error Unsplash::NotFoundError
     end
 
     it "parses the nested user object" do
@@ -177,7 +177,6 @@ describe Unsplash::Collection do
       end
     end
   end
-
 
   describe "#remove" do
     before :each do
