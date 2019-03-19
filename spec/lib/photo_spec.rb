@@ -8,10 +8,9 @@ describe Unsplash::Photo do
 
     it "returns a Photo object" do
       VCR.use_cassette("photos") do
-        @photo = Unsplash::Photo.find(photo_id)
+        photo = Unsplash::Photo.find(photo_id)
+        expect(photo).to be_a Unsplash::Photo
       end
-
-      expect(@photo).to be_a Unsplash::Photo
     end
 
     it "errors if the photo doesn't exist" do
@@ -24,34 +23,23 @@ describe Unsplash::Photo do
 
     it "parses the nested user object" do
       VCR.use_cassette("photos") do
-        @photo = Unsplash::Photo.find(photo_id)
+        photo = Unsplash::Photo.find(photo_id)
+        expect(photo.user).to be_an Unsplash::User
       end
-
-      expect(@photo.user).to be_an Unsplash::User
     end
 
     it "supports nested method access" do
       VCR.use_cassette("photos") do
-        @photo = Unsplash::Photo.find(photo_id)
+        photo = Unsplash::Photo.find(photo_id)
+        expect(photo.user.links.html).to match /@alejandroescamilla/
       end
-
-      expect(@photo.user.links.html).to eq("http://lvh.me:3000/@alejandroescamilla")
     end
   end
 
   describe "#random" do
-
-    let(:params) do
-      {
-        featured:   true,
-        width:      320,
-        height:     200
-      }
-    end
-
     it "returns a Photo object" do
       VCR.use_cassette("photos") do
-        @photo = Unsplash::Photo.random(params)
+        @photo = Unsplash::Photo.random
       end
 
       expect(@photo).to be_a Unsplash::Photo
@@ -60,17 +48,16 @@ describe Unsplash::Photo do
     it "errors if there are no photos to choose from" do
       expect {
         VCR.use_cassette("photos") do
-          @photo = Unsplash::Photo.random(user: "bigfoot")
+          Unsplash::Photo.random(user: "bigfoot_aint_real_either")
         end
       }.to raise_error Unsplash::Error
     end
 
     it "parses the nested user object" do
       VCR.use_cassette("photos") do
-        @photo = Unsplash::Photo.random(params)
+        photo = Unsplash::Photo.random
+        expect(photo.user).to be_an Unsplash::User
       end
-
-      expect(@photo.user).to be_an Unsplash::User
     end
 
     context "with collections" do
@@ -104,8 +91,8 @@ describe Unsplash::Photo do
 
       expect(@photos).to be_an Unsplash::SearchResult
       expect(@photos.size).to eq 10
-      expect(@photos.total).to eq 541
-      expect(@photos.total_pages).to eq 55
+      expect(@photos.total).to be_a(Numeric)
+      expect(@photos.total_pages).to be_a(Numeric)
     end
 
     it "returns a SearchResult of Photos with number of elements per page defined" do
@@ -115,8 +102,8 @@ describe Unsplash::Photo do
 
       expect(@photos).to be_an Unsplash::SearchResult
       expect(@photos.size).to eq 3
-      expect(@photos.total).to eq 541
-      expect(@photos.total_pages).to eq 181
+      expect(@photos.total).to be_a(Numeric)
+      expect(@photos.total_pages).to be_a(Numeric)
     end
 
     it "returns a SearchResult of Photos with orientation parameter" do
@@ -197,7 +184,7 @@ describe Unsplash::Photo do
     it "returns the URL" do
       VCR.use_cassette("photos") do
         photo = Unsplash::Photo.find("tAKXap853rY")
-        expect(photo.download!).to eq "https://images.unsplash.com/1/macbook-air-all-faded-and-stuff.jpg?ixlib=rb-0.3.5&q=85&fm=jpg&crop=entropy&cs=srgb&s=f33f08b334c34ffe513f1a0fdf72bb71"
+        expect(photo.download!).to match /macbook-air-all-faded-and-stuff.jpg/
       end
     end
 
