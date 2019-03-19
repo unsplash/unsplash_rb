@@ -127,10 +127,14 @@ module Unsplash #:nodoc:
 
       status_code = response.respond_to?(:status) ? response.status : response.code
 
-      if !(200..299).include?(status_code)
-        body = JSON.parse(response.body)
-        msg = body["error"] || body["errors"].join(" ")
-        raise Unsplash::Error.new msg
+      begin
+        if !(200..299).include?(status_code)
+          body = JSON.parse(response.body)
+          msg = body["error"] || body["errors"].join(" ")
+          raise Unsplash::Error.new msg
+        end
+      rescue JSON::ParserError
+        raise Unsplash::Error.new response.body
       end
 
       response
