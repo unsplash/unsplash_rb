@@ -10,7 +10,7 @@ describe Unsplash do
     allow(Unsplash::Connection).to receive(:get).and_return(response)
 
     expect(Unsplash.configuration.logger).to receive(:warn).with("Watch out!")
-    Unsplash::CuratedBatch.all
+    Unsplash::Collection.all
   end
 
   it "handles 5** errors as Unsplash Errors" do
@@ -21,6 +21,6 @@ describe Unsplash do
     )
     allow(Unsplash::Connection).to receive(:public_send).and_return(response)
 
-    expect { Unsplash::CuratedBatch.all }.to raise_error(Unsplash::Error)
+    expect { Unsplash::Collection.all }.to raise_error(Unsplash::Error)
   end
 end
