@@ -154,7 +154,7 @@ describe Unsplash::Collection do
           collection = Unsplash::Collection.find(4397795) # exists but does not belong to user
           collection.destroy
         end
-      }.to raise_error OAuth2::Error
+      }.to raise_error Unsplash::ForbiddenError
     end
 
   end

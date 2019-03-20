@@ -62,7 +62,7 @@ module Unsplash #:nodoc:
     # @param token_extract [Hash] OAuth token hash from #extract_token.
     # @return [OAuth2::AccessToken, nil] New access token object.
     def create_and_assign_token(token_extract)
-      unless token_extract.nil?
+      if token_extract
         @oauth_token = OAuth2::AccessToken.from_hash(@oauth, token_extract)
       end
     end
@@ -112,13 +112,17 @@ module Unsplash #:nodoc:
         # Anything else? User agent?
       }
 
-      response = if @oauth_token
-        refresh_token!
+      response = begin
+        if @oauth_token
+          refresh_token!
 
-        param_key = verb == :post ? :body : :params
-        @oauth_token.public_send(verb,  @api_base_uri + path, param_key => params, headers: headers)
-      else
-        self.class.public_send verb, path, query: params, headers: public_auth_header
+          param_key = verb == :post ? :body : :params
+          @oauth_token.public_send(verb,  @api_base_uri + path, param_key => params, headers: headers)
+        else
+          self.class.public_send verb, path, query: params, headers: public_auth_header
+        end
+      rescue OAuth2::Error => e
+        OpenStruct.new(headers: {}, status: 403, body: e.error_message(e.response.body))
       end
 
       if response.headers["Warning"]
@@ -132,6 +136,8 @@ module Unsplash #:nodoc:
         response
       when 401
         raise Unsplash::UnauthorizedError.new(error_message(response))
+      when 403
+        raise Unsplash::ForbiddenError.new(error_message(response))
       when 404
         raise Unsplash::NotFoundError.new(error_message(response))
       else
