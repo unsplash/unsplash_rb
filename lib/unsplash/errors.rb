@@ -3,5 +3,7 @@ module Unsplash # :nodoc:
   class Error < StandardError; end
   # Raise for deprecation errors
   class DeprecationError < Error; end
+
+  class UnauthorizedError < Error; end
   class NotFoundError < Error; end
 end

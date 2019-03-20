@@ -130,6 +130,8 @@ module Unsplash #:nodoc:
       case status_code
       when 200..299
         response
+      when 401
+        raise Unsplash::UnauthorizedError.new(error_message(response))
       when 404
         raise Unsplash::NotFoundError.new(error_message(response))
       else

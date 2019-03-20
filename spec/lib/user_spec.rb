@@ -146,7 +146,7 @@ describe Unsplash::User do
           VCR.use_cassette("users", match_requests_on: [:auth_header, :path, :query]) do
             @user = Unsplash::User.current
           end
-        }.to raise_error Unsplash::Error
+        }.to raise_error Unsplash::UnauthorizedError
       end
     end
 
@@ -167,7 +167,7 @@ describe Unsplash::User do
           VCR.use_cassette("users", match_requests_on: [:headers, :path, :query]) do
             @user = Unsplash::User.update_current last_name: "Jangly"
           end
-        }.to raise_error Unsplash::Error
+        }.to raise_error Unsplash::UnauthorizedError
       end
     end
 

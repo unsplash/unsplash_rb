@@ -121,7 +121,7 @@ describe Unsplash::Collection do
         VCR.use_cassette("collections", match_requests_on: [:method, :path, :body]) do
           Unsplash::Collection.create(title: "Pretty Good Pictures I Guess", private: true)
         end
-      }.to raise_error Unsplash::Error
+      }.to raise_error Unsplash::UnauthorizedError
     end
   end
 

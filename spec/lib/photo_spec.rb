@@ -148,12 +148,12 @@ describe Unsplash::Photo do
       end
     end
 
-    it "raises on error" do
+    it "raises UnauthorizedError when not logged in" do
       VCR.use_cassette("photos") do
         photo = Unsplash::Photo.new(id: "abc123")
         expect {
           photo.like!
-        }.to raise_error Unsplash::Error
+        }.to raise_error Unsplash::UnauthorizedError
       end
     end
   end
@@ -170,12 +170,12 @@ describe Unsplash::Photo do
       end
     end
 
-    it "raises on error" do
+    it "raises UnauthorizedError when not logged in" do
       VCR.use_cassette("photos") do
         photo = Unsplash::Photo.new(id: "abc123")
         expect {
           photo.unlike!
-        }.to raise_error Unsplash::Error
+        }.to raise_error Unsplash::UnauthorizedError
       end
     end
   end
