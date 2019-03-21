@@ -34,14 +34,17 @@ Unsplash.configure do |config|
   config.application_secret = "YOUR APPLICATION SECRET"
   config.application_redirect_uri = "https://your-application.com/oauth/callback"
   config.utm_source = "alices_terrific_client_app"
+
+  # optional:
+  config.logger = MyCustomLogger.new
 end
 ```
 
 #### API Guidelines
 
-All API applications must abide by the [API Guidelines](https://medium.com/unsplash/unsplash-api-guidelines-28e0216e6daa).
+All API applications must abide by the [API Guidelines](https://help.unsplash.com/api-guidelines/unsplash-api-guidelines).
 
-As part of [the API guidelines](https://medium.com/unsplash/unsplash-api-guidelines-28e0216e6daa), all API uses are required to use utm links when providing credit to photographers and Unsplash. Set the `config.utm_source` to your app's name to automatically append the utm source.
+As part of [the API guidelines](https://help.unsplash.com/api-guidelines/unsplash-api-guidelines), all API uses are required to use utm links when providing credit to photographers and Unsplash. Set the `config.utm_source` to your app's name to automatically append the utm source.
 
 ### Public-scope actions
 
@@ -83,7 +86,7 @@ permission scopes you requested and the user authorized.
 
 ### Hotlinking
 
-Hotlinking the [Unsplash image files is required](https://medium.com/@lukechesser/unsplash-api-guidelines-hotlinking-images-6c6b51030d2a)
+Hotlinking the [Unsplash image files is required](https://help.unsplash.com/api-guidelines/more-on-each-guideline/guideline-hotlinking-images)
 
 Unlike most APIs, Unsplash requires for the image URLs returned by the API to be directly used or embedded in your applications (generally referred to as hotlinking). By using the CDN and embedding the photo URLs in your application, Unsplash can better track photo views and pass those stats on to the photographer, providing them with context for how popular their photo is and how it's being used.
 
