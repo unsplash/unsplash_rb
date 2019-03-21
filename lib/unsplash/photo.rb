@@ -27,17 +27,9 @@ module Unsplash # :nodoc:
 
       # Get a photo. Can be cropped or resized using the optional parameters.
       # @param id [String] The ID of the photo to retrieve.
-      # @param width [Integer] Width of customized version of the photo.
-      # @param height [Integer] Height of the customized version of the photo.
-      # @param crop_rect [String] A comma-separated list (x,y,width,height) of the rectangle to crop from the photo.
       # @return [Unsplash::Photo] The Unsplash Photo.
-      def find(id, width: nil, height: nil, crop_rect: nil)
-        custom = {
-          w:    width,
-          h:    height,
-          rect: crop_rect
-        }.select { |k,v| v }
-        photo = Unsplash::Photo.new JSON.parse(connection.get("/photos/#{id}", custom).body)
+      def find(id)
+        photo = Unsplash::Photo.new JSON.parse(connection.get("/photos/#{id}").body)
         photo.user = Unsplash::User.new photo.user
         photo
       end
@@ -48,19 +40,15 @@ module Unsplash # :nodoc:
       # @param featured [Boolean] Limit selection to featured photos.
       # @param user [String] Limit selection to given User's ID.
       # @param query [String] Limit selection to given search query.
-      # @param width [Integer] Width of customized version of the photo.
-      # @param height [Integer] Height of the customized version of the photo.
       # @param orientation [String] Filter by orientation of the photo. Valid values are landscape, portrait, and squarish.
       # @return [Unsplash::Photo] An Unsplash Photo if count parameter is omitted
       # @return [Array] An array of Unsplash Photos if the count parameter is specified. An array is returned even if count is 1
-      def random(count: nil, collections: nil, featured: nil, user: nil, query: nil, width: nil, height: nil, orientation: nil)
+      def random(count: nil, collections: nil, featured: nil, user: nil, query: nil, orientation: nil)
         params = {
           collections: (collections && collections.join(",")),
           featured: featured,
           username: user,
           query:    query,
-          w:        width,
-          h:        height,
           orientation: orientation
         }.select { |k,v| v }
         if count
