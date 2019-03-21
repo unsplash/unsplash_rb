@@ -17,9 +17,9 @@ module Unsplash # :nodoc:
       true
     end
 
-    # Download a photo.
+    # Track the download of a photo.
     # @return [String] URL of image file for download.
-    def download!
+    def track_download
       connection.get(links.download_location)["url"]
     end
 

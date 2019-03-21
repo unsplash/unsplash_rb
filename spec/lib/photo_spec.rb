@@ -180,11 +180,11 @@ describe Unsplash::Photo do
     end
   end
 
-  describe "#download!" do
+  describe "#track_download" do
     it "returns the URL" do
       VCR.use_cassette("photos") do
         photo = Unsplash::Photo.find("tAKXap853rY")
-        expect(photo.download!).to match /macbook-air-all-faded-and-stuff.jpg/
+        expect(photo.track_download).to match /macbook-air-all-faded-and-stuff.jpg/
       end
     end
 
@@ -193,7 +193,7 @@ describe Unsplash::Photo do
 
       VCR.use_cassette("photos") do
         photo = Unsplash::Photo.find("tAKXap853rY")
-        photo.download!
+        photo.track_download
         expect(Unsplash::Photo.connection).to have_received(:get).with(photo.links.download_location)
       end
     end
