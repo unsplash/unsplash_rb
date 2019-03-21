@@ -62,9 +62,8 @@ module Unsplash #:nodoc:
     # @param token_extract [Hash] OAuth token hash from #extract_token.
     # @return [OAuth2::AccessToken, nil] New access token object.
     def create_and_assign_token(token_extract)
-      if token_extract
-        @oauth_token = OAuth2::AccessToken.from_hash(@oauth, token_extract)
-      end
+      return if !token_extract
+      @oauth_token = OAuth2::AccessToken.from_hash(@oauth, token_extract)
     end
 
     # Perform a GET request.
