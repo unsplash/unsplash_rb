@@ -90,6 +90,15 @@ Hotlinking the [Unsplash image files is required](https://help.unsplash.com/api-
 
 Unlike most APIs, Unsplash requires for the image URLs returned by the API to be directly used or embedded in your applications (generally referred to as hotlinking). By using the CDN and embedding the photo URLs in your application, Unsplash can better track photo views and pass those stats on to the photographer, providing them with context for how popular their photo is and how it's being used.
 
+### Track Download
+
+Do you want to trigger [track download](https://help.unsplash.com/api-guidelines/more-on-each-guideline/guideline-triggering-a-download) attribution on a photo ? 
+
+```ruby
+photo = Unsplash::Photo.find("tAKXap853rY")
+photo.track_download
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake rspec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
