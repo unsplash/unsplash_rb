@@ -39,6 +39,18 @@ module Unsplash # :nodoc:
       self.class.connection
     end
 
+    # @private
+    def add_utm_params(url)
+      uri = URI.parse(url)
+
+      qs = Rack::Utils.parse_nested_query(uri.query)
+      qs.merge!(connection.utm_params)
+
+      uri.query = Rack::Utils.build_query(qs)
+
+      uri.to_s
+    end
+
     class << self
       # The connection object being used to communicate with Unsplash.
       # @return [Unsplash::Connection] the connection

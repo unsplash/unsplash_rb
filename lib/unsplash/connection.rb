@@ -94,6 +94,14 @@ module Unsplash #:nodoc:
       request :delete, path, params
     end
 
+    def utm_params
+      {
+        "utm_source"   => Unsplash.configuration.utm_source || "api_app",
+        "utm_medium"   => "referral",
+        "utm_campaign" => "api-credit"
+      }
+    end
+
     private
 
     def request(verb, path, params = {})
@@ -148,14 +156,6 @@ module Unsplash #:nodoc:
 
     def public_auth_header
       { "Authorization" => "Client-ID #{@application_access_key}" }
-    end
-
-    def utm_params
-      {
-        utm_source:   Unsplash.configuration.utm_source || "api_app",
-        utm_medium:   "referral",
-        utm_campaign: "api-credit"
-      }
     end
 
     def refresh_token!

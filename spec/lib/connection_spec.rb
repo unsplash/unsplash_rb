@@ -32,9 +32,9 @@ describe Unsplash::Connection do
       headers = { "Authorization"=> "Client-ID #{Unsplash.configuration.application_access_key}" }
       params = {
         foo: "bar",
-        utm_source:   "my_app",
-        utm_medium:   "referral",
-        utm_campaign: "api-credit"
+        "utm_source" => "my_app",
+        "utm_medium" =>  "referral",
+        "utm_campaign" => "api-credit"
       }
 
       Unsplash.configuration.utm_source = "my_app"

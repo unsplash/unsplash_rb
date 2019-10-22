@@ -3,6 +3,11 @@ module Unsplash # :nodoc:
   # Unsplash Photo operations.
   class Photo < Client
 
+    def initialize(attrs)
+      super
+      add_utm_to_urls
+    end
+
     # Like a photo for the current user.
     # @return [Boolean] True if successful. Will raise on error.
     def like!
@@ -21,6 +26,12 @@ module Unsplash # :nodoc:
     # @return [String] URL of image file for download.
     def track_download
       connection.get(links.download_location)["url"]
+    end
+
+    def add_utm_to_urls
+      (@attributes["urls"] || {}).each do |key, url|
+        @attributes["urls"][key] = add_utm_params(url)
+      end
     end
 
     class << self
@@ -100,7 +111,6 @@ module Unsplash # :nodoc:
       def parse_list(json)
         JSON.parse(json).map { |photo| new photo }
       end
-
     end
   end
 end

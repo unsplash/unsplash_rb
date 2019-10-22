@@ -89,5 +89,10 @@ module Unsplash # :nodoc:
       end
     end
 
+    # Get the URL of the user's Unsplash profile.
+    # @return [String] A URL.
+    def profile_url
+      add_utm_params("https://unsplash.com/@#{username}")
+    end
   end
 end
