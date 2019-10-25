@@ -81,6 +81,13 @@ describe Unsplash::Photo do
       end
     end
 
+    it "logs warning when supplying both collections and query filters" do
+      allow(Unsplash::Photo.connection).to receive(:get).and_return(double(body: '{ "id": "definitely_a_photo" }'))
+      allow(Unsplash.configuration.logger).to receive(:warn).and_call_original
+
+      Unsplash::Photo.random(collections: [4,5,6], query: "cute dogs")
+      expect(Unsplash.configuration.logger).to have_received(:warn)
+    end
   end
 
   describe "#search" do

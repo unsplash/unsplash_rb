@@ -46,7 +46,7 @@ module Unsplash # :nodoc:
       end
 
       # Get a random photo or set of photos. The photo selection pool can be narrowed using
-      # a combination of optional parameters. Can also optionally specify a custom image size.
+      # a combination of optional parameters.
       # @param count [Integer] Number of photos required. Default=1, Max=30
       # @param featured [Boolean] Limit selection to featured photos.
       # @param user [String] Limit selection to given User's ID.
@@ -55,6 +55,8 @@ module Unsplash # :nodoc:
       # @return [Unsplash::Photo] An Unsplash Photo if count parameter is omitted
       # @return [Array] An array of Unsplash Photos if the count parameter is specified. An array is returned even if count is 1
       def random(count: nil, collections: nil, featured: nil, user: nil, query: nil, orientation: nil)
+        Unsplash.configuration.logger.warn "You cannot combine 'collections' and 'query' parameters. 'query' will be ignored." if collections && query
+
         params = {
           collections: (collections && collections.join(",")),
           featured: featured,
