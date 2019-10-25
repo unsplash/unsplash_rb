@@ -7,6 +7,7 @@ module Unsplash # :nodoc:
     # @param attrs [Hash]
     def initialize(attrs = {})
       @attributes = OpenStruct.new(attrs)
+      add_utm_to_links
     end
 
     # (Re)load full object details from Unsplash.
@@ -37,6 +38,25 @@ module Unsplash # :nodoc:
     # @return [Unsplash::Connection] the connection
     def connection
       self.class.connection
+    end
+
+    # @private
+    def add_utm_params(url)
+      uri = URI.parse(url)
+
+      qs = Rack::Utils.parse_nested_query(uri.query)
+      qs.merge!(connection.utm_params)
+
+      uri.query = Rack::Utils.build_query(qs)
+
+      uri.to_s
+    end
+
+    # @private
+    def add_utm_to_links
+      (@attributes["links"] || {}).each do |key, url|
+        @attributes["links"][key] = add_utm_params(url)
+      end
     end
 
     class << self

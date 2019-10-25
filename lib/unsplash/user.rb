@@ -88,6 +88,5 @@ module Unsplash # :nodoc:
         Unsplash::Collection.new collection.to_hash
       end
     end
-
   end
 end
