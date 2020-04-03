@@ -9,20 +9,20 @@ module Unsplash # :nodoc:
       # @param username [String] the username of the user to retrieve.
       # @return [Unsplash::User] the Unsplash User.
       def find(username)
-        new JSON.parse(connection.get("/users/#{username}").body)
+        new(connection.get_json("/users/#{username}"))
       end
 
       # Get the currently-logged in user.
       # @return [Unsplash::User] the current user.
       def current
-        new JSON.parse(connection.get("/me").body)
+        new(connection.get_json('/me'))
       end
 
       # Update the current user.
       # @param params [Hash] the hash of attributes to update.
       # @return [Unsplash::User] the updated user.
       def update_current(params)
-        Unsplash::User.new JSON.parse(connection.put("/me", params).body)
+        Unsplash::User.new(connection.put_json('/me', params))
       end
 
       # Get a single page of user results for a query.
@@ -36,7 +36,7 @@ module Unsplash # :nodoc:
           page:     page,
           per_page: per_page
         }
-        Unsplash::Search.search("/search/users", self, params)
+        Unsplash::Search.search('/search/users', self, params)
       end
 
     end
@@ -51,9 +51,9 @@ module Unsplash # :nodoc:
         per_page: per_page
       }
 
-      list = JSON.parse(connection.get("/users/#{username}/photos", params).body)
+      list = connection.get_json("/users/#{username}/photos", params)
       list.map do |photo|
-        Unsplash::Photo.new photo.to_hash
+        Unsplash::Photo.new(photo.to_hash)
       end
     end
 
@@ -67,9 +67,9 @@ module Unsplash # :nodoc:
         per_page: per_page
       }
 
-      list = JSON.parse(connection.get("/users/#{username}/likes", params).body)
+      list = connection.get_json("/users/#{username}/likes", params)
       list.map do |photo|
-        Unsplash::Photo.new photo.to_hash
+        Unsplash::Photo.new(photo.to_hash)
       end
     end
 
@@ -83,9 +83,9 @@ module Unsplash # :nodoc:
         per_page: per_page
       }
 
-      list = JSON.parse(connection.get("/users/#{username}/collections", params).body)
+      list = connection.get_json("/users/#{username}/collections", params)
       list.map do |collection|
-        Unsplash::Collection.new collection.to_hash
+        Unsplash::Collection.new(collection.to_hash)
       end
     end
   end

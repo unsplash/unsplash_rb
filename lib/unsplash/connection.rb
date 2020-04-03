@@ -5,13 +5,13 @@ module Unsplash #:nodoc:
     include HTTParty
 
     # The version of the API being used if unspecified.
-    DEFAULT_VERSION  = "v1"
+    DEFAULT_VERSION  = 'v1'
 
     # Base URI for the Unsplash API..
-    DEFAULT_API_BASE_URI   = "https://api.unsplash.com"
+    DEFAULT_API_BASE_URI   = 'https://api.unsplash.com'
 
     # Base URI for Unsplash OAuth.
-    DEFAULT_OAUTH_BASE_URI = "https://unsplash.com"
+    DEFAULT_OAUTH_BASE_URI = 'https://unsplash.com'
 
     # Create a Connection object.
     # @param version [String] The Unsplash API version to use.
@@ -19,9 +19,9 @@ module Unsplash #:nodoc:
     # @param oauth_base_uri [String] Base URI for OAuth requests.
     def initialize(version: DEFAULT_VERSION, api_base_uri: DEFAULT_API_BASE_URI, oauth_base_uri: DEFAULT_OAUTH_BASE_URI)
       @application_access_key = Unsplash.configuration.application_access_key
-      @application_secret = Unsplash.configuration.application_secret
-      @api_version        = version
-      @api_base_uri       = api_base_uri
+      @application_secret     = Unsplash.configuration.application_secret
+      @api_version            = version
+      @api_base_uri           = api_base_uri
 
       oauth_base_uri = oauth_base_uri
       @oauth = ::OAuth2::Client.new(@application_access_key, @application_secret, site: oauth_base_uri) do |http|
@@ -36,9 +36,9 @@ module Unsplash #:nodoc:
     # Get OAuth URL for user authentication and authorization.
     # @param requested_scopes [Array] An array of permission scopes being requested.
     # @return [String] The authorization URL.
-    def authorization_url(requested_scopes = ["public"])
+    def authorization_url(requested_scopes = ['public'])
       @oauth.auth_code.authorize_url(redirect_uri: Unsplash.configuration.application_redirect_uri,
-                                     scope:        requested_scopes.join(" "))
+                                     scope:        requested_scopes.join(' '))
     end
 
     # Generate an access token given an auth code received from Unsplash.
@@ -73,11 +73,19 @@ module Unsplash #:nodoc:
       request :get, path, params
     end
 
+    def get_json(path, params = {})
+      JSON.parse(request(:get, path, params).body)
+    end
+
     # Perform a PUT request.
     # @param path [String] The path at which to make ther request.
     # @param params [Hash] A hash of request parameters.
     def put(path, params = {})
       request :put, path, params
+    end
+
+    def put_json(path, params = {})
+      JSON.parse(request(:put, path, params).body)
     end
 
     # Perform a POST request.
@@ -87,6 +95,10 @@ module Unsplash #:nodoc:
       request :post, path, params
     end
 
+    def post_json(path, params = {})
+      JSON.parse(request(:post, path, params).body)
+    end
+
     # Perform a DELETE request.
     # @param path [String] The path at which to make ther request.
     # @param params [Hash] A hash of request parameters.
@@ -94,28 +106,32 @@ module Unsplash #:nodoc:
       request :delete, path, params
     end
 
+    def delete_json(path, params = {})
+      JSON.parse(request(:delete, path, params).body)
+    end
+
     def utm_params
       {
-        "utm_source"   => Unsplash.configuration.utm_source || "api_app",
-        "utm_medium"   => "referral",
-        "utm_campaign" => "api-credit"
+        'utm_source'   => Unsplash.configuration.utm_source || 'api_app',
+        'utm_medium'   => 'referral',
+        'utm_campaign' => 'api-credit'
       }
     end
 
     private
 
     def request(verb, path, params = {})
-      raise ArgumentError.new "Invalid http verb #{verb}" if ![:get, :post, :put, :delete].include?(verb)
+      raise ArgumentError.new "Invalid http verb #{verb}" unless %i(get post put delete).include?(verb)
 
       params.merge!(utm_params)
 
       if !Unsplash.configuration.utm_source
-        url = "https://help.unsplash.com/api-guidelines/unsplash-api-guidelines"
-        Unsplash.configuration.logger.warn "utm_source is required as part of API Terms: #{url}"
+        url = 'https://help.unsplash.com/api-guidelines/unsplash-api-guidelines'
+        Unsplash.configuration.logger.warn("utm_source is required as part of API Terms: #{url}")
       end
 
       headers = {
-        "Accept-Version" => @api_version
+        'Accept-Version' => @api_version
         # Anything else? User agent?
       }
 
@@ -132,8 +148,8 @@ module Unsplash #:nodoc:
         OpenStruct.new(headers: {}, status: 403, body: e.error_message(e.response.body))
       end
 
-      if response.headers["Warning"]
-        Unsplash.configuration.logger.warn response.headers["Warning"]
+      if response.headers['Warning']
+        Unsplash.configuration.logger.warn(response.headers['Warning'])
       end
 
       status_code = response.respond_to?(:status) ? response.status : response.code
@@ -155,7 +171,7 @@ module Unsplash #:nodoc:
     end
 
     def public_auth_header
-      { "Authorization" => "Client-ID #{@application_access_key}" }
+      { 'Authorization' => "Client-ID #{@application_access_key}" }
     end
 
     def refresh_token!
@@ -166,7 +182,7 @@ module Unsplash #:nodoc:
 
     def error_message(response)
       body = JSON.parse(response.body)
-      body["error"] || body["errors"].join(" ")
+      body['error'] || body['errors'].join(' ')
     rescue JSON::ParserError
       raise Unsplash::Error.new(response.body)
     end

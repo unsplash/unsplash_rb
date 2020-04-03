@@ -7,7 +7,7 @@ module Unsplash # :nodoc:
       # Get a list of statistics regardling Unsplash as a whole.
       # @return [Hash] The numbers.
       def total
-        JSON.parse(connection.get("/stats/total").body)
+        connection.get_json('/stats/total')
       end
     end
   end

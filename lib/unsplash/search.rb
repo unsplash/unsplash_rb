@@ -5,11 +5,11 @@ module Unsplash # :nodoc:
     attr_reader :total, :total_pages
 
     def initialize(decorated, klass)
-      @total = decorated["total"]
-      @total_pages = decorated["total_pages"]
+      @total = decorated['total']
+      @total_pages = decorated['total_pages']
 
-      list = decorated["results"].map do |content|
-        klass.new content.to_hash
+      list = decorated['results'].map do |content|
+        klass.new(content.to_hash)
       end
 
       super(list)
@@ -26,7 +26,7 @@ module Unsplash # :nodoc:
       # @param params [Hash] Params for the search
       # @return [SearchResult] Decorated Array of klass-type objects
       def search(url, klass, params)
-        list = JSON.parse(connection.get(url, params).body)
+        list = connection.get_json(url, params)
         SearchResult.new(list, klass)
       end
     end

@@ -30,10 +30,10 @@ and secret. If you are using Rails, you can do this in an initializer.
 
 ```ruby
 Unsplash.configure do |config|
-  config.application_access_key = "YOUR ACCESS KEY"
-  config.application_secret = "YOUR APPLICATION SECRET"
-  config.application_redirect_uri = "https://your-application.com/oauth/callback"
-  config.utm_source = "alices_terrific_client_app"
+  config.application_access_key = 'YOUR ACCESS KEY'
+  config.application_secret = 'YOUR APPLICATION SECRET'
+  config.application_redirect_uri = 'https://your-application.com/oauth/callback'
+  config.utm_source = 'alices_terrific_client_app'
 
   # optional:
   config.logger = MyCustomLogger.new
@@ -53,13 +53,13 @@ If you are *only* making public requests (i.e. nothing requiring a specific logg
 Looking for details of a specific photo? Find it by ID:
 
 ```ruby
-photo = Unsplash::Photo.find("tAKXap853rY")
+photo = Unsplash::Photo.find('tAKXap853rY')
 ```
 
 Want a bunch of pictures of cats? You're on the internet; of course you do.
 
 ```ruby
-search_results = Unsplash::Photo.search("cats")
+search_results = Unsplash::Photo.search('cats')
 ```
 
 For a complete list of available actions, see our [documentation details](http://www.rubydoc.info/github/unsplash/unsplash_rb/).
@@ -70,7 +70,7 @@ For non-public actions, you'll have to get the user's permission to access their
 Direct them to the Unsplash authorization URL:
 
 ```ruby
-requested_scopes = ["public", "read_user", "something_else_you_are_asking_for"]
+requested_scopes = ['public', 'read_user', 'something_else_you_are_asking_for']
 auth_url = Unsplash::Client.connection.authorization_url(requested_scopes)
 ```
 
@@ -78,7 +78,7 @@ Upon authorization, Unsplash will return to you an authentication code via your 
 callback handler. With that you can generate an access token:
 
 ```ruby
-Unsplash::Client.connection.authorize!("the authentication code")
+Unsplash::Client.connection.authorize!('the authentication code')
 ```
 
 And that's it. The API actions will be available to you according to whichever
@@ -92,10 +92,10 @@ Unlike most APIs, Unsplash requires for the image URLs returned by the API to be
 
 ### Track Download
 
-Do you want to trigger [track download](https://help.unsplash.com/api-guidelines/more-on-each-guideline/guideline-triggering-a-download) attribution on a photo ? 
+Do you want to trigger [track download](https://help.unsplash.com/api-guidelines/more-on-each-guideline/guideline-triggering-a-download) attribution on a photo ?
 
 ```ruby
-photo = Unsplash::Photo.find("tAKXap853rY")
+photo = Unsplash::Photo.find('tAKXap853rY')
 photo.track_download
 ```
 

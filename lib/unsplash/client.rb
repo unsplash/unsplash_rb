@@ -13,12 +13,12 @@ module Unsplash # :nodoc:
     # (Re)load full object details from Unsplash.
     # @return [Unspash::Client] Itself, with full details reloaded.
     def reload!
-      if links && links["self"]
-        attrs = JSON.parse(connection.get(links["self"]).body)
+      if links && links['self']
+        attrs = connection.get_json(links['self'])
         @attributes = OpenStruct.new(attrs)
         self
       else
-        raise Unsplash::Error.new "Missing self link for #{self.class} with ID #{self.id}"
+        raise Unsplash::Error, "Missing self link for #{self.class} with ID #{self.id}"
       end
     end
 
@@ -54,8 +54,8 @@ module Unsplash # :nodoc:
 
     # @private
     def add_utm_to_links
-      (@attributes["links"] || {}).each do |key, url|
-        @attributes["links"][key] = add_utm_params(url)
+      (@attributes['links'] || {}).each do |key, url|
+        @attributes['links'][key] = add_utm_params(url)
       end
     end
 

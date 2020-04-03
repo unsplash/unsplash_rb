@@ -9,7 +9,7 @@ module Unsplash # :nodoc:
       # @param id [Integer] The ID of the collection.
       # @return [Unsplash::Collection] The requested collection.
       def find(id)
-        Unsplash::Collection.new JSON.parse(connection.get("/collections/#{id}").body)
+        Unsplash::Collection.new(connection.get_json("/collections/#{id}"))
       end
 
       # Get a list of all collections.
@@ -21,7 +21,8 @@ module Unsplash # :nodoc:
           page:     page,
           per_page: per_page
         }
-        list = JSON.parse(connection.get("/collections/", params).body)
+
+        list = connection.get_json('/collections/', params)
         list.map { |data| Unsplash::Collection.new(data) }
       end
 
@@ -33,9 +34,9 @@ module Unsplash # :nodoc:
       def featured(page = 1, per_page = 10)
         params = {
           page:     page,
-          per_page: per_page
+          per_page: per_page,
         }
-        list = JSON.parse(connection.get("/collections/featured", params).body)
+        list = connection.get_json('/collections/featured', params)
         list.map { |data| Unsplash::Collection.new(data) }
       end
 
@@ -43,13 +44,14 @@ module Unsplash # :nodoc:
       # @param title [String] The title of the collection.
       # @param description [String] The collection's description. (optional)
       # @param private [Boolean] Whether to make the collection private. (optional, default +false+)
-      def create(title: "", description: "", private: false)
+      def create(title: '', description: '', private: false)
         params = {
           title:       title,
           description: description,
           private:     private
         }
-        Unsplash::Collection.new JSON.parse(connection.post("/collections", params).body)
+
+        Unsplash::Collection.new(connection.post_json('/collections', params))
       end
 
       # Get a single page of collection results for a query.
@@ -63,14 +65,15 @@ module Unsplash # :nodoc:
           page:     page,
           per_page: per_page
         }
-        Unsplash::Search.search("/search/collections", self, params)
+
+        Unsplash::Search.search('/search/collections', self, params)
       end
 
     end
 
     def initialize(options = {})
-      options["user"] = Unsplash::User.new options["user"]
-      options["cover_photo"] = Unsplash::Photo.new options["cover_photo"]
+      options['user'] = Unsplash::User.new(options['user'])
+      options['cover_photo'] = Unsplash::Photo.new(options['cover_photo'])
       super(options)
     end
 
@@ -83,10 +86,11 @@ module Unsplash # :nodoc:
         title:       title,
         description: description,
         private:     private
-      }.select { |k,v| v }
-      updated = JSON.parse(connection.put("/collections/#{id}", params).body)
-      self.title = updated["title"]
-      self.description = updated["description"]
+      }
+
+      updated = connection.put_json("/collections/#{id}", params.compact)
+      self.title = updated['title']
+      self.description = updated['description']
       self
     end
 
@@ -107,8 +111,8 @@ module Unsplash # :nodoc:
         per_page: per_page
       }
 
-      list = JSON.parse(connection.get("/collections/#{id}/photos", params).body)
-      list.map { |photo| Unsplash::Photo.new photo }
+      list = connection.get_json("/collections/#{id}/photos", params)
+      list.map { |photo| Unsplash::Photo.new(photo) }
     end
 
     # Add a photo to the collection. If the photo is already in the collection,
@@ -116,12 +120,12 @@ module Unsplash # :nodoc:
     # @param [Unsplash::Photo] The photo to add.
     # @return [Hash] Collected photo metadata.
     def add(photo)
-      response = JSON.parse(connection.post("/collections/#{id}/add", { photo_id: photo.id }).body)
+      response = connection.post_json("/collections/#{id}/add", { photo_id: photo.id })
       {
-        photo_id:      response["photo"]["id"],
-        collection_id: response["collection"]["id"],
-        user_id:       response["user"]["id"],
-        created_at:    response["created_at"]
+        photo_id:      response['photo']['id'],
+        collection_id: response['collection']['id'],
+        user_id:       response['user']['id'],
+        created_at:    response['created_at']
       }
     end
 
@@ -133,6 +137,5 @@ module Unsplash # :nodoc:
       response = connection.delete("/collections/#{id}/remove", photo_id: photo.id)
       (200..299).include?(response.status)
     end
-
   end
 end

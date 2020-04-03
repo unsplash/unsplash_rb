@@ -25,12 +25,12 @@ module Unsplash # :nodoc:
     # Track the download of a photo.
     # @return [String] URL of image file for download.
     def track_download
-      connection.get(links.download_location)["url"]
+      connection.get(links.download_location)['url']
     end
 
     def add_utm_to_urls
-      (@attributes["urls"] || {}).each do |key, url|
-        @attributes["urls"][key] = add_utm_params(url)
+      (@attributes['urls'] || {}).each do |key, url|
+        @attributes['urls'][key] = add_utm_params(url)
       end
     end
 
@@ -40,7 +40,7 @@ module Unsplash # :nodoc:
       # @param id [String] The ID of the photo to retrieve.
       # @return [Unsplash::Photo] The Unsplash Photo.
       def find(id)
-        photo = Unsplash::Photo.new JSON.parse(connection.get("/photos/#{id}").body)
+        photo = Unsplash::Photo.new(connection.get_json("/photos/#{id}"))
         photo.user = Unsplash::User.new photo.user
         photo
       end
@@ -58,22 +58,25 @@ module Unsplash # :nodoc:
         Unsplash.configuration.logger.warn "You cannot combine 'collections' and 'query' parameters. 'query' will be ignored." if collections && query
 
         params = {
-          collections: (collections && collections.join(",")),
+          collections: collections&.join(','),
           featured: featured,
           username: user,
           query:    query,
           orientation: orientation
-        }.select { |k,v| v }
+        }
+
+        params.compact!
+
         if count
           params[:count] = count
-          photos = parse_list connection.get("/photos/random/", params).body
-          photos.map { |photo|
+          photos = parse_list(connection.get('/photos/random/', params).body)
+          photos.map do |photo|
             photo.user = Unsplash::User.new photo[:user]
             photo
-          }
+          end
         else
-          photo = Unsplash::Photo.new JSON.parse(connection.get("/photos/random", params).body)
-          photo.user = Unsplash::User.new photo.user
+          photo = Unsplash::Photo.new(JSON.parse(connection.get('/photos/random', params).body))
+          photo.user = Unsplash::User.new(photo.user)
           photo
         end
       end
@@ -90,8 +93,9 @@ module Unsplash # :nodoc:
           page:     page,
           per_page: per_page,
           orientation: orientation
-        }.select { |_k, v| v }
-        Unsplash::Search.search("/search/photos", self, params)
+        }
+
+        Unsplash::Search.search('/search/photos', self, params.compact)
       end
 
       # Get a list of all photos.
@@ -99,19 +103,20 @@ module Unsplash # :nodoc:
       # @param per_page [Integer] The number of search results per page. (default: 10, maximum: 30)
       # @param order_by [String] How to sort the photos. (Valid values: latest, oldest, popular; default: latest)
       # @return [Array] A single page of +Unsplash::Photo+ search results.
-      def all(page = 1, per_page = 10, order_by = "latest")
+      def all(page = 1, per_page = 10, order_by = 'latest')
         params = {
           page:     page,
           per_page: per_page,
           order_by: order_by
         }
-        parse_list connection.get("/photos/", params).body
+
+        parse_list connection.get('/photos/', params).body
       end
 
       private
 
       def parse_list(json)
-        JSON.parse(json).map { |photo| new photo }
+        JSON.parse(json).map { |photo| new(photo) }
       end
     end
   end
