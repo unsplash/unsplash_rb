@@ -29,7 +29,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "vcr",     "~> 3.0.0"
   spec.add_development_dependency "webmock", "~> 3.5.1"
   spec.add_development_dependency "pry"
-  spec.add_development_dependency "coveralls"
+  spec.add_development_dependency "coveralls_reborn", "~> 0.25.0"
   spec.add_development_dependency "dotenv"
   spec.add_development_dependency "rb-readline"
 end
