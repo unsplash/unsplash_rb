@@ -18,17 +18,18 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.required_ruby_version = ">= 2.3.0"
+  spec.required_ruby_version = ">= 2.7.0"
 
-  spec.add_dependency "httparty", "~> 0.16"
-  spec.add_dependency "oauth2",   "~> 1"
+  spec.add_dependency "httparty", "~> 0.20"
+  spec.add_dependency "oauth2",   ">= 2.0.8"
+  spec.add_dependency "faraday-multipart", "~> 1.0.4"
 
   spec.add_development_dependency "rake",    "~> 12.3.2"
   spec.add_development_dependency "rspec",   "~> 3.8.0"
-  spec.add_development_dependency "vcr",     "~> 3.0.0"
-  spec.add_development_dependency "webmock", "~> 3.5.1"
+  spec.add_development_dependency "vcr",     "~> 6.1.0"
+  spec.add_development_dependency "webmock", "~> 3.18.1"
   spec.add_development_dependency "pry"
-  spec.add_development_dependency "coveralls"
+  spec.add_development_dependency "coveralls_reborn", "~> 0.25.0"
   spec.add_development_dependency "dotenv"
   spec.add_development_dependency "rb-readline"
 end

@@ -1,3 +1,5 @@
+require 'faraday/multipart'
+
 module Unsplash #:nodoc:
 
   # HTTP connection to and communication with the Unsplash API.
@@ -23,7 +25,6 @@ module Unsplash #:nodoc:
       @api_version        = version
       @api_base_uri       = api_base_uri
 
-      oauth_base_uri = oauth_base_uri
       @oauth = ::OAuth2::Client.new(@application_access_key, @application_secret, site: oauth_base_uri) do |http|
         http.request :multipart
         http.request :url_encoded
@@ -129,7 +130,7 @@ module Unsplash #:nodoc:
           self.class.public_send verb, path, query: params, headers: public_auth_header
         end
       rescue OAuth2::Error => e
-        OpenStruct.new(headers: {}, status: 403, body: e.error_message(e.response.body))
+        OpenStruct.new(headers: {}, status: 403, body: e.message)
       end
 
       if response.headers["Warning"]
