@@ -26,8 +26,8 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "rake",    "~> 12.3.2"
   spec.add_development_dependency "rspec",   "~> 3.8.0"
-  spec.add_development_dependency "vcr",     "~> 3.0.0"
-  spec.add_development_dependency "webmock", "~> 3.5.1"
+  spec.add_development_dependency "vcr",     "~> 6.1.0"
+  spec.add_development_dependency "webmock", "~> 3.18.1"
   spec.add_development_dependency "pry"
   spec.add_development_dependency "coveralls_reborn", "~> 0.25.0"
   spec.add_development_dependency "dotenv"
