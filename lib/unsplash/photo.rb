@@ -54,7 +54,7 @@ module Unsplash # :nodoc:
       # @param orientation [String] Filter by orientation of the photo. Valid values are landscape, portrait, and squarish.
       # @return [Unsplash::Photo] An Unsplash Photo if count parameter is omitted
       # @return [Array] An array of Unsplash Photos if the count parameter is specified. An array is returned even if count is 1
-      def random(count: nil, collections: nil, featured: nil, user: nil, query: nil, orientation: nil)
+      def random(count: nil, collections: nil, featured: nil, user: nil, query: nil, orientation: nil, content_filter: :nil)
         Unsplash.configuration.logger.warn "You cannot combine 'collections' and 'query' parameters. 'query' will be ignored." if collections && query
 
         params = {
@@ -62,7 +62,8 @@ module Unsplash # :nodoc:
           featured: featured,
           username: user,
           query:    query,
-          orientation: orientation
+          orientation: orientation,
+          content_filter: content_filter
         }.select { |k,v| v }
         if count
           params[:count] = count
