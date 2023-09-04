@@ -63,10 +63,10 @@ describe Unsplash::Photo do
     context "with collections" do
       it "joins them" do
         expect(Unsplash::Photo.connection)
-          .to receive(:get).with("/photos/random", collections: "4,5,6")
+          .to receive(:get).with("/photos/random", collections: "4,5,6", content_filter: 'low')
           .and_return double(body: "{}")
 
-        photo = Unsplash::Photo.random(collections: [4,5,6])
+        photo = Unsplash::Photo.random(collections: [4,5,6], content_filter: 'low')
       end
     end
 

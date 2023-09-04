@@ -52,9 +52,10 @@ module Unsplash # :nodoc:
       # @param user [String] Limit selection to given User's ID.
       # @param query [String] Limit selection to given search query.
       # @param orientation [String] Filter by orientation of the photo. Valid values are landscape, portrait, and squarish.
+      # @param content_filter [String] Filter by content_filter to remove content that may be unsuitable for younger audiences.
       # @return [Unsplash::Photo] An Unsplash Photo if count parameter is omitted
       # @return [Array] An array of Unsplash Photos if the count parameter is specified. An array is returned even if count is 1
-      def random(count: nil, collections: nil, featured: nil, user: nil, query: nil, orientation: nil)
+      def random(count: nil, collections: nil, featured: nil, user: nil, query: nil, orientation: nil, content_filter: 'low')
         Unsplash.configuration.logger.warn "You cannot combine 'collections' and 'query' parameters. 'query' will be ignored." if collections && query
 
         params = {
@@ -62,7 +63,8 @@ module Unsplash # :nodoc:
           featured: featured,
           username: user,
           query:    query,
-          orientation: orientation
+          orientation: orientation,
+          content_filter: content_filter
         }.select { |k,v| v }
         if count
           params[:count] = count
@@ -83,13 +85,15 @@ module Unsplash # :nodoc:
       # @param page  [Integer] Which page of search results to return.
       # @param per_page [Integer] The number of users search result per page. (default: 10, maximum: 30)
       # @param orientation [String] Filter by orientation of the photo. Valid values are landscape, portrait, and squarish.
+      # @param content_filter [String] Filter by content_filter to remove content that may be unsuitable for younger audiences.
       # @return [SearchResult] a list of +Unsplash::Photo+ objects.
-      def search(query, page = 1, per_page = 10, orientation = nil)
+      def search(query, page = 1, per_page = 10, orientation = nil, content_filter = 'low')
         params = {
           query:    query,
           page:     page,
           per_page: per_page,
-          orientation: orientation
+          orientation: orientation,
+          content_filter: content_filter
         }.select { |_k, v| v }
         Unsplash::Search.search("/search/photos", self, params)
       end
