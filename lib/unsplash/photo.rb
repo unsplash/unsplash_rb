@@ -52,10 +52,10 @@ module Unsplash # :nodoc:
       # @param user [String] Limit selection to given User's ID.
       # @param query [String] Limit selection to given search query.
       # @param orientation [String] Filter by orientation of the photo. Valid values are landscape, portrait, and squarish.
-      # @param content_filter [String] Filter by content_filter to remove content that may be unsuitable for younger audiences.
+      # @param content_filter [String] Limit results by content_filter to avoid content that may be unsuitable for younger audiences. Valid values are low, high. Defaults to low.
       # @return [Unsplash::Photo] An Unsplash Photo if count parameter is omitted
       # @return [Array] An array of Unsplash Photos if the count parameter is specified. An array is returned even if count is 1
-      def random(count: nil, collections: nil, featured: nil, user: nil, query: nil, orientation: nil, content_filter: 'low')
+      def random(count: nil, collections: nil, featured: nil, user: nil, query: nil, orientation: nil, content_filter: "low")
         Unsplash.configuration.logger.warn "You cannot combine 'collections' and 'query' parameters. 'query' will be ignored." if collections && query
 
         params = {
@@ -85,9 +85,9 @@ module Unsplash # :nodoc:
       # @param page  [Integer] Which page of search results to return.
       # @param per_page [Integer] The number of users search result per page. (default: 10, maximum: 30)
       # @param orientation [String] Filter by orientation of the photo. Valid values are landscape, portrait, and squarish.
-      # @param content_filter [String] Filter by content_filter to remove content that may be unsuitable for younger audiences.
+      # @param content_filter [String] Limit results by content_filter to avoid content that may be unsuitable for younger audiences. Valid values are low, high. Defaults to low.
       # @return [SearchResult] a list of +Unsplash::Photo+ objects.
-      def search(query, page = 1, per_page = 10, orientation = nil, content_filter = 'low')
+      def search(query, page = 1, per_page = 10, orientation = nil, content_filter = "low")
         params = {
           query:    query,
           page:     page,
