@@ -1,4 +1,4 @@
 module Unsplash # :nodoc:
   # :nodoc:
-  VERSION = "3.0.0"
+  VERSION = "3.1.1"
 end
